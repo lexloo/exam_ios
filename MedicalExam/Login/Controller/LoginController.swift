@@ -9,11 +9,21 @@ import UIKit
 import Foundation
 
 class LoginController: UIViewController {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    @IBAction func login(_ sender: Any) {
+        print("login")
+    }
+    
+    @IBAction func doneCloseKeyBoard(_ sender: Any) {
+        (sender as! UITextField).resignFirstResponder()
+        print("click")
     }
 }
