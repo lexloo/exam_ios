@@ -4,3 +4,7 @@ framework module HandyJSON {
   export *
   module * { export * }
 }
+
+module HandyJSON.__Swift {
+    exclude header "HandyJSON-Swift.h"
+}

@@ -1,12 +1,21 @@
 PODS:
-  - HandyJSON (1.8.0)
+  - SwiftyJSON (4.0.0)
 
 DEPENDENCIES:
-  - HandyJSON
+  - SwiftyJSON (from `https://github.com/SwiftyJSON/SwiftyJSON.git`)
+
+EXTERNAL SOURCES:
+  SwiftyJSON:
+    :git: https://github.com/SwiftyJSON/SwiftyJSON.git
+
+CHECKOUT OPTIONS:
+  SwiftyJSON:
+    :commit: fb67763f27990ba76a42bf412f848af5aef5e5ea
+    :git: https://github.com/SwiftyJSON/SwiftyJSON.git
 
 SPEC CHECKSUMS:
-  HandyJSON: edaaa3278bf4c4c96d6f7382b80d6b91c88d3bf5
+  SwiftyJSON: 8cd73b154950360d79292a8dc8c0d0a85d258930
 
-PODFILE CHECKSUM: 37794723839b3b615a08ca10474827566585e0c3
+PODFILE CHECKSUM: 8de6ae9af06ae8934b84cb76f2df68dafc2289ab
 
 COCOAPODS: 1.2.1

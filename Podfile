@@ -7,5 +7,5 @@ target 'MedicalExam' do
 
   # Pods for MedicalExam
   
-  pod  'HandyJSON'
+  pod 'SwiftyJSON', :git => 'https://github.com/SwiftyJSON/SwiftyJSON.git'
 end
