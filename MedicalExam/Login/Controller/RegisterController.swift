@@ -9,8 +9,6 @@ import UIKit
 import Foundation
 
 class RegisterController: UIViewController {
-    @IBOutlet weak var navigationBar: UINavigationBar!
-
     @IBOutlet weak var txtMobile: UITextField!
     @IBOutlet weak var txtName: UITextField!
     @IBOutlet weak var txtPassword: UITextField!
@@ -18,26 +16,14 @@ class RegisterController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.navigationBar.pushItem(self.makeNavItem(), animated: true)
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
-    @objc func goLogin() {
+    func goLogin() {
         self.dismiss(animated: true, completion: nil)
-    }
-    
-    func makeNavItem() -> UINavigationItem  {
-        let item: UINavigationItem = UINavigationItem()
-        let leftButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.done, target: self, action: #selector(goLogin))
-        
-        item.title = "注册"
-        item.setLeftBarButton(leftButton, animated: true)
-        
-        return item
     }
     
     @IBAction func onFieldExit(_ sender: UITextField) {
