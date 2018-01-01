@@ -8,4 +8,5 @@ target 'MedicalExam' do
   # Pods for MedicalExam
   
   pod 'SwiftyJSON', :git => 'https://github.com/SwiftyJSON/SwiftyJSON.git'
+  pod 'Alamofire', '~> 4.5'
 end

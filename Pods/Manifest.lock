@@ -1,7 +1,9 @@
 PODS:
+  - Alamofire (4.6.0)
   - SwiftyJSON (4.0.0)
 
 DEPENDENCIES:
+  - Alamofire (~> 4.5)
   - SwiftyJSON (from `https://github.com/SwiftyJSON/SwiftyJSON.git`)
 
 EXTERNAL SOURCES:
@@ -14,8 +16,9 @@ CHECKOUT OPTIONS:
     :git: https://github.com/SwiftyJSON/SwiftyJSON.git
 
 SPEC CHECKSUMS:
+  Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
   SwiftyJSON: 8cd73b154950360d79292a8dc8c0d0a85d258930
 
-PODFILE CHECKSUM: 8de6ae9af06ae8934b84cb76f2df68dafc2289ab
+PODFILE CHECKSUM: a057e72680372c542a0f89454c6e8405cf97e0e2
 
 COCOAPODS: 1.2.1
