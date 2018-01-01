@@ -10,6 +10,10 @@ import Foundation
 
 class LoginController: UIViewController {
     
+    @IBOutlet weak var txtMobile: UITextField!
+    
+    @IBOutlet weak var txtPasswd: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -22,8 +26,14 @@ class LoginController: UIViewController {
         print("login")
     }
     
-    @IBAction func doneCloseKeyBoard(_ sender: Any) {
-        (sender as! UITextField).resignFirstResponder()
+    @IBAction func onDoex(_ sender: UITextField) {
+        sender.resignFirstResponder()
+        
         print("click")
+    }
+    
+    @IBAction func backTap(_ sender: Any) {
+        txtMobile.resignFirstResponder()
+        txtPasswd.resignFirstResponder()
     }
 }
