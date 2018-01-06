@@ -22,6 +22,13 @@
 		41D51C771FEFC94D00DF78ED /* CellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D51C761FEFC94D00DF78ED /* CellModel.swift */; };
 		41D51C7A1FEFD3FE00DF78ED /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D51C791FEFD3FE00DF78ED /* HeaderView.swift */; };
 		41D51C7C1FEFDC4300DF78ED /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D51C7B1FEFDC4300DF78ED /* TableViewCell.swift */; };
+		41EEA0C720007ABE006DB553 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EEA0C620007ABE006DB553 /* UserInfo.swift */; };
+		41EEA0CA20007EDC006DB553 /* RealmUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EEA0C920007EDC006DB553 /* RealmUtil.swift */; };
+		41EEA0CD2000B005006DB553 /* HttpUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EEA0CC2000B005006DB553 /* HttpUtil.swift */; };
+		41EEA0D12000B8C6006DB553 /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EEA0D02000B8C6006DB553 /* BaseModel.swift */; };
+		41EEA0D32000D9AC006DB553 /* SelectCategoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EEA0D22000D9AC006DB553 /* SelectCategoryController.swift */; };
+		41EEA0E02000E5BA006DB553 /* NaviTopView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41EEA0DF2000E5BA006DB553 /* NaviTopView.xib */; };
+		41EEA0E22000EA4D006DB553 /* NaviTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EEA0E12000EA4D006DB553 /* NaviTopView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +50,13 @@
 		41D51C761FEFC94D00DF78ED /* CellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellModel.swift; sourceTree = "<group>"; };
 		41D51C791FEFD3FE00DF78ED /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		41D51C7B1FEFDC4300DF78ED /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		41EEA0C620007ABE006DB553 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
+		41EEA0C920007EDC006DB553 /* RealmUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmUtil.swift; sourceTree = "<group>"; };
+		41EEA0CC2000B005006DB553 /* HttpUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpUtil.swift; sourceTree = "<group>"; };
+		41EEA0D02000B8C6006DB553 /* BaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
+		41EEA0D22000D9AC006DB553 /* SelectCategoryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCategoryController.swift; sourceTree = "<group>"; };
+		41EEA0DF2000E5BA006DB553 /* NaviTopView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NaviTopView.xib; sourceTree = "<group>"; };
+		41EEA0E12000EA4D006DB553 /* NaviTopView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NaviTopView.swift; sourceTree = "<group>"; };
 		C1635153DACAFDCD2BEC932D /* Pods-MedicalExam.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MedicalExam.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MedicalExam/Pods-MedicalExam.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -87,6 +101,10 @@
 		413307301FEBED0800C2BD45 /* MedicalExam */ = {
 			isa = PBXGroup;
 			children = (
+				41EEA0D62000E029006DB553 /* CustomView */,
+				41EEA0CF2000B8A6006DB553 /* Model */,
+				41EEA0CB2000AFDD006DB553 /* Http */,
+				41EEA0C820007EBA006DB553 /* Realm */,
 				41B825D61FF74432004DFDA3 /* Login */,
 				41D51C781FEFD3DB00DF78ED /* View */,
 				41D51C731FEFC88B00DF78ED /* Model */,
@@ -120,6 +138,7 @@
 		41B825D81FF74450004DFDA3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				41EEA0C620007ABE006DB553 /* UserInfo.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -129,6 +148,7 @@
 			children = (
 				41B825E01FFA25FE004DFDA3 /* RegisterController.swift */,
 				41B825DC1FF7BEA3004DFDA3 /* LoginController.swift */,
+				41EEA0D22000D9AC006DB553 /* SelectCategoryController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -160,6 +180,40 @@
 				41D51C7B1FEFDC4300DF78ED /* TableViewCell.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		41EEA0C820007EBA006DB553 /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				41EEA0C920007EDC006DB553 /* RealmUtil.swift */,
+			);
+			path = Realm;
+			sourceTree = "<group>";
+		};
+		41EEA0CB2000AFDD006DB553 /* Http */ = {
+			isa = PBXGroup;
+			children = (
+				41EEA0CC2000B005006DB553 /* HttpUtil.swift */,
+			);
+			path = Http;
+			sourceTree = "<group>";
+		};
+		41EEA0CF2000B8A6006DB553 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				41EEA0D02000B8C6006DB553 /* BaseModel.swift */,
+			);
+			name = Model;
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		41EEA0D62000E029006DB553 /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				41EEA0E12000EA4D006DB553 /* NaviTopView.swift */,
+				41EEA0DF2000E5BA006DB553 /* NaviTopView.xib */,
+			);
+			path = CustomView;
 			sourceTree = "<group>";
 		};
 		6BEB30CA255B9D8B83B2BB62 /* Pods */ = {
@@ -235,6 +289,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41EEA0E02000E5BA006DB553 /* NaviTopView.xib in Resources */,
 				4133073E1FEBED0800C2BD45 /* LaunchScreen.storyboard in Resources */,
 				41B825DB1FF79A6E004DFDA3 /* UILogin.storyboard in Resources */,
 				4133073B1FEBED0800C2BD45 /* Assets.xcassets in Resources */,
@@ -299,13 +354,19 @@
 				41D51C681FEF45F300DF78ED /* MainViewController.swift in Sources */,
 				413307321FEBED0800C2BD45 /* AppDelegate.swift in Sources */,
 				41B825E11FFA25FF004DFDA3 /* RegisterController.swift in Sources */,
+				41EEA0CD2000B005006DB553 /* HttpUtil.swift in Sources */,
 				41D51C6C1FEF493700DF78ED /* MyViewController.swift in Sources */,
+				41EEA0C720007ABE006DB553 /* UserInfo.swift in Sources */,
 				41D51C7C1FEFDC4300DF78ED /* TableViewCell.swift in Sources */,
 				41D51C6E1FEF495800DF78ED /* VideoViewController.swift in Sources */,
 				41B825DD1FF7BEA3004DFDA3 /* LoginController.swift in Sources */,
+				41EEA0D12000B8C6006DB553 /* BaseModel.swift in Sources */,
+				41EEA0CA20007EDC006DB553 /* RealmUtil.swift in Sources */,
+				41EEA0D32000D9AC006DB553 /* SelectCategoryController.swift in Sources */,
 				41D51C771FEFC94D00DF78ED /* CellModel.swift in Sources */,
 				41D51C6A1FEF480A00DF78ED /* QuestionBankViewController.swift in Sources */,
 				41D51C751FEFC8CD00DF78ED /* SectionModel.swift in Sources */,
+				41EEA0E22000EA4D006DB553 /* NaviTopView.swift in Sources */,
 				41D51C7A1FEFD3FE00DF78ED /* HeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
