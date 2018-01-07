@@ -115,10 +115,10 @@
                                     <action selector="selectCategory:" destination="vh9-ga-hBX" eventType="touchUpInside" id="Txg-cm-D2D"/>
                                 </connections>
                             </button>
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pDd-XZ-K87">
-                                <rect key="frame" x="0.0" y="274" width="320" height="206"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            </pickerView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ole-VK-Oa8" customClass="BottomPopupView" customModule="MedicalExam" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="280" width="320" height="200"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -128,17 +128,21 @@
                             <constraint firstItem="wrU-kf-KzV" firstAttribute="leading" secondItem="kdO-cW-zjd" secondAttribute="leading" constant="16" id="Fcw-Nm-tkZ"/>
                             <constraint firstItem="kdO-cW-zjd" firstAttribute="trailing" secondItem="oaE-aD-6IM" secondAttribute="trailing" constant="39" id="Gj1-fY-yZh"/>
                             <constraint firstItem="oaE-aD-6IM" firstAttribute="top" secondItem="Jld-bJ-fHh" secondAttribute="bottom" constant="32" id="JIG-SL-ojo"/>
+                            <constraint firstItem="Ole-VK-Oa8" firstAttribute="trailing" secondItem="kdO-cW-zjd" secondAttribute="trailing" id="MQj-OX-3jV"/>
                             <constraint firstItem="oaE-aD-6IM" firstAttribute="leading" secondItem="wrU-kf-KzV" secondAttribute="trailing" constant="15" id="Mld-fV-uTN"/>
+                            <constraint firstItem="Ole-VK-Oa8" firstAttribute="bottom" secondItem="kdO-cW-zjd" secondAttribute="bottom" id="QHX-d5-gm8"/>
+                            <constraint firstItem="Ole-VK-Oa8" firstAttribute="top" secondItem="uH3-LA-6Sm" secondAttribute="top" constant="280" id="R5r-ba-wvB"/>
                             <constraint firstItem="wrU-kf-KzV" firstAttribute="centerY" secondItem="oaE-aD-6IM" secondAttribute="centerY" id="gfH-7h-2kF"/>
                             <constraint firstItem="Jld-bJ-fHh" firstAttribute="leading" secondItem="uH3-LA-6Sm" secondAttribute="leading" id="mrH-Me-2a0"/>
+                            <constraint firstItem="Ole-VK-Oa8" firstAttribute="leading" secondItem="kdO-cW-zjd" secondAttribute="leading" id="nlH-KX-GZG"/>
                             <constraint firstAttribute="trailing" secondItem="Jld-bJ-fHh" secondAttribute="trailing" id="vok-KX-5NP"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="kdO-cW-zjd"/>
                     </view>
                     <connections>
+                        <outlet property="bpvCategory" destination="Ole-VK-Oa8" id="4iI-yu-oDb"/>
                         <outlet property="btnSelectCategory" destination="oaE-aD-6IM" id="V2b-Yc-bz3"/>
                         <outlet property="naviTopView" destination="Jld-bJ-fHh" id="ySo-CV-Uat"/>
-                        <outlet property="pvExamCategory" destination="pDd-XZ-K87" id="okq-qy-X2K"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GIk-aK-gqR" userLabel="First Responder" sceneMemberID="firstResponder"/>

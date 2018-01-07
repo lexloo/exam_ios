@@ -12,8 +12,9 @@ import Foundation
 class SelectCategoryController: UIViewController {
     @IBOutlet weak var naviTopView: NaviTopView!
     @IBOutlet weak var btnSelectCategory: UIButton!
-    @IBOutlet weak var pvExamCategory: UIPickerView!
-
+    @IBOutlet weak var bpvCategory: BottomPopupView!
+    var pvExamCategory: UIPickerView?
+    
     let kind1 = Kind(guid: "61AEAB78A7CD3671E050840A063959A8", name:"医师资格");
     let kind2 = Kind(guid:"61AEAB78A7CE3671E050840A063959A8", name:"卫生资格");
     
@@ -25,10 +26,12 @@ class SelectCategoryController: UIViewController {
         super.viewDidLoad()
         
         naviTopView.btnReturn.addTarget(self, action: #selector(SelectCategoryController.close), for: UIControlEvents.touchUpInside)
-        pvExamCategory.selectedRow(inComponent: 0)
-        pvExamCategory.selectedRow(inComponent: 1)
-        pvExamCategory.dataSource = self
-        pvExamCategory.delegate = self
+        
+        pvExamCategory?.selectedRow(inComponent: 0)
+        pvExamCategory?.selectedRow(inComponent: 1)
+        pvExamCategory?.dataSource = self
+        pvExamCategory?.delegate = self
+        bpvCategory.vwContainer.addSubview(pvExamCategory!)
     
         loadData()
     }
@@ -42,7 +45,7 @@ class SelectCategoryController: UIViewController {
     }
     
     @IBAction func selectCategory(_ sender: UIButton) {
-        let category = String(pvExamCategory.selectedRow(inComponent: 0)) + "|" + String(pvExamCategory.selectedRow(inComponent: 1))
+        let category = String(describing: pvExamCategory?.selectedRow(inComponent: 0)) + "|" + String(describing: pvExamCategory?.selectedRow(inComponent: 1))
         sender.setTitle(category, for: .normal)
     }
     
@@ -68,7 +71,7 @@ class SelectCategoryController: UIViewController {
             }
             self.catagorys = [self.kind1: catagory1, self.kind2: catagory2]
             print(self.catagorys)
-            self.pvExamCategory.reloadAllComponents()
+            self.pvExamCategory?.reloadAllComponents()
         }
     }
 }

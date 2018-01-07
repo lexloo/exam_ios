@@ -8,16 +8,16 @@
 
 import UIKit
 
-class BottomPopupView: UIView {
+@IBDesignable class BottomPopupView: UIView {
     @IBOutlet weak var btnCancel: UIButton!
     @IBOutlet weak var btnOK: UIButton!
-    
-    func initialSetup(){
-    }
     @IBOutlet weak var vwContainer: UIView!
     
     @IBAction func cancelClick(_ sender: UIButton) {
         self.isHidden = true
+    }
+    
+    func initialSetup(){
     }
     /*** 下面的几个方法都是为了让这个自定义类能将xib里的view加载进来。这个是通用的，我们不需修改。 ****/
     var contentView:UIView!
