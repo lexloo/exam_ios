@@ -20,6 +20,7 @@
 		414DCA9B20024E3200CB2B74 /* NvWKWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414DCA9A20024E3200CB2B74 /* NvWKWebViewController.swift */; };
 		414DCA9D20024E3A00CB2B74 /* NvWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414DCA9C20024E3A00CB2B74 /* NvWebViewController.swift */; };
 		414DCAA5200252FF00CB2B74 /* SelectQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414DCAA4200252FF00CB2B74 /* SelectQuestionViewController.swift */; };
+		414DCAA7200259BB00CB2B74 /* test.metal in Sources */ = {isa = PBXBuildFile; fileRef = 414DCAA6200259BB00CB2B74 /* test.metal */; };
 		41B825DB1FF79A6E004DFDA3 /* UILogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41B825DA1FF79A6E004DFDA3 /* UILogin.storyboard */; };
 		41B825DD1FF7BEA3004DFDA3 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B825DC1FF7BEA3004DFDA3 /* LoginController.swift */; };
 		41B825E11FFA25FF004DFDA3 /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B825E01FFA25FE004DFDA3 /* RegisterController.swift */; };
@@ -60,6 +61,7 @@
 		414DCA9A20024E3200CB2B74 /* NvWKWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NvWKWebViewController.swift; sourceTree = "<group>"; };
 		414DCA9C20024E3A00CB2B74 /* NvWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NvWebViewController.swift; sourceTree = "<group>"; };
 		414DCAA4200252FF00CB2B74 /* SelectQuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectQuestionViewController.swift; sourceTree = "<group>"; };
+		414DCAA6200259BB00CB2B74 /* test.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = test.metal; sourceTree = "<group>"; };
 		41B825DA1FF79A6E004DFDA3 /* UILogin.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UILogin.storyboard; sourceTree = "<group>"; };
 		41B825DC1FF7BEA3004DFDA3 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		41B825E01FFA25FE004DFDA3 /* RegisterController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegisterController.swift; path = MedicalExam/Login/Controller/RegisterController.swift; sourceTree = SOURCE_ROOT; };
@@ -156,6 +158,7 @@
 		414DCA9E20024E4700CB2B74 /* Html */ = {
 			isa = PBXGroup;
 			children = (
+				414DCAA6200259BB00CB2B74 /* test.metal */,
 			);
 			path = Html;
 			sourceTree = "<group>";
@@ -434,6 +437,7 @@
 				41D51C771FEFC94D00DF78ED /* CellModel.swift in Sources */,
 				41D51C6A1FEF480A00DF78ED /* QuestionBankViewController.swift in Sources */,
 				41EEA0E62001163F006DB553 /* Kind.swift in Sources */,
+				414DCAA7200259BB00CB2B74 /* test.metal in Sources */,
 				414DCA902002128300CB2B74 /* BaseItem.swift in Sources */,
 				41D51C751FEFC8CD00DF78ED /* SectionModel.swift in Sources */,
 				41EEA0E420010E5F006DB553 /* SelectCategoryController.swift in Sources */,
