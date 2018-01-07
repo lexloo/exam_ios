@@ -16,6 +16,10 @@
 		414DCA922002134200CB2B74 /* Subject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414DCA912002134200CB2B74 /* Subject.swift */; };
 		414DCA942002134D00CB2B74 /* Chapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414DCA932002134D00CB2B74 /* Chapter.swift */; };
 		414DCA962002136800CB2B74 /* ChapterQuestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414DCA952002136800CB2B74 /* ChapterQuestions.swift */; };
+		414DCA9920024E2200CB2B74 /* NvWKWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414DCA9820024E2200CB2B74 /* NvWKWebView.swift */; };
+		414DCA9B20024E3200CB2B74 /* NvWKWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414DCA9A20024E3200CB2B74 /* NvWKWebViewController.swift */; };
+		414DCA9D20024E3A00CB2B74 /* NvWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414DCA9C20024E3A00CB2B74 /* NvWebViewController.swift */; };
+		414DCAA5200252FF00CB2B74 /* SelectQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414DCAA4200252FF00CB2B74 /* SelectQuestionViewController.swift */; };
 		41B825DB1FF79A6E004DFDA3 /* UILogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41B825DA1FF79A6E004DFDA3 /* UILogin.storyboard */; };
 		41B825DD1FF7BEA3004DFDA3 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B825DC1FF7BEA3004DFDA3 /* LoginController.swift */; };
 		41B825E11FFA25FF004DFDA3 /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B825E01FFA25FE004DFDA3 /* RegisterController.swift */; };
@@ -52,6 +56,10 @@
 		414DCA912002134200CB2B74 /* Subject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subject.swift; sourceTree = "<group>"; };
 		414DCA932002134D00CB2B74 /* Chapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chapter.swift; sourceTree = "<group>"; };
 		414DCA952002136800CB2B74 /* ChapterQuestions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChapterQuestions.swift; sourceTree = "<group>"; };
+		414DCA9820024E2200CB2B74 /* NvWKWebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NvWKWebView.swift; sourceTree = "<group>"; };
+		414DCA9A20024E3200CB2B74 /* NvWKWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NvWKWebViewController.swift; sourceTree = "<group>"; };
+		414DCA9C20024E3A00CB2B74 /* NvWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NvWebViewController.swift; sourceTree = "<group>"; };
+		414DCAA4200252FF00CB2B74 /* SelectQuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectQuestionViewController.swift; sourceTree = "<group>"; };
 		41B825DA1FF79A6E004DFDA3 /* UILogin.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UILogin.storyboard; sourceTree = "<group>"; };
 		41B825DC1FF7BEA3004DFDA3 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		41B825E01FFA25FE004DFDA3 /* RegisterController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegisterController.swift; path = MedicalExam/Login/Controller/RegisterController.swift; sourceTree = SOURCE_ROOT; };
@@ -117,6 +125,7 @@
 		413307301FEBED0800C2BD45 /* MedicalExam */ = {
 			isa = PBXGroup;
 			children = (
+				414DCA9720024D6100CB2B74 /* WebView */,
 				41EEA0D62000E029006DB553 /* CustomView */,
 				41EEA0CF2000B8A6006DB553 /* Model */,
 				41EEA0CB2000AFDD006DB553 /* Http */,
@@ -125,12 +134,38 @@
 				41D51C781FEFD3DB00DF78ED /* View */,
 				41D51C731FEFC88B00DF78ED /* Model */,
 				41D51C641FEF452C00DF78ED /* Controller */,
+				414DCA9E20024E4700CB2B74 /* Html */,
 				413307311FEBED0800C2BD45 /* AppDelegate.swift */,
 				4133073A1FEBED0800C2BD45 /* Assets.xcassets */,
 				4133073C1FEBED0800C2BD45 /* LaunchScreen.storyboard */,
 				4133073F1FEBED0800C2BD45 /* Info.plist */,
 			);
 			path = MedicalExam;
+			sourceTree = "<group>";
+		};
+		414DCA9720024D6100CB2B74 /* WebView */ = {
+			isa = PBXGroup;
+			children = (
+				414DCA9C20024E3A00CB2B74 /* NvWebViewController.swift */,
+				414DCA9A20024E3200CB2B74 /* NvWKWebViewController.swift */,
+				414DCA9820024E2200CB2B74 /* NvWKWebView.swift */,
+			);
+			path = WebView;
+			sourceTree = "<group>";
+		};
+		414DCA9E20024E4700CB2B74 /* Html */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Html;
+			sourceTree = "<group>";
+		};
+		414DCA9F2002527900CB2B74 /* QuestionBank */ = {
+			isa = PBXGroup;
+			children = (
+				414DCAA4200252FF00CB2B74 /* SelectQuestionViewController.swift */,
+			);
+			path = QuestionBank;
 			sourceTree = "<group>";
 		};
 		41B825D61FF74432004DFDA3 /* Login */ = {
@@ -178,6 +213,7 @@
 		41D51C641FEF452C00DF78ED /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				414DCA9F2002527900CB2B74 /* QuestionBank */,
 				41D51C671FEF45F300DF78ED /* MainViewController.swift */,
 				41D51C691FEF480A00DF78ED /* QuestionBankViewController.swift */,
 				41D51C6B1FEF493700DF78ED /* MyViewController.swift */,
@@ -376,6 +412,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				414DCAA5200252FF00CB2B74 /* SelectQuestionViewController.swift in Sources */,
 				41D51C681FEF45F300DF78ED /* MainViewController.swift in Sources */,
 				413307321FEBED0800C2BD45 /* AppDelegate.swift in Sources */,
 				41B825E11FFA25FF004DFDA3 /* RegisterController.swift in Sources */,
@@ -387,10 +424,12 @@
 				41EEA0C720007ABE006DB553 /* UserInfo.swift in Sources */,
 				414DCA8E2001F9D400CB2B74 /* Global.swift in Sources */,
 				41D51C7C1FEFDC4300DF78ED /* TableViewCell.swift in Sources */,
+				414DCA9920024E2200CB2B74 /* NvWKWebView.swift in Sources */,
 				41D51C6E1FEF495800DF78ED /* VideoViewController.swift in Sources */,
 				41B825DD1FF7BEA3004DFDA3 /* LoginController.swift in Sources */,
 				414DCA922002134200CB2B74 /* Subject.swift in Sources */,
 				414DCA942002134D00CB2B74 /* Chapter.swift in Sources */,
+				414DCA9D20024E3A00CB2B74 /* NvWebViewController.swift in Sources */,
 				41EEA0CA20007EDC006DB553 /* RealmUtil.swift in Sources */,
 				41D51C771FEFC94D00DF78ED /* CellModel.swift in Sources */,
 				41D51C6A1FEF480A00DF78ED /* QuestionBankViewController.swift in Sources */,
@@ -398,6 +437,7 @@
 				414DCA902002128300CB2B74 /* BaseItem.swift in Sources */,
 				41D51C751FEFC8CD00DF78ED /* SectionModel.swift in Sources */,
 				41EEA0E420010E5F006DB553 /* SelectCategoryController.swift in Sources */,
+				414DCA9B20024E3200CB2B74 /* NvWKWebViewController.swift in Sources */,
 				41EEA0E22000EA4D006DB553 /* NaviTopView.swift in Sources */,
 				41D51C7A1FEFD3FE00DF78ED /* HeaderView.swift in Sources */,
 			);
