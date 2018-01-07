@@ -123,6 +123,10 @@ class RealmUtil {
         }
     }
     
+    static func selectByFilterString<T: Object> (_: T.Type, filter: String) -> Results<T> {
+        return sharedInstance.objects(T.self).filter(filter)
+    }
+    
     static func selectByPredicate<T: Object> (_: T.Type, predicate: NSPredicate) -> Results<T> {
         return sharedInstance.objects(T.self).filter(predicate)
     }

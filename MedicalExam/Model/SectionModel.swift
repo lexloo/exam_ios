@@ -7,32 +7,37 @@
 //
 class SectionModel {
     var title: String?
+    var subjectGuid: String?
     var isExpanded: Bool? = false
     var cellModels: [CellModel] = []
     var isLoaded: Bool? = false
     
     func loadCellModels() {
+        self.isLoaded = true
         var cellModels = [CellModel]()
         
-        for j in 0..<6 {
+        let chapters = RealmUtil.selectByFilterString(Chapter.self, filter: "subjectGuid = '\(self.subjectGuid!)'");
+        for chapter in chapters {
             let cellModel = CellModel()
-            cellModel.title = "Cell \(j)"
+            cellModel.title = chapter.name
             
             cellModels.append(cellModel)
         }
         
-        self.isLoaded = true
         self.cellModels = cellModels
     }
     
     class func loadSections(finish: ([SectionModel]) -> ()) {
         var array = [SectionModel]()
-        for i in 0..<10 {
-            let sectionModel = SectionModel()
-            sectionModel.isExpanded = false
-            sectionModel.title = "Section \(i)"
+        let userInfo = Global.userInfo
+        let subjects = RealmUtil.selectByFilterString(Subject.self, filter: "categoryGuid = '\(userInfo.examCategory!)'");
+        for subject in subjects {
+            let s = SectionModel()
+            s.title = subject.name
+            s.subjectGuid = subject.guid
+            s.isExpanded = false
             
-            array.append(sectionModel)
+            array.append(s)
         }
         
         finish(array)

@@ -81,12 +81,9 @@ extension QuestionBankViewController: UITableViewDelegate {
         headerView?.sectionModel = dataSource![section]
         headerView?.expandCallBack = {
             (isExpanded: Bool) -> Void in
-            print(isExpanded)
             if isExpanded {
-                print(self.lastActiveSection as Any)
                 if self.lastActiveSection != nil && self.lastActiveSection != section {
                     self.dataSource![self.lastActiveSection!].isExpanded = false
-                    print("hhhh")
                     tableView.reloadSections([section, self.lastActiveSection!], with: UITableViewRowAnimation.fade)
                 } else {
                     tableView.reloadSections([section], with: UITableViewRowAnimation.fade)
