@@ -129,7 +129,6 @@
 			children = (
 				414DCA9720024D6100CB2B74 /* WebView */,
 				41EEA0D62000E029006DB553 /* CustomView */,
-				41EEA0CF2000B8A6006DB553 /* Model */,
 				41EEA0CB2000AFDD006DB553 /* Http */,
 				41EEA0C820007EBA006DB553 /* Realm */,
 				41B825D61FF74432004DFDA3 /* Login */,
@@ -228,6 +227,7 @@
 		41D51C731FEFC88B00DF78ED /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				414DCA8D2001F9D400CB2B74 /* Global.swift */,
 				41D51C741FEFC8CD00DF78ED /* SectionModel.swift */,
 				41D51C761FEFC94D00DF78ED /* CellModel.swift */,
 			);
@@ -257,15 +257,6 @@
 				41EEA0CC2000B005006DB553 /* HttpUtil.swift */,
 			);
 			path = Http;
-			sourceTree = "<group>";
-		};
-		41EEA0CF2000B8A6006DB553 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				414DCA8D2001F9D400CB2B74 /* Global.swift */,
-			);
-			name = Model;
-			path = "New Group";
 			sourceTree = "<group>";
 		};
 		41EEA0D62000E029006DB553 /* CustomView */ = {
