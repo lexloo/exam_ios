@@ -7,4 +7,5 @@
 //
 class CellModel {
     var title: String?
+    var guid: String?
 }

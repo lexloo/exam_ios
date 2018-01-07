@@ -20,6 +20,7 @@ class SectionModel {
         for chapter in chapters {
             let cellModel = CellModel()
             cellModel.title = chapter.name
+            cellModel.guid = chapter.guid
             
             cellModels.append(cellModel)
         }

@@ -99,5 +99,14 @@ extension QuestionBankViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let section = self.dataSource![indexPath.section]
+        let cell = section.cellModels[indexPath.row]
+        
+        let subjectName = section.title
+        let chapterName = cell.title
+        let chapterGuid = cell.guid
+        
+//        let alert = UIAlertController(title: "", message: subjectName! + ":" + chapterName!, preferredStyle: .alert)
+//        self.present(alert, animated: true, completion: nil)
     }
 }
