@@ -25,7 +25,7 @@ class LoginController: UIViewController {
     @IBAction func login(_ sender: Any) {
         let parameters: Dictionary = ["mobile": txtMobile.text!, "password": txtPasswd.text!]
         
-        HttpUtil.post("user/login", parameters: parameters) {
+        HttpUtil.postReturnResult("user/login", parameters: parameters) {
             json in
             let userInfo = UserInfo()
             userInfo.mapping(json)
