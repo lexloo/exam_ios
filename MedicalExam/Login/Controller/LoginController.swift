@@ -29,8 +29,10 @@ class LoginController: UIViewController {
             json in
             let userInfo = UserInfo()
             userInfo.mapping(json)
+            Global.userInfo.copyFrom(userInfo)
             
             RealmUtil.addCanUpdate(userInfo)
+
             if userInfo.examKind != nil {
                 //goto main controller
                 let main = MainViewController()

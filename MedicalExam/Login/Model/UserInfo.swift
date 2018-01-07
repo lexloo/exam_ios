@@ -27,13 +27,22 @@ class UserInfo: Object  {
         self.mobile = json["mobile"].string
         self.guid = json["guid"].string
         self.name = json["name"].string
-        self.examKind = json["exam"].string
+        self.examKind = json["examKind"].string
         self.examCategory = json["examCategory"].string
         self.password = json["password"].string
         
         let timeStamp = json["modifyTime"].int
         let timeInterval = TimeInterval(timeStamp!)
         self.modifyTime = Date(timeIntervalSince1970: timeInterval)
+    }
+    
+    func copyFrom(_ userInfo: UserInfo) {
+        self.mobile = userInfo.mobile
+        self.guid = userInfo.guid
+        self.name = userInfo.name
+        self.examKind = userInfo.examKind
+        self.examCategory = userInfo.examCategory
+        self.password = userInfo.password
     }
 //    override static func indexedProperties() -> [String] {
 //        return ["mobile"]

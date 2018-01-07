@@ -8,10 +8,9 @@
 
 import UIKit
 
-@IBDesignable class BottomPopupView: UIView {
-    @IBOutlet weak var btnCancel: UIButton!
+class BottomPopupView: UIView {
+    @IBOutlet weak var vmContainer: UIView!
     @IBOutlet weak var btnOK: UIButton!
-    @IBOutlet weak var vwContainer: UIView!
     
     @IBAction func cancelClick(_ sender: UIButton) {
         self.isHidden = true

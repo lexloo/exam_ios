@@ -12,9 +12,10 @@ import Foundation
 class SelectCategoryController: UIViewController {
     @IBOutlet weak var naviTopView: NaviTopView!
     @IBOutlet weak var btnSelectCategory: UIButton!
-    @IBOutlet weak var bpvCategory: BottomPopupView!
+   
     var pvExamCategory: UIPickerView?
     
+    @IBOutlet weak var bpvCatagory: BottomPopupView!
     let kind1 = Kind(guid: "61AEAB78A7CD3671E050840A063959A8", name:"医师资格");
     let kind2 = Kind(guid:"61AEAB78A7CE3671E050840A063959A8", name:"卫生资格");
     
@@ -27,12 +28,16 @@ class SelectCategoryController: UIViewController {
         
         naviTopView.btnReturn.addTarget(self, action: #selector(SelectCategoryController.close), for: UIControlEvents.touchUpInside)
         
+        pvExamCategory = UIPickerView()
         pvExamCategory?.selectedRow(inComponent: 0)
         pvExamCategory?.selectedRow(inComponent: 1)
         pvExamCategory?.dataSource = self
         pvExamCategory?.delegate = self
-        bpvCategory.vwContainer.addSubview(pvExamCategory!)
-    
+        
+        bpvCatagory.vmContainer.addSubview(pvExamCategory!)
+        bpvCatagory.btnOK.addTarget(self, action: #selector(SelectCategoryController.setCategory), for: .touchUpInside)
+        
+        
         loadData()
     }
     
@@ -44,9 +49,29 @@ class SelectCategoryController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
+    @objc func setCategory() {
+        let kind: Kind = self.kindArr![(self.pvExamCategory?.selectedRow(inComponent: 0))!]
+        let catagory: Catagory = self.catagorys![kind]![(self.pvExamCategory?.selectedRow(inComponent: 1))!]
+        let title = kind.name + "|" + catagory.name!
+        self.btnSelectCategory.setTitle(title, for: .normal)
+        
+        //save
+        let userInfo = UserInfo()
+        userInfo.copyFrom(Global.userInfo)
+        userInfo.examKind = kind.guid
+        userInfo.examCategory = catagory.guid
+        
+        RealmUtil.addCanUpdate(userInfo)
+        Global.userInfo.copyFrom(userInfo)
+        
+        let parameters:Dictionary = ["guid": userInfo.guid!, "kind": userInfo.examKind!, "category": userInfo.examCategory!]
+        HttpUtil.postReturnString("user/kind_category", parameters: parameters) {
+            json in
+        }
+    }
+    
     @IBAction func selectCategory(_ sender: UIButton) {
-        let category = String(describing: pvExamCategory?.selectedRow(inComponent: 0)) + "|" + String(describing: pvExamCategory?.selectedRow(inComponent: 1))
-        sender.setTitle(category, for: .normal)
+        bpvCatagory.isHidden = false
     }
     
     func loadData() {
@@ -62,15 +87,12 @@ class SelectCategoryController: UIViewController {
                 catagory.mapping(item)
                 
                 if "61AEAB78A7CD3671E050840A063959A8" == catagory.kindGuid! {
-                    print("add1")
                     catagory1.append(catagory)
                 } else {
-                    print("add2")
                     catagory2.append(catagory)
                 }
             }
             self.catagorys = [self.kind1: catagory1, self.kind2: catagory2]
-            print(self.catagorys)
             self.pvExamCategory?.reloadAllComponents()
         }
     }

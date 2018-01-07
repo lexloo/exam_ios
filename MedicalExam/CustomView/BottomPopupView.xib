@@ -10,10 +10,15 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BottomPopupView" customModule="MedicalExam" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BottomPopupView" customModule="MedicalExam" customModuleProvider="target">
+            <connections>
+                <outlet property="btnOK" destination="3BX-Bo-GQN" id="JQ2-u4-4rO"/>
+                <outlet property="vmContainer" destination="fNn-W2-tko" id="VlZ-cX-MFF"/>
+            </connections>
+        </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="528" height="220"/>
+            <rect key="frame" x="0.0" y="0.0" width="521" height="185"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="aPs-E3-ULU">
@@ -24,55 +29,37 @@
                     <rect key="frame" x="419" y="138" width="20" height="20"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </activityIndicatorView>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Axq-En-mcR">
-                    <rect key="frame" x="0.0" y="0.0" width="528" height="30"/>
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Axq-En-mcR">
+                    <rect key="frame" x="0.0" y="0.0" width="521" height="30"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qHL-Tq-m5c">
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qHL-Tq-m5c">
                             <rect key="frame" x="16" y="0.0" width="31" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <state key="normal" title="取消"/>
                             <connections>
-                                <action selector="cancelClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="Yjg-J9-Cdy"/>
+                                <action selector="cancelClick:" destination="-1" eventType="touchUpInside" id="7Gw-qe-jJi"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3BX-Bo-GQN">
-                            <rect key="frame" x="481" y="0.0" width="31" height="30"/>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3BX-Bo-GQN">
+                            <rect key="frame" x="474" y="0.0" width="31" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                             <state key="normal" title="确定"/>
                         </button>
                     </subviews>
                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.10062720070422536" colorSpace="calibratedRGB"/>
-                    <constraints>
-                        <constraint firstAttribute="trailing" secondItem="3BX-Bo-GQN" secondAttribute="trailing" constant="16" id="E0t-t4-Los"/>
-                        <constraint firstItem="qHL-Tq-m5c" firstAttribute="leading" secondItem="Axq-En-mcR" secondAttribute="leading" constant="16" id="NPT-Hq-zRA"/>
-                        <constraint firstAttribute="bottom" secondItem="qHL-Tq-m5c" secondAttribute="bottom" id="Re6-xv-Oyb"/>
-                        <constraint firstItem="qHL-Tq-m5c" firstAttribute="top" secondItem="Axq-En-mcR" secondAttribute="top" id="VfM-an-4bf"/>
-                        <constraint firstAttribute="bottom" secondItem="3BX-Bo-GQN" secondAttribute="bottom" id="YCp-fJ-J7l"/>
-                        <constraint firstItem="3BX-Bo-GQN" firstAttribute="top" secondItem="Axq-En-mcR" secondAttribute="top" id="YrT-Zw-6lF"/>
-                    </constraints>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fNn-W2-tko">
-                    <rect key="frame" x="0.0" y="30" width="528" height="190"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fNn-W2-tko">
+                    <rect key="frame" x="0.0" y="30" width="521" height="155"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.052624339788732391" colorSpace="calibratedRGB"/>
                 </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-            <constraints>
-                <constraint firstItem="fNn-W2-tko" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="P7K-nU-Hxp"/>
-                <constraint firstItem="fNn-W2-tko" firstAttribute="top" secondItem="Axq-En-mcR" secondAttribute="bottom" id="Pvv-3Q-k1k"/>
-                <constraint firstItem="Axq-En-mcR" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="Q1X-hq-8Qg"/>
-                <constraint firstItem="Axq-En-mcR" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="Vl5-Xb-9mb"/>
-                <constraint firstItem="Axq-En-mcR" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="fEy-0F-wry"/>
-                <constraint firstItem="fNn-W2-tko" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="gEI-a9-nPI"/>
-                <constraint firstItem="fNn-W2-tko" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="ztb-bt-op2"/>
-            </constraints>
             <nil key="simulatedTopBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <connections>
-                <outlet property="btnCancel" destination="qHL-Tq-m5c" id="7k2-7E-JUC"/>
-                <outlet property="btnOK" destination="3BX-Bo-GQN" id="xMr-L0-Lkx"/>
-                <outlet property="vwContainer" destination="fNn-W2-tko" id="Phj-3F-fgH"/>
-            </connections>
-            <point key="canvasLocation" x="107" y="-80"/>
+            <point key="canvasLocation" x="103.5" y="-97.5"/>
         </view>
     </objects>
 </document>

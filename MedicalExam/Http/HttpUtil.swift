@@ -19,7 +19,7 @@ class HttpUtil {
             switch response.result {
             case .success(let value):
                 let json = JSON(value)
-                
+                print(json);
                 handler(json["message"])
             case .failure(let error):
                 print(error)
@@ -33,8 +33,22 @@ class HttpUtil {
             switch response.result {
             case .success(let value):
                 let json = JSON(value)
-                
+                print(json)
                 handler(json)
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+    
+    static func postReturnString(_ serviceURL: String, parameters: Parameters?, completionHandler handler: @escaping (String) -> Void) {
+        Alamofire.request(URL_PREFIX + serviceURL, method: HTTPMethod.post, parameters: parameters, encoding: URLEncoding.default).responseString {
+            response in
+            switch response.result {
+            case .success(let value):
+                print(value)
+            
+                handler(value)
             case .failure(let error):
                 print(error)
             }
