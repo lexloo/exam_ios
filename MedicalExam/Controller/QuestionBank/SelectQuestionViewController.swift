@@ -12,6 +12,9 @@ import WebKit
 class SelectQuestionViewController: UIViewController {
     @IBOutlet weak var lblSubject: UILabel!
     @IBOutlet weak var lblChapter: UILabel!
+    var subjectName: String?
+    var chapterName: String?
+    var chapterGuid: String?
     
     var webView: WKWebView?
     
@@ -30,6 +33,15 @@ class SelectQuestionViewController: UIViewController {
         webView?.uiDelegate = self
         webView?.configuration.userContentController.add(self, name: "invoke")
         view.addSubview(webView!)
+        
+        let path = Bundle.main.path(forResource: "Html/question_board", ofType:"html")
+        let myUrl = URL(fileURLWithPath: path!)
+        //        let f = URL(string: "http://121.43.96.235:8787/sfa/mobi/exam/question_bank.html")
+        //
+        webView?.load(URLRequest(url: myUrl));
+        print(lblSubject)
+        lblSubject.text = subjectName!
+        lblChapter.text = chapterName!
     }
 
     override func didReceiveMemoryWarning() {

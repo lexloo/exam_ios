@@ -140,7 +140,7 @@
         <!--Select Question View Controller-->
         <scene sceneID="w7p-g7-OYr">
             <objects>
-                <viewController id="1Ol-ER-NM5" customClass="SelectQuestionViewController" customModule="MedicalExam" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SelectQuestionVC" id="1Ol-ER-NM5" customClass="SelectQuestionViewController" customModule="MedicalExam" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Dqc-e9-kf7">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -158,7 +158,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="返回"/>
                                 <connections>
-                                    <action selector="returnClick:" destination="JMd-Ib-YZm" eventType="touchUpInside" id="JAd-k6-v6e"/>
+                                    <action selector="returnClick:" destination="1Ol-ER-NM5" eventType="touchUpInside" id="K9m-r3-SPp"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HAq-Ks-QaO">
@@ -166,7 +166,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="重做"/>
                                 <connections>
-                                    <action selector="redoClick:" destination="JMd-Ib-YZm" eventType="touchUpInside" id="bnz-V6-Zmn"/>
+                                    <action selector="redoClick:" destination="1Ol-ER-NM5" eventType="touchUpInside" id="s2v-vY-aO5"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mQF-do-HJk">
@@ -187,7 +187,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ez6-JB-4sG" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="JMd-Ib-YZm" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2450.625" y="-480"/>
         </scene>

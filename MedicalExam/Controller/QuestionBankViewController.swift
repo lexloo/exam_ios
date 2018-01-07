@@ -106,7 +106,12 @@ extension QuestionBankViewController: UITableViewDelegate {
         let chapterName = cell.title
         let chapterGuid = cell.guid
         
-//        let alert = UIAlertController(title: "", message: subjectName! + ":" + chapterName!, preferredStyle: .alert)
-//        self.present(alert, animated: true, completion: nil)
+        let loginStoryBoard = UIStoryboard(name: "UILogin", bundle: nil)
+        let selectQuestionVC = loginStoryBoard.instantiateViewController(withIdentifier: "SelectQuestionVC") as! SelectQuestionViewController
+        selectQuestionVC.subjectName = subjectName
+        selectQuestionVC.chapterName = chapterName
+        selectQuestionVC.chapterGuid = chapterGuid
+        
+        self.present(selectQuestionVC, animated: true, completion: nil)
     }
 }
