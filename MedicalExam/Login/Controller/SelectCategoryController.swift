@@ -54,26 +54,28 @@ class SelectCategoryController: UIViewController {
         let catagory: Catagory = self.catagorys![kind]![(self.pvExamCategory?.selectedRow(inComponent: 1))!]
         let title = kind.name + "|" + catagory.name!
         self.btnSelectCategory.setTitle(title, for: .normal)
-        
-        //save
+
         let userInfo = UserInfo()
         userInfo.copyFrom(Global.userInfo)
         userInfo.examKind = kind.guid
         userInfo.examCategory = catagory.guid
-        
-        RealmUtil.addCanUpdate(userInfo)
         Global.userInfo.copyFrom(userInfo)
-        
+
         let parameters:Dictionary = ["guid": userInfo.guid!, "kind": userInfo.examKind!, "category": userInfo.examCategory!]
         HttpUtil.postReturnString("user/kind_category", parameters: parameters) {
-            json in
+            result in
+            if "SUCCESS" == result {
+                self.refreshData(userInfo)
+            }
         }
     }
     
     @IBAction func selectCategory(_ sender: UIButton) {
         bpvCatagory.isHidden = false
     }
-    
+}
+
+extension SelectCategoryController {
     func loadData() {
         kindArr = [kind1, kind2]
         selectKind = kind1
@@ -94,6 +96,50 @@ class SelectCategoryController: UIViewController {
             }
             self.catagorys = [self.kind1: catagory1, self.kind2: catagory2]
             self.pvExamCategory?.reloadAllComponents()
+        }
+    }
+    
+    func refreshData(_ userInfo: UserInfo) {
+        RealmUtil.addCanUpdate(userInfo)
+        
+        RealmUtil.delete(RealmUtil.selectAll(ChapterQuestions.self))
+        RealmUtil.delete(RealmUtil.selectAll(Chapter.self))
+        RealmUtil.delete(RealmUtil.selectAll(Subject.self))
+        
+        let p1 = ["category_guid": userInfo.examCategory!]
+        HttpUtil.postReturnData("list/subject", parameters: p1) {
+            json in
+            var subjects = [Subject]()
+            for (_, item) in json {
+                let subject = Subject()
+                subject.mapping(item)
+                subjects.append(subject)
+            }
+            RealmUtil.addListData(subjects)
+        }
+      
+        let p2 = ["category_guid": userInfo.examCategory!]
+        HttpUtil.postReturnData("list/category_chapter", parameters: p2) {
+            json in
+            var chapters = [Chapter]()
+            for (_, item) in json {
+                let chapter = Chapter()
+                chapter.mapping(item)
+                chapters.append(chapter)
+            }
+            RealmUtil.addListData(chapters)
+        }
+ 
+        let p3 = ["category_guid": userInfo.examCategory!]
+        HttpUtil.postReturnData("question/category/get", parameters: p3) {
+            json in
+            var questions = [ChapterQuestions]()
+            for (_, item) in json {
+                let question = ChapterQuestions()
+                question.mapping(item)
+                questions.append(question)
+            }
+            RealmUtil.addListData(questions)
         }
     }
 }
