@@ -34,12 +34,11 @@ class SelectQuestionViewController: UIViewController {
         webView?.configuration.userContentController.add(self, name: "invoke")
         view.addSubview(webView!)
         
-        let path = Bundle.main.path(forResource: "Html/question_board", ofType:"html")
-        let myUrl = URL(fileURLWithPath: path!)
-        //        let f = URL(string: "http://121.43.96.235:8787/sfa/mobi/exam/question_bank.html")
-        //
-        webView?.load(URLRequest(url: myUrl));
-        print(lblSubject)
+        let urlStr = "http://192.168.1.6/question-bank/mobi/qb/question_board.html?chapterName\(self.chapterName!)&chapterGuid\(self.chapterGuid!)&subjectName\(self.subjectName!)"
+        let url = URL(string: urlStr.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!)
+        print(url)
+        webView?.load(URLRequest(url: url!))
+        
         lblSubject.text = subjectName!
         lblChapter.text = chapterName!
     }
