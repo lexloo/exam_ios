@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <title>选择试题</title>
+    <link rel="stylesheet" type="text/css" href="./question_board.css">
+    <script type="text/javascript" src="../libs/vue.min.js"></script>
+</head>
+<body>
+    <div>aaaa</div>
+<div id ="app" v-cloak>
+    <div class="title">{{title}}</div>
+    <div class="items">
+    	<span v-for="q in questions" class="item" :class="{'right': q.status==1, 'error': q.status==2}" @click="doQuestion(q.no, q.guid)">{{q.no}}</span>
+    </div>
+</div>
+<script type="text/javascript" src="./question_board.js"></script>
+</body>
+</html>
