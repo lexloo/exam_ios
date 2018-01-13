@@ -29,6 +29,7 @@
 		41D51C771FEFC94D00DF78ED /* CellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D51C761FEFC94D00DF78ED /* CellModel.swift */; };
 		41D51C7A1FEFD3FE00DF78ED /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D51C791FEFD3FE00DF78ED /* HeaderView.swift */; };
 		41D51C7C1FEFDC4300DF78ED /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D51C7B1FEFDC4300DF78ED /* TableViewCell.swift */; };
+		41E4CE00200A6111000CA73F /* html in Resources */ = {isa = PBXBuildFile; fileRef = 41E4CDFF200A6111000CA73F /* html */; };
 		41EEA0C720007ABE006DB553 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EEA0C620007ABE006DB553 /* UserInfo.swift */; };
 		41EEA0CA20007EDC006DB553 /* RealmUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EEA0C920007EDC006DB553 /* RealmUtil.swift */; };
 		41EEA0CD2000B005006DB553 /* HttpUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EEA0CC2000B005006DB553 /* HttpUtil.swift */; };
@@ -67,6 +68,7 @@
 		41D51C761FEFC94D00DF78ED /* CellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellModel.swift; sourceTree = "<group>"; };
 		41D51C791FEFD3FE00DF78ED /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		41D51C7B1FEFDC4300DF78ED /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		41E4CDFF200A6111000CA73F /* html */ = {isa = PBXFileReference; lastKnownFileType = folder; path = html; sourceTree = "<group>"; };
 		41EEA0C620007ABE006DB553 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		41EEA0C920007EDC006DB553 /* RealmUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmUtil.swift; sourceTree = "<group>"; };
 		41EEA0CC2000B005006DB553 /* HttpUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpUtil.swift; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 				41D51C781FEFD3DB00DF78ED /* View */,
 				41D51C731FEFC88B00DF78ED /* Model */,
 				41D51C641FEF452C00DF78ED /* Controller */,
+				41E4CDFF200A6111000CA73F /* html */,
 				413307311FEBED0800C2BD45 /* AppDelegate.swift */,
 				4133073A1FEBED0800C2BD45 /* Assets.xcassets */,
 				4133073C1FEBED0800C2BD45 /* LaunchScreen.storyboard */,
@@ -327,6 +330,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				41EEA0E02000E5BA006DB553 /* NaviTopView.xib in Resources */,
+				41E4CE00200A6111000CA73F /* html in Resources */,
 				41EEA0EC2001D32D006DB553 /* BottomPopupView.xib in Resources */,
 				4133073E1FEBED0800C2BD45 /* LaunchScreen.storyboard in Resources */,
 				41B825DB1FF79A6E004DFDA3 /* UILogin.storyboard in Resources */,
