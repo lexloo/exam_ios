@@ -41,7 +41,7 @@ extension NvWKWebView {
     }
     
     private func loadSdk() {
-        let sdkJs = self.loadJsFile(name: "HtmlApi/html5_sdk_m")
+        let sdkJs = self.loadJsFile(name: "html/api/html5_sdk_m")
         
         self.evaluateJavaScript(sdkJs) {
             (_, err) in
