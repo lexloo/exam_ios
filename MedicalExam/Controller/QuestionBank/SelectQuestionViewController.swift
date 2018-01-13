@@ -16,28 +16,15 @@ class SelectQuestionViewController: UIViewController {
     var chapterName: String?
     var chapterGuid: String?
     
-    var webView: WKWebView?
+    var webView: NvWKWebView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        let config = WKWebViewConfiguration()
-        config.preferences = WKPreferences()
-        config.preferences.minimumFontSize = 10
-        config.preferences.javaScriptEnabled = true
-        config.processPool = WKProcessPool()
-        config.userContentController = WKUserContentController()
         
-        webView = WKWebView(frame: CGRect(x:0, y:100, width:self.view.bounds.size.width, height:self.view.bounds.size.height), configuration: config)
-        webView?.navigationDelegate = self
-        webView?.uiDelegate = self
-        webView?.configuration.userContentController.add(self, name: "invoke")
+        webView = NvWKWebView(frame: CGRect(x:0, y:100, width:self.view.bounds.size.width, height:self.view.bounds.size.height), uiViewController: self)
         view.addSubview(webView!)
         
-        let urlStr = "http://192.168.1.6/question-bank/mobi/qb/question_board.html?chapterName\(self.chapterName!)&chapterGuid\(self.chapterGuid!)&subjectName\(self.subjectName!)"
-        let url = URL(string: urlStr.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!)
-        print(url)
-        webView?.load(URLRequest(url: url!))
+        webView?.loadHtml(name: "Html/question_board")
         
         lblSubject.text = subjectName!
         lblChapter.text = chapterName!
@@ -53,65 +40,6 @@ class SelectQuestionViewController: UIViewController {
     }
     
     @IBAction func redoClick(_ sender: UIButton) {
-    }
-}
-
-extension SelectQuestionViewController: WKNavigationDelegate {
-    func webView(_ webView: WKWebView, didReceive challenge: URLAuthenticationChallenge, completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {
-        
-        let cred = URLCredential.init(trust: challenge.protectionSpace.serverTrust!)
-        completionHandler(.useCredential, cred)
-    }
-}
-
-extension SelectQuestionViewController: WKUIDelegate {
-    // 监听通过JS调用警告框
-    func webView(_ webView: WKWebView, runJavaScriptAlertPanelWithMessage message: String, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping () -> Void) {
-        let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
-            completionHandler()
-        }))
-        self.present(alert, animated: true, completion: nil)
-    }
-    
-    // 监听通过JS调用提示框
-    func webView(_ webView: WKWebView, runJavaScriptConfirmPanelWithMessage message: String, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping (Bool) -> Void) {
-        let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
-            completionHandler(true)
-        }))
-        alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: { (action) in
-            completionHandler(false)
-        }))
-        self.present(alert, animated: true, completion: nil)
-    }
-    
-    // 监听JS调用输入框
-    func webView(_ webView: WKWebView, runJavaScriptTextInputPanelWithPrompt prompt: String, defaultText: String?, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping (String?) -> Void) {
-        // 类似上面两个方法
-    }
-}
-
-extension SelectQuestionViewController: WKScriptMessageHandler {
-    func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
-        
-        if message.name == "invoke" {
-            if message.body is Dictionary<String, String> {
-                let m = message.body as! Dictionary<String, String>
-                let data = m["data"]?.data(using: String.Encoding.utf8)
-                let json = try? JSONSerialization.jsonObject(with: data!, options:[]) as! [String: Any]
-                if (m["module"] == "ui") {
-                    if (m["funcName"] == "goURL") {
-                        let url = json?["options"] as! String
-                        
-                        let h = NvWebViewController(url: url)
-                        self.present(h, animated: true, completion: nil)
-                    } else if (m["funcName"] == "close") {
-                        close()
-                    }
-                }
-            }
-        }
     }
     
     func close() {
