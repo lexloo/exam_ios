@@ -13,7 +13,7 @@ class Qb {
     static func exec(nvWebView: NvWKWebView, funcName: String, data: JSON) {
         let params = data["params"]
         let callbackId = data["callbackId"].string
-        
+        print(funcName);
         if funcName == "getChapterQuestion" {
             getChapterQuestions(nvWebView:nvWebView, params: params, callbackId: callbackId)
         } else if (funcName == "startDoQuestion") {
@@ -86,6 +86,7 @@ class Qb {
             result["status"].int = 0
         }
         
+        print(result);
         nvWebView.sendCallback(callbackId: callbackId!, result: result)
     }
     

@@ -90,6 +90,14 @@ iTek.on("Ready", function() {
 			}, function(result) {
 				result.select = result.select || "";
 				that.question = result;
+                                  
+                                  if (!that.isNotDo) {
+                                  iTek.qb.getDoQuestionInfo({
+                                                            questionGuid: guid
+                                                            }, function(result) {
+                                                            that.stat = result;
+                                                            });
+                                  }
 			});
 
 			iTek.qb.getCommentCount({
@@ -97,14 +105,6 @@ iTek.on("Ready", function() {
 			}, function(result) {
 				that.commentCount = result.count;
 			});
-
-			if (!this.isNotDo) {
-				iTek.qb.getDoQuestionInfo({
-					questionGuid: guid
-				}, function(result) {
-					that.stat = result;
-				});
-			}
 		}
 	});
 });
