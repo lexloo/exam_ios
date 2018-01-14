@@ -71,7 +71,7 @@ iTek.on("Ready", function() {
 
 			showComments: function() {
 				iTek.qp.showComments({
-                    questionGuid:this.question.guid
+					questionGuid: this.question.guid
 				});
 			},
 
@@ -90,14 +90,14 @@ iTek.on("Ready", function() {
 			}, function(result) {
 				result.select = result.select || "";
 				that.question = result;
-                                  
-                                  if (!that.isNotDo) {
-                                  iTek.qb.getDoQuestionInfo({
-                                                            questionGuid: guid
-                                                            }, function(result) {
-                                                            that.stat = result;
-                                                            });
-                                  }
+
+				if (!that.isNotDo) {
+					iTek.qb.getDoQuestionInfo({
+						questionGuid: guid
+					}, function(result) {
+						that.stat = result;
+					});
+				}
 			});
 
 			iTek.qb.getCommentCount({
