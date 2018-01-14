@@ -11,7 +11,7 @@ import WebKit
 import SwiftyJSON
 
 class NvWKWebView: WKWebView {
-    private var uiViewController: UIViewController?
+    var uiViewController: UIViewController?
     
     init(frame: CGRect, uiViewController: UIViewController){
         let config = WKWebViewConfiguration()
@@ -38,7 +38,7 @@ class NvWKWebView: WKWebView {
 extension NvWKWebView {
     func initClients() {
         loadSdk()
-        registerClientFuncs(module: "qb", funcs: ["getChapterQuestion"])
+        registerClientFuncs(module: "qb", funcs: ["getChapterQuestion,startDoQuestion"])
         addKVO()
     }
     

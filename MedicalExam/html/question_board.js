@@ -11,7 +11,13 @@ iTek.on("Ready", function(){
         },
         methods: {
             doQuestion: function(index, guid) {
-//                __Native__.startDoQuestion(parseInt(index), this.subjectName, this.chapterGuid, this.chapterName, this.type);
+                iTek.qb.startDoQuestion({
+                                        index: parseInt(index),
+                                        subjectName: this.subjectName,
+                                        chapterGuid: this.chapterGuid,
+                                        chapterName: this.chapterName,
+                                        type: this.type
+                });
             }
         },
         created: function() {

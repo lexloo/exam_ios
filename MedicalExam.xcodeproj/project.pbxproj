@@ -32,6 +32,7 @@
 		41E4CE00200A6111000CA73F /* html in Resources */ = {isa = PBXBuildFile; fileRef = 41E4CDFF200A6111000CA73F /* html */; };
 		41E4CE02200B051D000CA73F /* WebViewModuleFuncs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E4CE01200B051D000CA73F /* WebViewModuleFuncs.swift */; };
 		41E4CE05200B0667000CA73F /* Qb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E4CE04200B0667000CA73F /* Qb.swift */; };
+		41E4CE07200B2254000CA73F /* DoQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E4CE06200B2254000CA73F /* DoQuestionViewController.swift */; };
 		41EEA0C720007ABE006DB553 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EEA0C620007ABE006DB553 /* UserInfo.swift */; };
 		41EEA0CA20007EDC006DB553 /* RealmUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EEA0C920007EDC006DB553 /* RealmUtil.swift */; };
 		41EEA0CD2000B005006DB553 /* HttpUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EEA0CC2000B005006DB553 /* HttpUtil.swift */; };
@@ -73,6 +74,7 @@
 		41E4CDFF200A6111000CA73F /* html */ = {isa = PBXFileReference; lastKnownFileType = folder; path = html; sourceTree = "<group>"; };
 		41E4CE01200B051D000CA73F /* WebViewModuleFuncs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewModuleFuncs.swift; sourceTree = "<group>"; };
 		41E4CE04200B0667000CA73F /* Qb.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Qb.swift; sourceTree = "<group>"; };
+		41E4CE06200B2254000CA73F /* DoQuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoQuestionViewController.swift; sourceTree = "<group>"; };
 		41EEA0C620007ABE006DB553 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		41EEA0C920007EDC006DB553 /* RealmUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmUtil.swift; sourceTree = "<group>"; };
 		41EEA0CC2000B005006DB553 /* HttpUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpUtil.swift; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				414DCAA4200252FF00CB2B74 /* SelectQuestionViewController.swift */,
+				41E4CE06200B2254000CA73F /* DoQuestionViewController.swift */,
 			);
 			path = QuestionBank;
 			sourceTree = "<group>";
@@ -434,6 +437,7 @@
 				41D51C751FEFC8CD00DF78ED /* SectionModel.swift in Sources */,
 				41EEA0E420010E5F006DB553 /* SelectCategoryController.swift in Sources */,
 				41EEA0E22000EA4D006DB553 /* NaviTopView.swift in Sources */,
+				41E4CE07200B2254000CA73F /* DoQuestionViewController.swift in Sources */,
 				41D51C7A1FEFD3FE00DF78ED /* HeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
