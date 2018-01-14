@@ -51,9 +51,8 @@ class DoQuestionViewController: UIViewController {
         for i in 0 ..< qs.count {
             let tmpView = NvWKWebView(frame: CGRect(x: CGFloat(i) * width, y: 0, width: width, height: height), uiViewController: self)
             
-            tmpView.params = ["subjectName": subjectName!, "chapterGuid": chapterGuid!, "chapterName": chapterName!, "index": String(i), "questionGuid": qs[i].guid!]
-            tmpView.html = "html/do_question";
-            tmpView.reloadHtml()
+            let params = ["subjectName": subjectName!, "chapterGuid": chapterGuid!, "chapterName": chapterName!, "index": String(i), "questionGuid": qs[i].guid!]
+            tmpView.loadHtml(name: "html/do_question", params: params)
             
             svContainer.addSubview(tmpView)
         }

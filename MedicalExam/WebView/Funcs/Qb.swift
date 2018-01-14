@@ -114,8 +114,7 @@ class Qb {
             "result": value.result!]
         HttpUtil.postReturnString("question/do_info/set", parameters: parameters) {
             result in
-            nvWebView.reloadHtml()
-            //nvWebView.sendCallback(callbackId: callbackId!, result: JSON())
+            nvWebView.sendCallback(callbackId: callbackId!, result: JSON())
         }
     }
 }

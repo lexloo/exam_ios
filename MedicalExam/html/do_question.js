@@ -49,18 +49,18 @@ iTek.on("Ready", function() {
 					return;
 				}
 
-				let result = (this.question.select === this.question.answer) ? "1" : "2";
+            var that = this;
+				var result = (this.question.select === this.question.answer) ? "1" : "2";
             iTek.qb.saveDoQuestion({
                                    questionGuid: this.question.guid,
                                    chapterGuid: this.chapterGuid,
                                    answer: this.question.select,
                                    result: result
                                    }
-                                   //, function(){
-                                   //    window.location.reload();
-                                   //}
+                                   , function(){
+                                   that.question.status = parseInt(result);
+                                   }
                                    );
-				//            __Native__.saveDoQuestion(this.question.guid, this.chapterGuid, this.question.select, result);
 				
 			},
 
