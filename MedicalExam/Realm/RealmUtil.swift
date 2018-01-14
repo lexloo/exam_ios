@@ -138,4 +138,8 @@ class RealmUtil {
     static func selectAll<T: Object> (_: T.Type) -> Results<T> {
         return sharedInstance.objects(T.self)
     }
+    
+    static func select<T: Object> (_: T.Type, forPrimaryKey: String) -> T {
+        return sharedInstance.object(ofType: T.self, forPrimaryKey: forPrimaryKey)!
+    }
 }

@@ -15,13 +15,15 @@ class Qb {
         let callbackId = data["callbackId"].string
         
         if funcName == "getChapterQuestion" {
-            getChapterQuestion(nvWebView:nvWebView, params: params, callbackId: callbackId)
+            getChapterQuestions(nvWebView:nvWebView, params: params, callbackId: callbackId)
         } else if (funcName == "startDoQuestion") {
             startDoQuestion(nvWebView:nvWebView, params: params, callbackId: callbackId)
+        } else if (funcName == "getDoQuestion") {
+            getDoQuestion(nvWebView: nvWebView, params: params, callbackId: callbackId)
         }
     }
     
-    static func getChapterQuestion(nvWebView: NvWKWebView, params: JSON, callbackId: String?) {
+    static func getChapterQuestions(nvWebView: NvWKWebView, params: JSON, callbackId: String?) {
         let type = params["type"].string
         let chapterGuid = params["chapterGuid"].string!
         print("chapter:" + chapterGuid)
@@ -51,5 +53,14 @@ class Qb {
         doQuestionVC.type = params["type"].string
         
         nvWebView.uiViewController?.present(doQuestionVC, animated: true, completion: nil)
+    }
+
+    static func getDoQuestion(nvWebView: NvWKWebView, params: JSON, callbackId: String?) {
+        let questionGuid = params["questionGuid"].string!
+        
+        let question = RealmUtil.select(ChapterQuestions.self, forPrimaryKey: questionGuid)
+        
+        let result = JSON.init(parseJSON: question.data!);
+        nvWebView.sendCallback(callbackId: callbackId!, result: result)
     }
 }

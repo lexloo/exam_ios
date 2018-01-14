@@ -5,11 +5,13 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
     <title>做题</title>
     <link rel="stylesheet" type="text/css" href="./do_question.css">
-    <script type="text/javascript" src="./api/libs/vue.min.js"></script>
-    <script type="text/javascript" src="./api/libs/html5_sdk_client.js"></script>
+    <script type="text/javascript" src="./api/html5_sdk_client.js"></script>
+    <script type="text/javascript" src="./libs/vue.min.js"></script>
 </head>
 <body>
-<div id ="app" v-cloak>
+    <div>aaaabbbb</div>
+<div id ="app">
+    <div>aaaabbbb</div>
     <div class="title">{{no}}.{{question.text}}</div>
     <div class="options">
         <div @click="select('A')">
@@ -49,6 +51,7 @@
         <div><span class="red">【答案解析】</span>{{question.analysis}}</div>
     </div>
 </div>
+   <div>dddddd</div>
 <script type="text/javascript" src="./do_question.js"></script>
 </body>
 </html>
