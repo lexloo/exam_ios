@@ -20,8 +20,9 @@ iTek.on("Ready", function(){
             this.subjectName = iTek.local['subjectName'];
             this.type = iTek.local['type'];
         
-            iTek.qb.getChapterQuestion({chapterGuid: this.chapterGuid, type: "this.type"}, function(result){
-                alert(JSON.stringify(result))
+            var that = this;
+            iTek.qb.getChapterQuestion({chapterGuid: this.chapterGuid, type: this.type}, function(result){
+                that.questions = result;
             });
         }
     });

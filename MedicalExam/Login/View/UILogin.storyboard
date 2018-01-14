@@ -169,20 +169,11 @@
                                     <action selector="redoClick:" destination="1Ol-ER-NM5" eventType="touchUpInside" id="s2v-vY-aO5"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mQF-do-HJk">
-                                <rect key="frame" x="0.0" y="60" width="320" height="40"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.94893664121627808" green="0.94907277822494507" blue="0.94890671968460083" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="rcM-Si-HP7"/>
                     </view>
                     <connections>
-                        <outlet property="lblChapter" destination="mQF-do-HJk" id="v2t-zj-ffH"/>
                         <outlet property="lblSubject" destination="9H9-qC-0xK" id="18w-tH-wMJ"/>
                     </connections>
                 </viewController>

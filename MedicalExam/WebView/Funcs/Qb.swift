@@ -20,9 +20,20 @@ class Qb {
     }
     
     static func getChapterQuestion(nvWebView: NvWKWebView, params: JSON, callbackId: String) {
-        var json = JSON();
-        json["a"].string = "fafaf"
+        let type = params["type"].string
+        let chapterGuid = params["chapterGuid"].string!
+        print("chapter:" + chapterGuid)
         
-        nvWebView.sendCallback(callbackId: callbackId, result: json)
+        if type == nil {
+            let qs = RealmUtil.selectByFilterString(ChapterQuestions.self, filter: "chapterGuid =='\(chapterGuid)'")
+            
+            var arr = [[String: Any?]]();
+            for i in 0 ..< qs.count {
+                arr.append(["no": qs[i].index, "guid": qs[i].guid, "status": 1])
+            }
+            
+            let result = JSON(arr)
+            nvWebView.sendCallback(callbackId: callbackId, result: result)
+        }
     }
 }
