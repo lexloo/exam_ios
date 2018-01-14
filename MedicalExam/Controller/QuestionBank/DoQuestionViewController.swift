@@ -9,28 +9,51 @@
 import UIKit
 
 class DoQuestionViewController: UIViewController {
-
+    public var subjectName: String?
+    public var chapterGuid: String?
+    public var chapterName: String?
+    public var type: String?
+    public var index: Int?
+    
+    @IBOutlet weak var lblSubjectName: UILabel!
+    @IBOutlet weak var lblChapterName: UILabel!
+    @IBOutlet weak var svContainer: UIScrollView!
+    @IBAction func returnClick(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        self.view.backgroundColor = UIColor.green
-        // Do any additional setup after loading the view.
+        
+        lblSubjectName.text = subjectName!
+        lblChapterName.text = chapterName!
+        
+        svContainer.scrollsToTop = false
+        
+        setupViewPager()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    
+    
+    private func setupViewPager() {
+        let width = self.view.bounds.width
+        let height = self.view.bounds.height
+        
+        let qs = RealmUtil.selectByFilterString(ChapterQuestions.self, filter: "chapterGuid =='\(self.chapterGuid!)'")
+        
+        svContainer.contentSize = CGSize(width: width * CGFloat(qs.count), height: 0)
+        
+        for i in 0 ..< qs.count {
+            let tmpView = NvWKWebView(frame: CGRect(x: CGFloat(i) * width, y: 0, width: width, height: height), uiViewController: self)
+            
+            let params: [String: String] = ["subjectName": subjectName!, "chapterGuid": chapterGuid!, "chapterName": chapterName!]
+            tmpView.loadHtml(name: "html/question_board", params: params)
+            
+            svContainer.addSubview(tmpView)
+        }
     }
-    */
-
 }

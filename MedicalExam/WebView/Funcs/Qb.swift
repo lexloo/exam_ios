@@ -40,23 +40,14 @@ class Qb {
     }
     
     static func startDoQuestion(nvWebView: NvWKWebView, params: JSON, callbackId: String?) {
-        let doQuestionViewController = DoQuestionViewController();
+        let loginStoryBoard = UIStoryboard(name: "UILogin", bundle: nil)
+        let doQuestionVC = loginStoryBoard.instantiateViewController(withIdentifier: "DoQuestionVC") as! DoQuestionViewController
         
-        nvWebView.uiViewController?.present(doQuestionViewController, animated: true, completion: nil)
-//        let type = params["type"].string
-//        let chapterGuid = params["chapterGuid"].string!
-//        print("chapter:" + chapterGuid)
-//
-//        if type == nil {
-//            let qs = RealmUtil.selectByFilterString(ChapterQuestions.self, filter: "chapterGuid =='\(chapterGuid)'")
-//
-//            var arr = [[String: Any?]]();
-//            for i in 0 ..< qs.count {
-//                arr.append(["no": qs[i].index, "guid": qs[i].guid, "status": 1])
-//            }
-//
-//            let result = JSON(arr)
-//            nvWebView.sendCallback(callbackId: callbackId, result: result)
-//        }
+        doQuestionVC.subjectName = params["subjectName"].string
+        doQuestionVC.chapterName = params["chapterName"].string
+        doQuestionVC.chapterGuid = params["chapterGuid"].string
+        doQuestionVC.type = params["type"].string
+        
+        nvWebView.uiViewController?.present(doQuestionVC, animated: true, completion: nil)
     }
 }
