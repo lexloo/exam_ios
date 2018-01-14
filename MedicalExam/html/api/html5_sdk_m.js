@@ -60,10 +60,17 @@
                         if (!callback) {
                             callback = arg;
                         }
+                    } else if (typeof arg == 'object') {
+                        for (var p in arg) {
+                            if(arg.hasOwnProperty(p)) {
+                                params[p] = arg[p];
+                            }
+                        }
                     } else {
                         params["arg_" + i] = arg;
                     }
                 }
+                  
                 return _invoke(module, func, params, callback);
             };
         });

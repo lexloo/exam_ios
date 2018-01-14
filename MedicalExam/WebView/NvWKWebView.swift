@@ -8,6 +8,7 @@
 
 import UIKit
 import WebKit
+import SwiftyJSON
 
 class NvWKWebView: WKWebView {
     private var uiViewController: UIViewController?
@@ -22,7 +23,7 @@ class NvWKWebView: WKWebView {
         
         super.init(frame:frame, configuration: config)
         self.uiViewController = uiViewController
-        self.configuration.userContentController.add(self, name: "__Native__")
+        self.configuration.userContentController.add(self, name: "invoke")
         self.navigationDelegate = self
         self.uiDelegate = self
         
@@ -37,6 +38,7 @@ class NvWKWebView: WKWebView {
 extension NvWKWebView {
     func initClients() {
         loadSdk()
+        registerClientFuncs(module: "qb", funcs: ["getChapterQuestion"])
         addKVO()
     }
     
@@ -49,6 +51,19 @@ extension NvWKWebView {
                 print("\(String(describing: err))")
             }
         }
+    }
+    
+    private func registerClientFuncs(module: String, funcs:[String]) {
+        let script = "iTek.__html5_reg(\"\(module)\", \"\(funcs.joined(separator: ","))\")"
+        
+        self.evaluateJavaScript(script) {
+            (_, err) in
+            if err != nil {
+                print("\(String(describing: err))")
+            }
+        }
+        
+        print("register:" + funcs.joined(separator: ","))
     }
     
     private func addKVO() {
@@ -89,8 +104,6 @@ extension NvWKWebView {
                 print("\(String(describing: err))")
             }
         }
-        
-        print("kye:\(name),value:\(value)")
     }
     
     func loadHtml(name: String, params: [String: String]?) -> Void{
@@ -117,23 +130,15 @@ extension NvWKWebView {
 
 extension NvWKWebView: WKScriptMessageHandler {
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
-//        if message.name == "invoke" {
-//            if message.body is Dictionary<String, String> {
-//                let m = message.body as! Dictionary<String, String>
-//                let data = m["data"]?.data(using: String.Encoding.utf8)
-//                let json = try? JSONSerialization.jsonObject(with: data!, options:[]) as! [String: Any]
-//                if (m["module"] == "ui") {
-//                    if (m["funcName"] == "goURL") {
-//                        let url = json?["options"] as! String
-//
-//                        let h = NvWebViewController(url: url)
-//                        self.present(h, animated: true, completion: nil)
-//                    } else if (m["funcName"] == "close") {
-//                        close()
-//                    }
-//                }
-//            }
-//        }
+
+        if message.name == "invoke" {
+            let json = JSON(message.body)[0]
+            let module = json["module"].string!
+            let funcName = json["funcName"].string!
+            let data = JSON.init(parseJSON: json["data"].string!)
+            
+            WebViewModuleFuncs.exec(module: module, funcName: funcName, data: data)
+        }
     }
 }
 

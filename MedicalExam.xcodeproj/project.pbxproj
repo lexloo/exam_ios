@@ -30,6 +30,8 @@
 		41D51C7A1FEFD3FE00DF78ED /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D51C791FEFD3FE00DF78ED /* HeaderView.swift */; };
 		41D51C7C1FEFDC4300DF78ED /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D51C7B1FEFDC4300DF78ED /* TableViewCell.swift */; };
 		41E4CE00200A6111000CA73F /* html in Resources */ = {isa = PBXBuildFile; fileRef = 41E4CDFF200A6111000CA73F /* html */; };
+		41E4CE02200B051D000CA73F /* WebViewModuleFuncs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E4CE01200B051D000CA73F /* WebViewModuleFuncs.swift */; };
+		41E4CE05200B0667000CA73F /* Qb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E4CE04200B0667000CA73F /* Qb.swift */; };
 		41EEA0C720007ABE006DB553 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EEA0C620007ABE006DB553 /* UserInfo.swift */; };
 		41EEA0CA20007EDC006DB553 /* RealmUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EEA0C920007EDC006DB553 /* RealmUtil.swift */; };
 		41EEA0CD2000B005006DB553 /* HttpUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EEA0CC2000B005006DB553 /* HttpUtil.swift */; };
@@ -69,6 +71,8 @@
 		41D51C791FEFD3FE00DF78ED /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		41D51C7B1FEFDC4300DF78ED /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		41E4CDFF200A6111000CA73F /* html */ = {isa = PBXFileReference; lastKnownFileType = folder; path = html; sourceTree = "<group>"; };
+		41E4CE01200B051D000CA73F /* WebViewModuleFuncs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewModuleFuncs.swift; sourceTree = "<group>"; };
+		41E4CE04200B0667000CA73F /* Qb.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Qb.swift; sourceTree = "<group>"; };
 		41EEA0C620007ABE006DB553 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		41EEA0C920007EDC006DB553 /* RealmUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmUtil.swift; sourceTree = "<group>"; };
 		41EEA0CC2000B005006DB553 /* HttpUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpUtil.swift; sourceTree = "<group>"; };
@@ -143,7 +147,9 @@
 		414DCA9720024D6100CB2B74 /* WebView */ = {
 			isa = PBXGroup;
 			children = (
+				41E4CE03200B064A000CA73F /* Funcs */,
 				414DCA9820024E2200CB2B74 /* NvWKWebView.swift */,
+				41E4CE01200B051D000CA73F /* WebViewModuleFuncs.swift */,
 			);
 			path = WebView;
 			sourceTree = "<group>";
@@ -227,6 +233,14 @@
 				41D51C7B1FEFDC4300DF78ED /* TableViewCell.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		41E4CE03200B064A000CA73F /* Funcs */ = {
+			isa = PBXGroup;
+			children = (
+				41E4CE04200B0667000CA73F /* Qb.swift */,
+			);
+			path = Funcs;
 			sourceTree = "<group>";
 		};
 		41EEA0C820007EBA006DB553 /* Realm */ = {
@@ -397,6 +411,7 @@
 				41D51C681FEF45F300DF78ED /* MainViewController.swift in Sources */,
 				413307321FEBED0800C2BD45 /* AppDelegate.swift in Sources */,
 				41B825E11FFA25FF004DFDA3 /* RegisterController.swift in Sources */,
+				41E4CE02200B051D000CA73F /* WebViewModuleFuncs.swift in Sources */,
 				414DCA962002136800CB2B74 /* ChapterQuestions.swift in Sources */,
 				41EEA0EA2001D2F0006DB553 /* BottomPopupView.swift in Sources */,
 				41EEA0CD2000B005006DB553 /* HttpUtil.swift in Sources */,
@@ -410,6 +425,7 @@
 				41B825DD1FF7BEA3004DFDA3 /* LoginController.swift in Sources */,
 				414DCA922002134200CB2B74 /* Subject.swift in Sources */,
 				414DCA942002134D00CB2B74 /* Chapter.swift in Sources */,
+				41E4CE05200B0667000CA73F /* Qb.swift in Sources */,
 				41EEA0CA20007EDC006DB553 /* RealmUtil.swift in Sources */,
 				41D51C771FEFC94D00DF78ED /* CellModel.swift in Sources */,
 				41D51C6A1FEF480A00DF78ED /* QuestionBankViewController.swift in Sources */,
