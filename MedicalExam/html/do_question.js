@@ -49,24 +49,30 @@ iTek.on("Ready", function() {
 					return;
 				}
 
-            var that = this;
+				var that = this;
 				var result = (this.question.select === this.question.answer) ? "1" : "2";
-            iTek.qb.saveDoQuestion({
-                                   questionGuid: this.question.guid,
-                                   chapterGuid: this.chapterGuid,
-                                   answer: this.question.select,
-                                   result: result
-                                   }
-                                   , function(){
-                                   that.question.status = parseInt(result);
-                                   }
-                                   );
-				
+				iTek.qb.saveDoQuestion({
+					questionGuid: this.question.guid,
+					chapterGuid: this.chapterGuid,
+					answer: this.question.select,
+					result: result
+				}, function() {
+					that.question.status = parseInt(result);
+					if (！that.stat.likes) {
+						iTek.qb.getDoQuestionInfo({
+							questionGuid: that.question.guid
+						}, function(result) {
+							that.stat = result;
+						});
+					}
+				});
+
 			},
 
 			showComments: function() {
-            alert("xxxx");
-				//            __Native__.showComments(this.question.guid);
+				iTek.qp.showComments({
+					questionGuid： this.question.guid
+				});
 			},
 
 			incComments: function() {
@@ -74,24 +80,30 @@ iTek.on("Ready", function() {
 			}
 		},
 		created: function() {
-            var guid = iTek.local["questionGuid"];
+			var guid = iTek.local["questionGuid"];
 			this.no = parseInt(iTek.local["index"]) + 1;
 			this.chapterGuid = iTek.local["chapterGuid"];
 
-            var that = this;
-                    iTek.qb.getDoQuestion({questionGuid: guid}, function(result){
-                                          result.select = result.select || "";
-                                          that.question = result;
-                    });
+			var that = this;
+			iTek.qb.getDoQuestion({
+				questionGuid: guid
+			}, function(result) {
+				result.select = result.select || "";
+				that.question = result;
+			});
 
-            iTek.qb.getCommentCount({questionGuid: guid}, function(result){
-                                                        that.commentCount = result.count;
-                                                        });
+			iTek.qb.getCommentCount({
+				questionGuid: guid
+			}, function(result) {
+				that.commentCount = result.count;
+			});
 
 			if (!this.isNotDo) {
-//            iTek.qb.getDoQuestionInfo({questionGuid: guid}, function(result){
-//                                      that.stat = result;
-//                                      });
+				iTek.qb.getDoQuestionInfo({
+					questionGuid: guid
+				}, function(result) {
+					that.stat = result;
+				});
 			}
 		}
 	});
