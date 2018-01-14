@@ -49,13 +49,23 @@ iTek.on("Ready", function() {
 					return;
 				}
 
-				let result = (this.question.select === this.question.answer) ? 1 : 2;
-
+				let result = (this.question.select === this.question.answer) ? "1" : "2";
+            iTek.qb.saveDoQuestion({
+                                   questionGuid: this.question.guid,
+                                   chapterGuid: this.chapterGuid,
+                                   answer: this.question.select,
+                                   result: result
+                                   }
+                                   //, function(){
+                                   //    window.location.reload();
+                                   //}
+                                   );
 				//            __Native__.saveDoQuestion(this.question.guid, this.chapterGuid, this.question.select, result);
-				window.location.reload();
+				
 			},
 
 			showComments: function() {
+            alert("xxxx");
 				//            __Native__.showComments(this.question.guid);
 			},
 
@@ -79,7 +89,9 @@ iTek.on("Ready", function() {
                                                         });
 
 			if (!this.isNotDo) {
-				//            this.stat = JSON.parse(__Native__.getDoQuestionInfo(this.question.guid)) || {};
+//            iTek.qb.getDoQuestionInfo({questionGuid: guid}, function(result){
+//                                      that.stat = result;
+//                                      });
 			}
 		}
 	});

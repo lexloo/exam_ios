@@ -24,7 +24,7 @@ class ChapterQuestions: Object {
     func mapping(_ json: JSON) {
         self.guid = json["guid"].string
         self.index = json["index"].string
-        self.categoryGuid = json["index"].string
+        self.categoryGuid = json["categoryGuid"].string
         self.subjectGuid = json["subjectGuid"].string
         self.chapterGuid = json["chapterGuid"].string
         self.data = json["data"].string

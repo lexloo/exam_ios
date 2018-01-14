@@ -12,6 +12,8 @@ import SwiftyJSON
 
 class NvWKWebView: WKWebView {
     var uiViewController: UIViewController?
+    var params: [String: String]?
+    var html: String?
     
     init(frame: CGRect, uiViewController: UIViewController){
         let config = WKWebViewConfiguration()
@@ -38,7 +40,7 @@ class NvWKWebView: WKWebView {
 extension NvWKWebView {
     func initClients() {
         loadSdk()
-        registerClientFuncs(module: "qb", funcs: ["getChapterQuestion,startDoQuestion,getDoQuestion,getCommentCount"])
+        registerClientFuncs(module: "qb", funcs: ["getChapterQuestion,startDoQuestion,getDoQuestion,getCommentCount,saveDoQuestion"])
         addKVO()
     }
     
@@ -116,6 +118,10 @@ extension NvWKWebView {
         let pageURL = URL(fileURLWithPath: path!)
         
         self.load(URLRequest(url: pageURL))
+    }
+    
+    func reloadHtml() {
+        self.loadHtml(name: self.html!, params: self.params)
     }
     
     func sendCallback(callbackId: String, result: JSON?) {

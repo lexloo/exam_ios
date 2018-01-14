@@ -22,20 +22,28 @@ class Qb {
             getDoQuestion(nvWebView: nvWebView, params: params, callbackId: callbackId)
         } else if (funcName == "getCommentCount") {
             getCommentCount(nvWebView: nvWebView, params: params, callbackId: callbackId)
+        } else if (funcName == "saveDoQuestion") {
+            saveDoQuestion(nvWebView: nvWebView, params: params, callbackId: callbackId)
         }
     }
     
     static func getChapterQuestions(nvWebView: NvWKWebView, params: JSON, callbackId: String?) {
         let type = params["type"].string
         let chapterGuid = params["chapterGuid"].string!
-        print("chapter:" + chapterGuid)
+        
+        
+        let doInfo = RealmUtil.selectByFilterString(ChapterQuestionDo.self, filter: "chapterGuid == '\(chapterGuid)'")
+        var doInfoMap = [String: String]()
+        for item in doInfo {
+            doInfoMap[item.questionGuid!] = item.result
+        }
         
         if type == nil {
             let qs = RealmUtil.selectByFilterString(ChapterQuestions.self, filter: "chapterGuid =='\(chapterGuid)'")
             
             var arr = [[String: Any?]]();
             for i in 0 ..< qs.count {
-                arr.append(["no": qs[i].index, "guid": qs[i].guid, "status": 1])
+                arr.append(["no": qs[i].index, "guid": qs[i].guid, "status": doInfoMap[qs[i].guid!]])
             }
             
             let result = JSON(arr)
@@ -61,8 +69,21 @@ class Qb {
         let questionGuid = params["questionGuid"].string!
         
         let question = RealmUtil.select(ChapterQuestions.self, forPrimaryKey: questionGuid)
+        let questionDo = RealmUtil.selectByFilterString(ChapterQuestionDo.self, filter: "questionGuid == '\(questionGuid)'").first
         
-        let result = JSON.init(parseJSON: question.data!);
+        var result = JSON.init(parseJSON: question.data!);
+        
+        if questionDo != nil {
+            if questionDo?.result != nil {
+                result["status"].int = Int((questionDo?.result)!)
+                result["select"].string = questionDo?.answer
+            } else {
+                result["status"].int = 0
+            }
+        } else {
+            result["status"].int = 0
+        }
+        
         nvWebView.sendCallback(callbackId: callbackId!, result: result)
     }
     
@@ -72,8 +93,29 @@ class Qb {
             result in
             
             let json = JSON(["count": result]);
-            print(json)
             nvWebView.sendCallback(callbackId: callbackId!, result: json)
+        }
+    }
+    
+    static func saveDoQuestion(nvWebView: NvWKWebView, params: JSON, callbackId: String?) {
+        let value = ChapterQuestionDo()
+        value.questionGuid = params["questionGuid"].string
+        value.chapterGuid = params["chapterGuid"].string
+        value.answer = params["answer"].string
+        value.result = params["result"].string
+        
+        RealmUtil.addCanUpdate(value)
+        
+        let parameters = [
+            "user_guid": Global.userInfo.guid!,
+            "question_guid": value.questionGuid!,
+            "chapter_guid": value.chapterGuid!,
+            "answer": value.answer!,
+            "result": value.result!]
+        HttpUtil.postReturnString("question/do_info/set", parameters: parameters) {
+            result in
+            nvWebView.reloadHtml()
+            //nvWebView.sendCallback(callbackId: callbackId!, result: JSON())
         }
     }
 }

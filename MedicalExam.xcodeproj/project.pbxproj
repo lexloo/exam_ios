@@ -33,6 +33,7 @@
 		41E4CE02200B051D000CA73F /* WebViewModuleFuncs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E4CE01200B051D000CA73F /* WebViewModuleFuncs.swift */; };
 		41E4CE05200B0667000CA73F /* Qb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E4CE04200B0667000CA73F /* Qb.swift */; };
 		41E4CE07200B2254000CA73F /* DoQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E4CE06200B2254000CA73F /* DoQuestionViewController.swift */; };
+		41E4CE09200B8057000CA73F /* ChapterQuestionDo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E4CE08200B8057000CA73F /* ChapterQuestionDo.swift */; };
 		41EEA0C720007ABE006DB553 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EEA0C620007ABE006DB553 /* UserInfo.swift */; };
 		41EEA0CA20007EDC006DB553 /* RealmUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EEA0C920007EDC006DB553 /* RealmUtil.swift */; };
 		41EEA0CD2000B005006DB553 /* HttpUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EEA0CC2000B005006DB553 /* HttpUtil.swift */; };
@@ -75,6 +76,7 @@
 		41E4CE01200B051D000CA73F /* WebViewModuleFuncs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewModuleFuncs.swift; sourceTree = "<group>"; };
 		41E4CE04200B0667000CA73F /* Qb.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Qb.swift; sourceTree = "<group>"; };
 		41E4CE06200B2254000CA73F /* DoQuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoQuestionViewController.swift; sourceTree = "<group>"; };
+		41E4CE08200B8057000CA73F /* ChapterQuestionDo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChapterQuestionDo.swift; sourceTree = "<group>"; };
 		41EEA0C620007ABE006DB553 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		41EEA0C920007EDC006DB553 /* RealmUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmUtil.swift; sourceTree = "<group>"; };
 		41EEA0CC2000B005006DB553 /* HttpUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpUtil.swift; sourceTree = "<group>"; };
@@ -193,6 +195,7 @@
 				414DCA912002134200CB2B74 /* Subject.swift */,
 				414DCA932002134D00CB2B74 /* Chapter.swift */,
 				414DCA952002136800CB2B74 /* ChapterQuestions.swift */,
+				41E4CE08200B8057000CA73F /* ChapterQuestionDo.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -424,6 +427,7 @@
 				414DCA8E2001F9D400CB2B74 /* Global.swift in Sources */,
 				41D51C7C1FEFDC4300DF78ED /* TableViewCell.swift in Sources */,
 				414DCA9920024E2200CB2B74 /* NvWKWebView.swift in Sources */,
+				41E4CE09200B8057000CA73F /* ChapterQuestionDo.swift in Sources */,
 				41D51C6E1FEF495800DF78ED /* VideoViewController.swift in Sources */,
 				41B825DD1FF7BEA3004DFDA3 /* LoginController.swift in Sources */,
 				414DCA922002134200CB2B74 /* Subject.swift in Sources */,
