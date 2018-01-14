@@ -46,6 +46,8 @@ class Qb {
         doQuestionVC.subjectName = params["subjectName"].string
         doQuestionVC.chapterName = params["chapterName"].string
         doQuestionVC.chapterGuid = params["chapterGuid"].string
+        doQuestionVC.questionGuid = params["questionGuid"].string
+        doQuestionVC.index = params["index"].string
         doQuestionVC.type = params["type"].string
         
         nvWebView.uiViewController?.present(doQuestionVC, animated: true, completion: nil)

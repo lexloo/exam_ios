@@ -1,6 +1,8 @@
 Vue.filter('fixed2', function(value) {
   return value.toFixed(2);
 });
+alert("MMMMM")
+iTek.on("Ready", function(){
 var vue = new Vue({
 	el: '#app',
 	data: {
@@ -48,12 +50,12 @@ var vue = new Vue({
 
 			let result = (this.question.select === this.question.answer) ? 1 : 2;
 
-			__Native__.saveDoQuestion(this.question.guid, this.chapterGuid, this.question.select, result);
+//            __Native__.saveDoQuestion(this.question.guid, this.chapterGuid, this.question.select, result);
 			window.location.reload();
 		},
 
 		showComments: function() {
-			__Native__.showComments(this.question.guid);
+//            __Native__.showComments(this.question.guid);
 		},
 
 		incComments: function() {
@@ -61,22 +63,20 @@ var vue = new Vue({
 		}
 	},
 	created: function() {
-		this.no = parseInt(getUrlKey('no'));
-		this.chapterGuid = getUrlKey('chapter_guid');
-		
-		let data = JSON.parse(__Native__.getDoQuestion(this.no));
-		data.select = data.select || '';
+                  alert(iTek.local["questionGuid"]);
+//        this.no = parseInt(getUrlKey('no'));
+//        this.chapterGuid = getUrlKey('chapter_guid');
+//
+//        let data = JSON.parse(__Native__.getDoQuestion(this.no));
+//        data.select = data.select || '';
+//
+//        this.question = data;
 
-		this.question = data;
-
-		this.commentCount = __Native__.getCommentCount(this.question.guid);
+//        this.commentCount = __Native__.getCommentCount(this.question.guid);
 
 		if (!this.isNotDo) {
-			this.stat = JSON.parse(__Native__.getDoQuestionInfo(this.question.guid)) || {};
+//            this.stat = JSON.parse(__Native__.getDoQuestionInfo(this.question.guid)) || {};
 		}
 	}
 });
-
-function getUrlKey(name) {
-	return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.href) || [, ""])[1].replace(/\+/g, '%20')) || null;
-};
+});

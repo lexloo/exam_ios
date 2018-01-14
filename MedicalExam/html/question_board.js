@@ -12,10 +12,11 @@ iTek.on("Ready", function(){
         methods: {
             doQuestion: function(index, guid) {
                 iTek.qb.startDoQuestion({
-                                        index: parseInt(index),
+                                        index: index,
                                         subjectName: this.subjectName,
                                         chapterGuid: this.chapterGuid,
                                         chapterName: this.chapterName,
+                                        questionGuid: guid,
                                         type: this.type
                 });
             }

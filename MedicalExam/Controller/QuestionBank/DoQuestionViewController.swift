@@ -13,7 +13,8 @@ class DoQuestionViewController: UIViewController {
     public var chapterGuid: String?
     public var chapterName: String?
     public var type: String?
-    public var index: Int?
+    public var index: String?
+    public var questionGuid: String?
     
     @IBOutlet weak var lblSubjectName: UILabel!
     @IBOutlet weak var lblChapterName: UILabel!
@@ -50,8 +51,8 @@ class DoQuestionViewController: UIViewController {
         for i in 0 ..< qs.count {
             let tmpView = NvWKWebView(frame: CGRect(x: CGFloat(i) * width, y: 0, width: width, height: height), uiViewController: self)
             
-            let params: [String: String] = ["subjectName": subjectName!, "chapterGuid": chapterGuid!, "chapterName": chapterName!]
-            tmpView.loadHtml(name: "html/question_board", params: params)
+            let params: [String: String] = ["subjectName": subjectName!, "chapterGuid": chapterGuid!, "chapterName": chapterName!, "index": String(i), "questionGuid": questionGuid!]
+            tmpView.loadHtml(name: "html/do_question", params: params)
             
             svContainer.addSubview(tmpView)
         }
