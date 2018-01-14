@@ -118,6 +118,21 @@ extension NvWKWebView {
         self.load(URLRequest(url: pageURL))
     }
     
+    func sendCallback(callbackId: String, result: JSON?) {
+        var json = JSON()
+        json["callbackId"].string = callbackId
+        json["body"] = result!
+        
+        let script = "iTek.__html5_cb(\(json))"
+        
+        self.evaluateJavaScript(script) {
+            (_, err) in
+            if err != nil {
+                print("\(String(describing: err))")
+            }
+        }
+    }
+    
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         if keyPath == "loading" {
         }
@@ -137,7 +152,7 @@ extension NvWKWebView: WKScriptMessageHandler {
             let funcName = json["funcName"].string!
             let data = JSON.init(parseJSON: json["data"].string!)
             
-            WebViewModuleFuncs.exec(module: module, funcName: funcName, data: data)
+            WebViewModuleFuncs.exec(nvWebView: self, module: module, funcName: funcName, data: data)
         }
     }
 }

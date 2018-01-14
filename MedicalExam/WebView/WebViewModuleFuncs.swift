@@ -10,9 +10,9 @@ import Foundation
 import SwiftyJSON
 
 class WebViewModuleFuncs {
-    static func exec(module: String, funcName: String, data: JSON) {
+    static func exec(nvWebView: NvWKWebView,  module: String, funcName: String, data: JSON) {
         if module == "qb" {
-            Qb.exec(funcName: funcName, data: data)
+            Qb.exec(nvWebView: nvWebView, funcName: funcName, data: data)
         }
     }
 }

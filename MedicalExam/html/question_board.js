@@ -21,7 +21,7 @@ iTek.on("Ready", function(){
             this.type = iTek.local['type'];
         
             iTek.qb.getChapterQuestion({chapterGuid: this.chapterGuid, type: "this.type"}, function(result){
-                alert(result)
+                alert(JSON.stringify(result))
             });
         }
     });
