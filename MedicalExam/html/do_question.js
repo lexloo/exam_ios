@@ -64,24 +64,15 @@ iTek.on("Ready", function() {
 			}
 		},
 		created: function() {
-			//var guid = iTek.local["questionGuid"];
-			//        this.no = parseInt(getUrlKey('no'));
-			//        this.chapterGuid = getUrlKey('chapter_guid');
-			//
-			//        var that = this;
-			//                  this.question = {
-			//                  text:'ddddddddddddd'
-			//                  }
-			//        iTek.qb.getDoQuestion({questionGuid: guid}, function(result){
-			//                              result.select = result.select || "";
-			//                              alert(result)
-			//                              that.question = result;
-			//        });
+            var guid = iTek.local["questionGuid"];
+			this.no = parseInt(iTek.local["index"]) + 1;
+			this.chapterGuid = iTek.local["chapterGuid"];
 
-			//        let data = JSON.parse(__Native__.getDoQuestion(this.no));
-			//        data.select = data.select || '';
-			//
-			//        this.question = data;
+            var that = this;
+                    iTek.qb.getDoQuestion({questionGuid: guid}, function(result){
+                                          result.select = result.select || "";
+                                          that.question = result;
+                    });
 
 			//        this.commentCount = __Native__.getCommentCount(this.question.guid);
 
