@@ -20,6 +20,8 @@ class Qb {
             startDoQuestion(nvWebView:nvWebView, params: params, callbackId: callbackId)
         } else if (funcName == "getDoQuestion") {
             getDoQuestion(nvWebView: nvWebView, params: params, callbackId: callbackId)
+        } else if (funcName == "getCommentCount") {
+            getCommentCount(nvWebView: nvWebView, params: params, callbackId: callbackId)
         }
     }
     
@@ -62,5 +64,16 @@ class Qb {
         
         let result = JSON.init(parseJSON: question.data!);
         nvWebView.sendCallback(callbackId: callbackId!, result: result)
+    }
+    
+    static func getCommentCount(nvWebView: NvWKWebView, params: JSON, callbackId: String?) {
+        let parameters = ["question_guid": params["questionGuid"].string!]
+        HttpUtil.postReturnString("question/comment_count", parameters: parameters) {
+            result in
+            
+            let json = JSON(["count": result]);
+            print(json)
+            nvWebView.sendCallback(callbackId: callbackId!, result: json)
+        }
     }
 }

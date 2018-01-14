@@ -74,7 +74,9 @@ iTek.on("Ready", function() {
                                           that.question = result;
                     });
 
-			//        this.commentCount = __Native__.getCommentCount(this.question.guid);
+            iTek.qb.getCommentCount({questionGuid: guid}, function(result){
+                                                        that.commentCount = result.count;
+                                                        });
 
 			if (!this.isNotDo) {
 				//            this.stat = JSON.parse(__Native__.getDoQuestionInfo(this.question.guid)) || {};
