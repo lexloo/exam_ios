@@ -58,7 +58,7 @@ iTek.on("Ready", function() {
 					result: result
 				}, function() {
 					that.question.status = parseInt(result);
-					if (！that.stat.likes) {
+					if (!that.stat.likes) {
 						iTek.qb.getDoQuestionInfo({
 							questionGuid: that.question.guid
 						}, function(result) {
@@ -71,7 +71,7 @@ iTek.on("Ready", function() {
 
 			showComments: function() {
 				iTek.qp.showComments({
-					questionGuid： this.question.guid
+                    questionGuid:this.question.guid
 				});
 			},
 

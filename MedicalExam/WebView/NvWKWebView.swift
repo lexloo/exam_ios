@@ -38,7 +38,7 @@ class NvWKWebView: WKWebView {
 extension NvWKWebView {
     func initClients() {
         loadSdk()
-        registerClientFuncs(module: "qb", funcs: ["getChapterQuestion,startDoQuestion,getDoQuestion,getCommentCount,saveDoQuestion"])
+        registerClientFuncs(module: "qb", funcs: ["getChapterQuestion,startDoQuestion,getDoQuestion,getCommentCount,saveDoQuestion,getDoQuestionInfo"])
         addKVO()
     }
     
@@ -91,8 +91,6 @@ extension NvWKWebView {
                 print("\(String(describing: err))")
             }
         }
-        
-        print("event:" + eventName)
     }
     
     func setLocalVar(name: String, value: String) {

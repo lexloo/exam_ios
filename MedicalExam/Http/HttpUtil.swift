@@ -46,8 +46,6 @@ class HttpUtil {
             response in
             switch response.result {
             case .success(let value):
-                print(value)
-            
                 handler(value)
             case .failure(let error):
                 print(error)

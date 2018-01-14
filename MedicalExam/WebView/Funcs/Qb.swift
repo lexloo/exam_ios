@@ -24,6 +24,8 @@ class Qb {
             getCommentCount(nvWebView: nvWebView, params: params, callbackId: callbackId)
         } else if (funcName == "saveDoQuestion") {
             saveDoQuestion(nvWebView: nvWebView, params: params, callbackId: callbackId)
+        } else if (funcName == "getDoQuestionInfo") {
+            getDoQuestionInfo(nvWebView: nvWebView, params: params, callbackId: callbackId)
         }
     }
     
@@ -115,6 +117,17 @@ class Qb {
         HttpUtil.postReturnString("question/do_info/set", parameters: parameters) {
             result in
             nvWebView.sendCallback(callbackId: callbackId!, result: JSON())
+        }
+    }
+    
+    static func getDoQuestionInfo(nvWebView: NvWKWebView, params: JSON, callbackId: String?) {
+        let parameters = ["question_guid": params["questionGuid"].string!, "user_guid": Global.userInfo.guid!]
+        HttpUtil.postReturnString("question/do_info/get", parameters: parameters) {
+            result in
+            
+            let json = JSON.init(parseJSON: result);
+            print(json);
+            nvWebView.sendCallback(callbackId: callbackId!, result: json)
         }
     }
 }
