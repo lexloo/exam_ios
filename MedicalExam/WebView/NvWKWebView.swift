@@ -37,7 +37,7 @@ class NvWKWebView: WKWebView {
 extension NvWKWebView {
     func initClients() {
         loadSdk()
-        pubReadyEvent()
+        addKVO()
     }
     
     private func loadSdk() {
@@ -49,6 +49,12 @@ extension NvWKWebView {
                 print("\(String(describing: err))")
             }
         }
+    }
+    
+    private func addKVO() {
+        self.addObserver(self, forKeyPath: "loading", options: .new, context: nil)
+        self.addObserver(self, forKeyPath: "title", options: .new, context: nil)
+        self.addObserver(self, forKeyPath: "estimatedProgress", options: .new, context: nil)
     }
     
     private func pubReadyEvent() {
@@ -70,13 +76,42 @@ extension NvWKWebView {
                 print("\(String(describing: err))")
             }
         }
+        
+        print("event:" + eventName)
     }
     
-    func loadHtml(name: String) -> Void{
+    func setLocalVar(name: String, value: String) {
+        let script = "iTek.__html5_setLocalInfo(\"\(name)\",\"\(value)\")"
+        
+        self.evaluateJavaScript(script) {
+            (_, err) in
+            if err != nil {
+                print("\(String(describing: err))")
+            }
+        }
+        
+        print("kye:\(name),value:\(value)")
+    }
+    
+    func loadHtml(name: String, params: [String: String]?) -> Void{
+        if let params = params {
+            for (k, v) in params {
+               self.setLocalVar(name: k, value: v)
+            }
+        }
         let path = Bundle.main.path(forResource: name, ofType: "html")
         let pageURL = URL(fileURLWithPath: path!)
         
         self.load(URLRequest(url: pageURL))
+    }
+    
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        if keyPath == "loading" {
+        }
+        
+        if !self.isLoading {
+            self.pubReadyEvent()
+        }
     }
 }
 

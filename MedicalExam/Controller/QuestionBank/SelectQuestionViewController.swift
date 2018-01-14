@@ -24,7 +24,8 @@ class SelectQuestionViewController: UIViewController {
         webView = NvWKWebView(frame: CGRect(x:0, y:100, width:self.view.bounds.size.width, height:self.view.bounds.size.height), uiViewController: self)
         view.addSubview(webView!)
         
-        webView?.loadHtml(name: "html/question_board")
+        let params: [String: String] = ["subjectName": subjectName!, "chapterGuid": chapterGuid!, "chapterName": chapterName!]
+        webView?.loadHtml(name: "html/question_board", params: params)
         
         lblSubject.text = subjectName!
         lblChapter.text = chapterName!
