@@ -38,7 +38,7 @@ class NvWKWebView: WKWebView {
 extension NvWKWebView {
     func initClients() {
         loadSdk()
-        registerClientFuncs(module: "qb", funcs: ["getChapterQuestion,startDoQuestion,getDoQuestion,getCommentCount,saveDoQuestion,getDoQuestionInfo"])
+        registerClientFuncs(module: "qb", funcs: ["getChapterQuestion,startDoQuestion,getDoQuestion,getCommentCount,saveDoQuestion,getDoQuestionInfo,showComments"])
         addKVO()
     }
     
