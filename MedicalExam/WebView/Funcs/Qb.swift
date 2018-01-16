@@ -26,6 +26,8 @@ class Qb {
             saveDoQuestion(nvWebView: nvWebView, params: params, callbackId: callbackId)
         } else if (funcName == "getDoQuestionInfo") {
             getDoQuestionInfo(nvWebView: nvWebView, params: params, callbackId: callbackId)
+        } else if (funcName == "showComments") {
+            showComments(nvWebView: nvWebView, params: params, callbackId: callbackId)
         }
     }
     
@@ -130,5 +132,13 @@ class Qb {
             print(json);
             nvWebView.sendCallback(callbackId: callbackId!, result: json)
         }
+    }
+    
+    static func showComments(nvWebView: NvWKWebView, params: JSON, callbackId: String?) {
+        let loginStoryBoard = UIStoryboard(name: "UILogin", bundle: nil)
+        let commentsVC = loginStoryBoard.instantiateViewController(withIdentifier: "CommentsVC") as! CommentsViewController
+        
+        commentsVC.questionGuid = params["questionGuid"].string
+        nvWebView.uiViewController?.present(commentsVC, animated: true, completion: nil)
     }
 }
