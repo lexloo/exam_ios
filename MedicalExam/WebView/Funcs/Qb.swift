@@ -28,6 +28,8 @@ class Qb {
             getDoQuestionInfo(nvWebView: nvWebView, params: params, callbackId: callbackId)
         } else if (funcName == "showComments") {
             showComments(nvWebView: nvWebView, params: params, callbackId: callbackId)
+        } else if (funcName == "getComments") {
+            getComments(nvWebView: nvWebView, params: params, callbackId: callbackId)
         }
     }
     
@@ -139,6 +141,19 @@ class Qb {
         let commentsVC = loginStoryBoard.instantiateViewController(withIdentifier: "CommentsVC") as! CommentsViewController
         
         commentsVC.questionGuid = params["questionGuid"].string
+        print(commentsVC)
         nvWebView.uiViewController?.present(commentsVC, animated: true, completion: nil)
+    }
+    
+    static func getComments(nvWebView: NvWKWebView, params: JSON, callbackId: String?) {
+        print("getComments");
+//        let parameters = ["question_guid": params["questionGuid"].string!, "user_guid": Global.userInfo.guid!]
+//        HttpUtil.postReturnString("question/do_info/get", parameters: parameters) {
+//            result in
+//
+//            let json = JSON.init(parseJSON: result);
+//            print(json);
+//            nvWebView.sendCallback(callbackId: callbackId!, result: json)
+//        }
     }
 }

@@ -70,7 +70,7 @@ iTek.on("Ready", function() {
 			},
 
 			showComments: function() {
-				iTek.qp.showComments({
+				iTek.qb.showComments({
 					questionGuid: this.question.guid
 				});
 			},

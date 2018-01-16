@@ -18,6 +18,7 @@
 		414DCA962002136800CB2B74 /* ChapterQuestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414DCA952002136800CB2B74 /* ChapterQuestions.swift */; };
 		414DCA9920024E2200CB2B74 /* NvWKWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414DCA9820024E2200CB2B74 /* NvWKWebView.swift */; };
 		414DCAA5200252FF00CB2B74 /* SelectQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414DCAA4200252FF00CB2B74 /* SelectQuestionViewController.swift */; };
+		41AC373F200E4BC0005F410B /* CommentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41AC373E200E4BC0005F410B /* CommentsViewController.swift */; };
 		41B825DB1FF79A6E004DFDA3 /* UILogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41B825DA1FF79A6E004DFDA3 /* UILogin.storyboard */; };
 		41B825DD1FF7BEA3004DFDA3 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B825DC1FF7BEA3004DFDA3 /* LoginController.swift */; };
 		41B825E11FFA25FF004DFDA3 /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B825E01FFA25FE004DFDA3 /* RegisterController.swift */; };
@@ -34,7 +35,6 @@
 		41E4CE05200B0667000CA73F /* Qb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E4CE04200B0667000CA73F /* Qb.swift */; };
 		41E4CE07200B2254000CA73F /* DoQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E4CE06200B2254000CA73F /* DoQuestionViewController.swift */; };
 		41E4CE09200B8057000CA73F /* ChapterQuestionDo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E4CE08200B8057000CA73F /* ChapterQuestionDo.swift */; };
-		41E4CE0B200BBDF7000CA73F /* CommentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E4CE0A200BBDF7000CA73F /* CommentsViewController.swift */; };
 		41EEA0C720007ABE006DB553 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EEA0C620007ABE006DB553 /* UserInfo.swift */; };
 		41EEA0CA20007EDC006DB553 /* RealmUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EEA0C920007EDC006DB553 /* RealmUtil.swift */; };
 		41EEA0CD2000B005006DB553 /* HttpUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EEA0CC2000B005006DB553 /* HttpUtil.swift */; };
@@ -62,6 +62,7 @@
 		414DCA952002136800CB2B74 /* ChapterQuestions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChapterQuestions.swift; sourceTree = "<group>"; };
 		414DCA9820024E2200CB2B74 /* NvWKWebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NvWKWebView.swift; sourceTree = "<group>"; };
 		414DCAA4200252FF00CB2B74 /* SelectQuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectQuestionViewController.swift; sourceTree = "<group>"; };
+		41AC373E200E4BC0005F410B /* CommentsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentsViewController.swift; sourceTree = "<group>"; };
 		41B825DA1FF79A6E004DFDA3 /* UILogin.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UILogin.storyboard; sourceTree = "<group>"; };
 		41B825DC1FF7BEA3004DFDA3 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		41B825E01FFA25FE004DFDA3 /* RegisterController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegisterController.swift; path = MedicalExam/Login/Controller/RegisterController.swift; sourceTree = SOURCE_ROOT; };
@@ -78,7 +79,6 @@
 		41E4CE04200B0667000CA73F /* Qb.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Qb.swift; sourceTree = "<group>"; };
 		41E4CE06200B2254000CA73F /* DoQuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoQuestionViewController.swift; sourceTree = "<group>"; };
 		41E4CE08200B8057000CA73F /* ChapterQuestionDo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChapterQuestionDo.swift; sourceTree = "<group>"; };
-		41E4CE0A200BBDF7000CA73F /* CommentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsViewController.swift; sourceTree = "<group>"; };
 		41EEA0C620007ABE006DB553 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		41EEA0C920007EDC006DB553 /* RealmUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmUtil.swift; sourceTree = "<group>"; };
 		41EEA0CC2000B005006DB553 /* HttpUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpUtil.swift; sourceTree = "<group>"; };
@@ -163,9 +163,9 @@
 		414DCA9F2002527900CB2B74 /* QuestionBank */ = {
 			isa = PBXGroup;
 			children = (
+				41AC373E200E4BC0005F410B /* CommentsViewController.swift */,
 				414DCAA4200252FF00CB2B74 /* SelectQuestionViewController.swift */,
 				41E4CE06200B2254000CA73F /* DoQuestionViewController.swift */,
-				41E4CE0A200BBDF7000CA73F /* CommentsViewController.swift */,
 			);
 			path = QuestionBank;
 			sourceTree = "<group>";
@@ -439,7 +439,7 @@
 				41EEA0CA20007EDC006DB553 /* RealmUtil.swift in Sources */,
 				41D51C771FEFC94D00DF78ED /* CellModel.swift in Sources */,
 				41D51C6A1FEF480A00DF78ED /* QuestionBankViewController.swift in Sources */,
-				41E4CE0B200BBDF7000CA73F /* CommentsViewController.swift in Sources */,
+				41AC373F200E4BC0005F410B /* CommentsViewController.swift in Sources */,
 				41EEA0E62001163F006DB553 /* Kind.swift in Sources */,
 				414DCA902002128300CB2B74 /* BaseItem.swift in Sources */,
 				41D51C751FEFC8CD00DF78ED /* SectionModel.swift in Sources */,
