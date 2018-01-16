@@ -1,0 +1,51 @@
+* {
+	-webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-user-select: none;
+    outline: 0;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-tap-highlight-color: transparent;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+	height: 100%;
+}
+
+body {
+	height: 100%;
+	font-family: 'Helvetica Neue',Helvetica,sans-serif;
+    font-size: 17px;
+    line-height: 21px;
+    color: #000;
+    -webkit-overflow-scrolling: touch;
+}
+
+[v-cloak] {
+  display: none;
+}
+
+.comments-item {
+    margin-top: 2px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 6px;
+    padding-bottom: 4px;
+    border-bottom: 1px solid #ccc;
+    position: relative;
+}
+
+.reply {
+    position: absolute;
+    right: 20px;
+}
+
+.source {
+    margin-left: 20px;
+    border: 1px solid #bdb9b9;
+    background-color: beige;
+    padding: 6px;
+    margin-top: 10px;
+    border-radius: 5px;
+}

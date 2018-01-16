@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <title>考生评论</title>
+    <link rel="stylesheet" type="text/css" href="./comments.css">
+    <script type="text/javascript" src="./api/html5_sdk_client.js"></script>
+    <script type="text/javascript" src="./libs/vue.min.js"></script>
+</head>
+<body>
+<div id ="app">
+	<div class="comments-item" v-for="item in comments">
+		<button @click="addComment()" class="reply">回复</button>
+		<div v-if="item.replierGuid">
+			<div>{{item.replierName}}</div>
+			<div class="source">
+				<div>{{item.userName}}</div>
+				<div>{{item.comment}}</div>
+			</div>
+			<div>{{item.replierComment}}</div>
+		</div>
+		<div v-else>
+			<div>{{item.userName}}</div>
+			<div>{{item.comment}}</div>
+		</div>
+		
+	</div>
+</div>
+<script type="text/javascript" src="./comments.js"></script>
+</body>
+</html>
