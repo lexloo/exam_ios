@@ -33,7 +33,7 @@ class HttpUtil {
             switch response.result {
             case .success(let value):
                 let json = JSON(value)
-                print(json)
+
                 handler(json)
             case .failure(let error):
                 print(error)
