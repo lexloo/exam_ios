@@ -148,7 +148,6 @@ class Qb {
         let parameters = ["question_guid": params["questionGuid"].string!, "page": "1"]
         HttpUtil.postReturnData("question/list_comment", parameters: parameters) {
             result in
-            print(result);
             nvWebView.sendCallback(callbackId: callbackId!, result: result)
         }
     }
