@@ -19,12 +19,38 @@ class DoQuestionViewController: UIViewController {
     @IBOutlet weak var lblSubjectName: UILabel!
     @IBOutlet weak var lblChapterName: UILabel!
     @IBOutlet weak var svContainer: UIScrollView!
+    @IBOutlet weak var vTool: UIView!
+    @IBOutlet weak var vCommentInput: UIView!
+    @IBOutlet weak var constraintBottom: NSLayoutConstraint!
+    @IBOutlet weak var txtComments: UITextView!
+    
+    @IBAction func newCommentClick(_ sender: UIButton) {
+        vCommentInput.isHidden = false
+    }
+    @IBAction func newNoteClick(_ sender: UIButton) {
+
+    }
+    @IBAction func newLikesClick(_ sender: UIButton) {
+    }
+    @IBAction func CommentsOnMeClick(_ sender: UIButton) {
+    }
+    
+    @IBAction func commentOkClick(_ sender: UIButton) {
+        vCommentInput.isHidden = true
+    }
+    @IBAction func CommentCancelClick(_ sender: UIButton) {
+        vCommentInput.isHidden = true
+        txtComments.resignFirstResponder()
+    }
     @IBAction func returnClick(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
+        txtComments.resignFirstResponder()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(DoQuestionViewController.keyboardWillChange(_:)), name: .UIKeyboardWillChangeFrame, object: nil)
         
         lblSubjectName.text = subjectName!
         lblChapterName.text = chapterName!
@@ -37,8 +63,6 @@ class DoQuestionViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    
-    
     
     private func setupViewPager() {
         let width = self.view.bounds.width
@@ -55,6 +79,19 @@ class DoQuestionViewController: UIViewController {
             tmpView.loadHtml(name: "html/do_question", params: params)
             
             svContainer.addSubview(tmpView)
+        }
+    }
+    
+    func keyboardWillChange(_ notification: Notification) {
+        if let userInfo = notification.userInfo,
+        let value = userInfo[UIKeyboardFrameEndUserInfoKey] as? NSValue,
+        let duration = userInfo[UIKeyboardAnimationDurationUserInfoKey] as? Double,
+            let curve = userInfo[UIKeyboardAnimationCurveUserInfoKey] as? UInt {
+            let frame = value.cgRectValue
+            let intersection = frame.intersection(self.view.frame)
+            
+            self.constraintBottom.constant = -intersection.height
+            UIView.animate(withDuration: duration, delay: 0.0, options: UIViewAnimationOptions(rawValue: curve), animations: {self.view.layoutIfNeeded()}, completion: nil)
         }
     }
 }
