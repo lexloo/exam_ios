@@ -37,6 +37,7 @@ class DoQuestionViewController: UIViewController {
     
     @IBAction func commentOkClick(_ sender: UIButton) {
         vCommentInput.isHidden = true
+        txtComments.resignFirstResponder()
     }
     @IBAction func CommentCancelClick(_ sender: UIButton) {
         vCommentInput.isHidden = true
@@ -44,7 +45,6 @@ class DoQuestionViewController: UIViewController {
     }
     @IBAction func returnClick(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
-        txtComments.resignFirstResponder()
     }
     
     override func viewDidLoad() {
