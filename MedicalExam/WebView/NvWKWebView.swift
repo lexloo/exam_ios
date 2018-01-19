@@ -131,6 +131,15 @@ extension NvWKWebView {
         }
     }
     
+    func evaluateJavaScript(_ script: String) {
+        self.evaluateJavaScript(script) {
+            (_, err) in
+            if err != nil {
+                print("\(String(describing: err))")
+            }
+        }
+    }
+    
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         if keyPath == "loading" {
         }

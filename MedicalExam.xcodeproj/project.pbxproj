@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1537F7CA05E987BEA36818CF /* Pods_MedicalExam.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E872B2C99B3742F7399C88F /* Pods_MedicalExam.framework */; };
+		410A6B7B2012277F0052CE12 /* MessageUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410A6B7A2012277F0052CE12 /* MessageUtils.swift */; };
 		4131DD55200F9CCC00A364DE /* CommentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4131DD54200F9CCA00A364DE /* CommentsViewController.swift */; };
 		4131DD57200F9CDC00A364DE /* DoQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4131DD56200F9CDC00A364DE /* DoQuestionViewController.swift */; };
 		413307321FEBED0800C2BD45 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413307311FEBED0800C2BD45 /* AppDelegate.swift */; };
@@ -50,6 +51,7 @@
 /* Begin PBXFileReference section */
 		0CE52AF65BFC93A4E86B2E94 /* Pods-MedicalExam.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MedicalExam.release.xcconfig"; path = "Pods/Target Support Files/Pods-MedicalExam/Pods-MedicalExam.release.xcconfig"; sourceTree = "<group>"; };
 		0E872B2C99B3742F7399C88F /* Pods_MedicalExam.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MedicalExam.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		410A6B7A2012277F0052CE12 /* MessageUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageUtils.swift; sourceTree = "<group>"; };
 		4131DD54200F9CCA00A364DE /* CommentsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentsViewController.swift; sourceTree = "<group>"; };
 		4131DD56200F9CDC00A364DE /* DoQuestionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoQuestionViewController.swift; sourceTree = "<group>"; };
 		4133072E1FEBED0800C2BD45 /* MedicalExam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MedicalExam.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -112,6 +114,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		410A6B792012273C0052CE12 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				410A6B7A2012277F0052CE12 /* MessageUtils.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
 		413307251FEBED0800C2BD45 = {
 			isa = PBXGroup;
 			children = (
@@ -133,6 +143,7 @@
 		413307301FEBED0800C2BD45 /* MedicalExam */ = {
 			isa = PBXGroup;
 			children = (
+				410A6B792012273C0052CE12 /* Util */,
 				414DCA9720024D6100CB2B74 /* WebView */,
 				41EEA0D62000E029006DB553 /* CustomView */,
 				41EEA0CB2000AFDD006DB553 /* Http */,
@@ -419,6 +430,7 @@
 				414DCAA5200252FF00CB2B74 /* SelectQuestionViewController.swift in Sources */,
 				41D51C681FEF45F300DF78ED /* MainViewController.swift in Sources */,
 				413307321FEBED0800C2BD45 /* AppDelegate.swift in Sources */,
+				410A6B7B2012277F0052CE12 /* MessageUtils.swift in Sources */,
 				41B825E11FFA25FF004DFDA3 /* RegisterController.swift in Sources */,
 				41E4CE02200B051D000CA73F /* WebViewModuleFuncs.swift in Sources */,
 				4131DD57200F9CDC00A364DE /* DoQuestionViewController.swift in Sources */,

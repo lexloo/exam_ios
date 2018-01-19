@@ -15,7 +15,8 @@ class DoQuestionViewController: UIViewController {
     public var type: String?
     public var index: String?
     public var questionGuid: String?
-    
+    public var questionArr = [String]()
+    public var questionViewArr = [NvWKWebView?]()
     @IBOutlet weak var lblSubjectName: UILabel!
     @IBOutlet weak var lblChapterName: UILabel!
     @IBOutlet weak var svContainer: UIScrollView!
@@ -26,6 +27,7 @@ class DoQuestionViewController: UIViewController {
     
     @IBAction func newCommentClick(_ sender: UIButton) {
         vCommentInput.isHidden = false
+        txtComments.becomeFirstResponder()
     }
     @IBAction func newNoteClick(_ sender: UIButton) {
 
@@ -36,8 +38,25 @@ class DoQuestionViewController: UIViewController {
     }
     
     @IBAction func commentOkClick(_ sender: UIButton) {
-        vCommentInput.isHidden = true
-        txtComments.resignFirstResponder()
+        if self.txtComments.text == "" {
+            //MessageUtils.alert(viewController: self, message: "请输入评论")
+            print(self.questionArr[self.getCurrPage()])
+        } else {
+            let userInfo = Global.userInfo
+            let userGuid = userInfo.guid
+            let userName = userInfo.name
+            let comment = self.txtComments.text
+            let currQuestionGuid = self.questionArr[self.getCurrPage()]
+            
+            let parameters = ["questionGuid": currQuestionGuid, "userGuid": userGuid!, "userName": userName!, "comment": comment!]
+            HttpUtil.postReturnString("question/comment", parameters: parameters) {
+                result in
+                self.getCurrWebView().evaluateJavaScript("vue.incComments()")
+                self.txtComments.resignFirstResponder()
+                self.txtComments.text = ""
+                self.vCommentInput.isHidden = true
+            }
+        }
     }
     @IBAction func CommentCancelClick(_ sender: UIButton) {
         vCommentInput.isHidden = true
@@ -76,10 +95,24 @@ class DoQuestionViewController: UIViewController {
             let tmpView = NvWKWebView(frame: CGRect(x: CGFloat(i) * width, y: 0, width: width, height: height), uiViewController: self)
             
             let params = ["subjectName": subjectName!, "chapterGuid": chapterGuid!, "chapterName": chapterName!, "index": String(i), "questionGuid": qs[i].guid!]
+            questionArr.append(qs[i].guid!)
+            questionViewArr.append(tmpView)
+            
             tmpView.loadHtml(name: "html/do_question", params: params)
             
             svContainer.addSubview(tmpView)
         }
+    }
+    
+    private func getCurrPage() -> Int {
+        let pageWidth: CGFloat = self.svContainer.frame.size.width;
+        let page: Int = Int(floor((self.svContainer.contentOffset.x - pageWidth / 2) / pageWidth) + 1);
+    
+        return page;
+    }
+    
+    private func getCurrWebView() -> NvWKWebView {
+        return self.questionViewArr[self.getCurrPage()]!
     }
     
     @objc func keyboardWillChange(_ notification: Notification) {

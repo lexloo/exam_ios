@@ -9,7 +9,7 @@
     <script type="text/javascript" src="./libs/vue.min.js"></script>
 </head>
 <body>
-<div id ="app">
+<div id ="app" v-cloak>
     <div class="title">{{no}}.{{question.text}}</div>
     <div class="options">
         <div @click="select('A')">
