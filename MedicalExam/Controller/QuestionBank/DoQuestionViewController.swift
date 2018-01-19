@@ -33,14 +33,23 @@ class DoQuestionViewController: UIViewController {
 
     }
     @IBAction func newLikesClick(_ sender: UIButton) {
+        let userGuid = Global.userInfo.guid!
+        let currQuestionGuid = self.questionArr[self.getCurrPage()]
+        
+        let parameters = ["question_guid": currQuestionGuid, "user_guid": userGuid]
+        HttpUtil.postReturnString("question/likes/set", parameters: parameters) {
+            result in
+            //保存本地
+            MessageUtils.alert(viewController: self, message: "收藏成功")
+        }
     }
     @IBAction func CommentsOnMeClick(_ sender: UIButton) {
+        
     }
     
     @IBAction func commentOkClick(_ sender: UIButton) {
         if self.txtComments.text == "" {
-            //MessageUtils.alert(viewController: self, message: "请输入评论")
-            print(self.questionArr[self.getCurrPage()])
+            MessageUtils.alert(viewController: self, message: "请输入评论")
         } else {
             let userInfo = Global.userInfo
             let userGuid = userInfo.guid
