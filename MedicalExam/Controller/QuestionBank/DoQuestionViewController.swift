@@ -82,7 +82,7 @@ class DoQuestionViewController: UIViewController {
         }
     }
     
-    func keyboardWillChange(_ notification: Notification) {
+    @objc func keyboardWillChange(_ notification: Notification) {
         if let userInfo = notification.userInfo,
         let value = userInfo[UIKeyboardFrameEndUserInfoKey] as? NSValue,
         let duration = userInfo[UIKeyboardAnimationDurationUserInfoKey] as? Double,
