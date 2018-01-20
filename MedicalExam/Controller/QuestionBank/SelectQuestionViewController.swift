@@ -14,6 +14,7 @@ class SelectQuestionViewController: UIViewController {
     var subjectName: String?
     var chapterName: String?
     var chapterGuid: String?
+    var type: String?
     
     var webView: NvWKWebView?
     

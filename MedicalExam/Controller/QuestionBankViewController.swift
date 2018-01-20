@@ -8,11 +8,7 @@
 
 import UIKit
 
-class QuestionBankViewController: UIViewController {
-    private lazy var dataSource: [SectionModel]? = nil
-    private var lastActiveSection: Int?
-    
-    
+class QuestionBankViewController: UIQuestionBankBaseViewController {
     @IBOutlet weak var tableView: UITableView!
     
     private var vTools: UIView?
@@ -31,19 +27,29 @@ class QuestionBankViewController: UIViewController {
     }
     
     @IBAction func errorQuestionClick(_ sender: UIButton) {
+        let sb = UIStoryboard(name: "QuestionBank", bundle: nil)
+        let next = sb.instantiateViewController(withIdentifier: "TypeQuestionListVC") as! TypeQuestionViewController
+        next.type = "error"
+        self.present(next, animated: true, completion: nil)
     }
     
     @IBAction func likesClick(_ sender: UIButton) {
+        let sb = UIStoryboard(name: "QuestionBank", bundle: nil)
+        let next = sb.instantiateViewController(withIdentifier: "TypeQuestionListVC") as! TypeQuestionViewController
+        next.type = "liked"
+        self.present(next, animated: true, completion: nil)
     }
     
     @IBAction func notesClick(_ sender: UIButton) {
+        let sb = UIStoryboard(name: "QuestionBank", bundle: nil)
+        let next = sb.instantiateViewController(withIdentifier: "TypeQuestionListVC") as! TypeQuestionViewController
+        next.type = "notes"
+        self.present(next, animated: true, completion: nil)
     }
     func initViews() {
         initTableView()
     }
-}
-
-extension QuestionBankViewController: UITableViewDataSource {
+    
     func initTableView() {
         SectionModel.loadSections {
             (models) in self.dataSource = models
@@ -53,74 +59,5 @@ extension QuestionBankViewController: UITableViewDataSource {
         self.tableView.delegate = self
         
         self.view.addSubview(tableView)
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCell(withIdentifier: "id") as? TableViewCell
-        if cell == nil {
-            cell = TableViewCell.init(style: UITableViewCellStyle.value1, reuseIdentifier: "id")
-        }
-        
-        cell?.cellModel = dataSource![indexPath.section].cellModels[indexPath.row]
-        
-        return cell!
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let sectionModel = dataSource![section]
-        if sectionModel.isExpanded != false {
-            return sectionModel.cellModels.count
-        }
-        
-        return 0
-    }
-}
-
-extension QuestionBankViewController: UITableViewDelegate {
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return (dataSource?.count)!
-    }
-    
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        var headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "id") as? HeaderView
-        if headerView == nil {
-            headerView = HeaderView.init(reuseIdentifier: "id")
-        }
-        
-        headerView?.sectionModel = dataSource![section]
-        headerView?.expandCallBack = {
-            (isExpanded: Bool) -> Void in
-            if isExpanded {
-                if self.lastActiveSection != nil && self.lastActiveSection != section {
-                    self.dataSource![self.lastActiveSection!].isExpanded = false
-                    tableView.reloadSections([section, self.lastActiveSection!], with: UITableViewRowAnimation.fade)
-                } else {
-                    tableView.reloadSections([section], with: UITableViewRowAnimation.fade)
-                }
-                
-                self.lastActiveSection = section
-            } else {
-                tableView.reloadSections([section], with: UITableViewRowAnimation.fade)
-            }
-        }
-        
-        return headerView
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let section = self.dataSource![indexPath.section]
-        let cell = section.cellModels[indexPath.row]
-        
-        let subjectName = section.title
-        let chapterName = cell.title
-        let chapterGuid = cell.guid
-        
-        let loginStoryBoard = UIStoryboard(name: "UILogin", bundle: nil)
-        let selectQuestionVC = loginStoryBoard.instantiateViewController(withIdentifier: "SelectQuestionVC") as! SelectQuestionViewController
-        selectQuestionVC.subjectName = subjectName
-        selectQuestionVC.chapterName = chapterName
-        selectQuestionVC.chapterGuid = chapterGuid
-        
-        self.present(selectQuestionVC, animated: true, completion: nil)
     }
 }
