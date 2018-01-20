@@ -11,8 +11,9 @@ import Alamofire
 import SwiftyJSON
 
 class HttpUtil {
-    static let URL_PREFIX = "http://192.168.1.6/question-bank/v1/"
-
+    //static let URL_PREFIX = "http://192.168.1.6/question-bank/v1/"
+    static let URL_PREFIX = "http://121.43.96.235:7001/question-bank/v1/"
+    
     static func postReturnResult(_ serviceURL: String, parameters: Parameters?, viewController: UIViewController, completionHandler handler: @escaping (JSON) -> Void) {
         Alamofire.request(URL_PREFIX + serviceURL, method: HTTPMethod.post, parameters: parameters, encoding: URLEncoding.default).responseJSON {
             response in
