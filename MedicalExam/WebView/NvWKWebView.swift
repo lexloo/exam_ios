@@ -12,6 +12,7 @@ import SwiftyJSON
 
 class NvWKWebView: WKWebView {
     var uiViewController: UIViewController?
+    var callback: WKWebViewCallback?
     
     init(frame: CGRect, uiViewController: UIViewController){
         let config = WKWebViewConfiguration()
@@ -159,7 +160,13 @@ extension NvWKWebView: WKScriptMessageHandler {
             let funcName = json["funcName"].string!
             let data = JSON.init(parseJSON: json["data"].string!)
             
-            WebViewModuleFuncs.exec(nvWebView: self, module: module, funcName: funcName, data: data)
+            if module == "callback" {
+                if let callback = self.callback {
+                    callback.exec(funcName: funcName, data: data)
+                }
+            } else {
+                WebViewModuleFuncs.exec(nvWebView: self, module: module, funcName: funcName, data: data)
+            }
         }
     }
 }

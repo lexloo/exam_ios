@@ -56,6 +56,7 @@
                 var callback;
                 for (var i = 0; i < arguments.length; i++) {
                     var arg = arguments[i];
+
                     if (typeof arg == 'function') {
                         if (!callback) {
                             callback = arg;

@@ -16,6 +16,7 @@
 		410A6B8A201304710052CE12 /* TypeQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410A6B89201304710052CE12 /* TypeQuestionViewController.swift */; };
 		410A6B8D201304C20052CE12 /* UIQuestionBankBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410A6B8C201304C20052CE12 /* UIQuestionBankBaseViewController.swift */; };
 		410A6B8F20133A6A0052CE12 /* QuestionBankFilterUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410A6B8E20133A690052CE12 /* QuestionBankFilterUtils.swift */; };
+		410A6B9120136EEF0052CE12 /* WKWebViewCallback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410A6B9020136EEF0052CE12 /* WKWebViewCallback.swift */; };
 		4131DD55200F9CCC00A364DE /* CommentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4131DD54200F9CCA00A364DE /* CommentsViewController.swift */; };
 		4131DD57200F9CDC00A364DE /* DoQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4131DD56200F9CDC00A364DE /* DoQuestionViewController.swift */; };
 		413307321FEBED0800C2BD45 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413307311FEBED0800C2BD45 /* AppDelegate.swift */; };
@@ -66,6 +67,7 @@
 		410A6B89201304710052CE12 /* TypeQuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeQuestionViewController.swift; sourceTree = "<group>"; };
 		410A6B8C201304C20052CE12 /* UIQuestionBankBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIQuestionBankBaseViewController.swift; sourceTree = "<group>"; };
 		410A6B8E20133A690052CE12 /* QuestionBankFilterUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionBankFilterUtils.swift; sourceTree = "<group>"; };
+		410A6B9020136EEF0052CE12 /* WKWebViewCallback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKWebViewCallback.swift; sourceTree = "<group>"; };
 		4131DD54200F9CCA00A364DE /* CommentsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentsViewController.swift; sourceTree = "<group>"; };
 		4131DD56200F9CDC00A364DE /* DoQuestionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoQuestionViewController.swift; sourceTree = "<group>"; };
 		4133072E1FEBED0800C2BD45 /* MedicalExam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MedicalExam.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -197,6 +199,7 @@
 				41E4CE03200B064A000CA73F /* Funcs */,
 				414DCA9820024E2200CB2B74 /* NvWKWebView.swift */,
 				41E4CE01200B051D000CA73F /* WebViewModuleFuncs.swift */,
+				410A6B9020136EEF0052CE12 /* WKWebViewCallback.swift */,
 			);
 			path = WebView;
 			sourceTree = "<group>";
@@ -481,6 +484,7 @@
 				41D51C6C1FEF493700DF78ED /* MyViewController.swift in Sources */,
 				41EEA0E82001190C006DB553 /* Catagory.swift in Sources */,
 				41EEA0C720007ABE006DB553 /* UserInfo.swift in Sources */,
+				410A6B9120136EEF0052CE12 /* WKWebViewCallback.swift in Sources */,
 				414DCA8E2001F9D400CB2B74 /* Global.swift in Sources */,
 				41D51C7C1FEFDC4300DF78ED /* TableViewCell.swift in Sources */,
 				414DCA9920024E2200CB2B74 /* NvWKWebView.swift in Sources */,

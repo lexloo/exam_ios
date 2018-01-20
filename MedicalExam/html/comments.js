@@ -1,15 +1,23 @@
+var vue
 iTek.on("Ready", function() {
-	new Vue({
+	vue = new Vue({
 		el: '#app',
 		data: {
 			comments: []
 		},
 		methods: {
-			addComment: function(questionGuid, userGuid, userName, comment) {
-				alert("kkk");
-			}
+			addComment: function(item) {
+				iTek.callback.addComment(item)
+			},
+            insertComment: function(item) {
+                //native call
+                alert(JSON.stringify(item));
+                this.comments.push(item)
+                alert(this.comments)
+            }
 		},
 		created: function() {
+            iTek.__html5_reg('callback','addComment')
 			var questionGuid = iTek.local["questionGuid"];
 
 			var that = this;

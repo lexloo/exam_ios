@@ -11,7 +11,7 @@
 <body>
 <div id ="app" v-cloak>
 	<div class="comments-item" v-for="item in comments">
-		<button @click="addComment()" class="reply">回复</button>
+		<button @click="addComment(item)" class="reply">回复</button>
 		<div v-if="item.replierGuid">
 			<div>{{item.replierName}}</div>
 			<div class="source">
