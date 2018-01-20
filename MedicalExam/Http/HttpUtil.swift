@@ -13,14 +13,17 @@ import SwiftyJSON
 class HttpUtil {
     static let URL_PREFIX = "http://192.168.1.6/question-bank/v1/"
 
-    static func postReturnResult(_ serviceURL: String, parameters: Parameters?, completionHandler handler: @escaping (JSON) -> Void) {
+    static func postReturnResult(_ serviceURL: String, parameters: Parameters?, viewController: UIViewController, completionHandler handler: @escaping (JSON) -> Void) {
         Alamofire.request(URL_PREFIX + serviceURL, method: HTTPMethod.post, parameters: parameters, encoding: URLEncoding.default).responseJSON {
             response in
             switch response.result {
             case .success(let value):
                 let json = JSON(value)
-
-                handler(json["message"])
+                if json["code"].int == 1 {
+                    MessageUtils.alert(viewController: viewController, message: json["message"].string!)
+                } else {
+                   handler(json["message"])
+                }
             case .failure(let error):
                 print(error)
             }
