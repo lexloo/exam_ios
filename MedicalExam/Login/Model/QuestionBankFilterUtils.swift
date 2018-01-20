@@ -13,7 +13,7 @@ class QuestionBankFilterUtils {
             filter = "notes != nil"
         } else if type == "liked" {
             filter = "likes != nil"
-        } else if type == "doinfo" {
+        } else if type == "error" {
             filter = "doinfo != nil"
         }
         

@@ -19,6 +19,7 @@ class ChapterQuestions: Object {
     
     @objc dynamic var notes: Notes?
     @objc dynamic var likes: Likes?
+    @objc dynamic var doinfo: DoInfo?
 
     override static func primaryKey() -> String {
         return "guid"
