@@ -44,17 +44,20 @@ class Qb {
             doInfoMap[item.questionGuid!] = item.result
         }
         
-        if type == nil {
-            let qs = RealmUtil.selectByFilterString(ChapterQuestions.self, filter: "chapterGuid =='\(chapterGuid)'")
-            
-            var arr = [[String: Any?]]();
-            for i in 0 ..< qs.count {
-                arr.append(["no": qs[i].index, "guid": qs[i].guid, "status": doInfoMap[qs[i].guid!]])
-            }
-            
-            let result = JSON(arr)
-            nvWebView.sendCallback(callbackId: callbackId!, result: result)
+        var filter = QuestionBankFilterUtils.getTypeFilter(type!)
+        if filter != "" {
+            filter = " and \(filter)"
         }
+        
+        let qs = RealmUtil.selectByFilterString(ChapterQuestions.self, filter: "chapterGuid =='\(chapterGuid)' \(filter)")
+        print("chapterGuid =='\(chapterGuid)' \(filter)")
+        var arr = [[String: Any?]]();
+        for i in 0 ..< qs.count {
+            arr.append(["no": qs[i].index, "guid": qs[i].guid, "status": doInfoMap[qs[i].guid!]])
+        }
+        
+        let result = JSON(arr)
+        nvWebView.sendCallback(callbackId: callbackId!, result: result)
     }
     
     static func startDoQuestion(nvWebView: NvWKWebView, params: JSON, callbackId: String?) {

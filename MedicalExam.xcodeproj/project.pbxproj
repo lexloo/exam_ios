@@ -15,6 +15,7 @@
 		410A6B862012F00F0052CE12 /* Likes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410A6B852012F00F0052CE12 /* Likes.swift */; };
 		410A6B8A201304710052CE12 /* TypeQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410A6B89201304710052CE12 /* TypeQuestionViewController.swift */; };
 		410A6B8D201304C20052CE12 /* UIQuestionBankBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410A6B8C201304C20052CE12 /* UIQuestionBankBaseViewController.swift */; };
+		410A6B8F20133A6A0052CE12 /* QuestionBankFilterUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410A6B8E20133A690052CE12 /* QuestionBankFilterUtils.swift */; };
 		4131DD55200F9CCC00A364DE /* CommentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4131DD54200F9CCA00A364DE /* CommentsViewController.swift */; };
 		4131DD57200F9CDC00A364DE /* DoQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4131DD56200F9CDC00A364DE /* DoQuestionViewController.swift */; };
 		413307321FEBED0800C2BD45 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413307311FEBED0800C2BD45 /* AppDelegate.swift */; };
@@ -64,6 +65,7 @@
 		410A6B852012F00F0052CE12 /* Likes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Likes.swift; sourceTree = "<group>"; };
 		410A6B89201304710052CE12 /* TypeQuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeQuestionViewController.swift; sourceTree = "<group>"; };
 		410A6B8C201304C20052CE12 /* UIQuestionBankBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIQuestionBankBaseViewController.swift; sourceTree = "<group>"; };
+		410A6B8E20133A690052CE12 /* QuestionBankFilterUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionBankFilterUtils.swift; sourceTree = "<group>"; };
 		4131DD54200F9CCA00A364DE /* CommentsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentsViewController.swift; sourceTree = "<group>"; };
 		4131DD56200F9CDC00A364DE /* DoQuestionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoQuestionViewController.swift; sourceTree = "<group>"; };
 		4133072E1FEBED0800C2BD45 /* MedicalExam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MedicalExam.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -242,6 +244,7 @@
 				41E4CE08200B8057000CA73F /* ChapterQuestionDo.swift */,
 				410A6B832012E5670052CE12 /* Notes.swift */,
 				410A6B852012F00F0052CE12 /* Likes.swift */,
+				410A6B8E20133A690052CE12 /* QuestionBankFilterUtils.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -471,6 +474,7 @@
 				41B825E11FFA25FF004DFDA3 /* RegisterController.swift in Sources */,
 				41E4CE02200B051D000CA73F /* WebViewModuleFuncs.swift in Sources */,
 				4131DD57200F9CDC00A364DE /* DoQuestionViewController.swift in Sources */,
+				410A6B8F20133A6A0052CE12 /* QuestionBankFilterUtils.swift in Sources */,
 				414DCA962002136800CB2B74 /* ChapterQuestions.swift in Sources */,
 				41EEA0EA2001D2F0006DB553 /* BottomPopupView.swift in Sources */,
 				41EEA0CD2000B005006DB553 /* HttpUtil.swift in Sources */,
