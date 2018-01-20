@@ -28,7 +28,6 @@ iTek.on("Ready", function(){
             this.type = iTek.local['type'];
         
             var that = this;
-            alert(this.type)
             iTek.qb.getChapterQuestion({chapterGuid: this.chapterGuid, type: this.type}, function(result){
                 that.questions = result;
             });

@@ -102,7 +102,12 @@ class DoQuestionViewController: UIViewController {
         let width = self.view.bounds.width
         let height = self.view.bounds.height
         
-        let qs = RealmUtil.selectByFilterString(ChapterQuestions.self, filter: "chapterGuid =='\(self.chapterGuid!)'")
+        var filter = QuestionBankFilterUtils.getTypeFilter(type!)
+        if filter != "" {
+            filter = " and \(filter)"
+        }
+        
+        let qs = RealmUtil.selectByFilterString(ChapterQuestions.self, filter: "chapterGuid =='\(self.chapterGuid!)' \(filter)"  )
         
         svContainer.contentSize = CGSize(width: width * CGFloat(qs.count), height: 0)
         
