@@ -30,8 +30,13 @@ class DoQuestionViewController: UIViewController {
         txtComments.becomeFirstResponder()
     }
     @IBAction func newNoteClick(_ sender: UIButton) {
-
+        let sb = UIStoryboard(name: "QuestionBank", bundle: nil)
+        let notesVC = sb.instantiateViewController(withIdentifier: "NotesVC") as! NotesViewController
+        
+        notesVC.questionGuid = self.questionArr[self.getCurrPage()]
+        self.present(notesVC, animated: true, completion: nil)
     }
+    
     @IBAction func newLikesClick(_ sender: UIButton) {
         let userGuid = Global.userInfo.guid!
         let currQuestionGuid = self.questionArr[self.getCurrPage()]

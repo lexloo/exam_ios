@@ -16,6 +16,8 @@ class ChapterQuestions: Object {
     @objc dynamic var subjectGuid: String?
     @objc dynamic var chapterGuid: String?
     @objc dynamic var data: String?
+    
+    @objc dynamic var notes: Notes?
 
     override static func primaryKey() -> String {
         return "guid"

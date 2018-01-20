@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		1537F7CA05E987BEA36818CF /* Pods_MedicalExam.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E872B2C99B3742F7399C88F /* Pods_MedicalExam.framework */; };
 		410A6B7B2012277F0052CE12 /* MessageUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410A6B7A2012277F0052CE12 /* MessageUtils.swift */; };
+		410A6B7E2012DBF00052CE12 /* QuestionBank.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 410A6B7D2012DBF00052CE12 /* QuestionBank.storyboard */; };
+		410A6B822012DF6D0052CE12 /* NotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410A6B812012DF6D0052CE12 /* NotesViewController.swift */; };
+		410A6B842012E5670052CE12 /* Notes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410A6B832012E5670052CE12 /* Notes.swift */; };
 		4131DD55200F9CCC00A364DE /* CommentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4131DD54200F9CCA00A364DE /* CommentsViewController.swift */; };
 		4131DD57200F9CDC00A364DE /* DoQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4131DD56200F9CDC00A364DE /* DoQuestionViewController.swift */; };
 		413307321FEBED0800C2BD45 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413307311FEBED0800C2BD45 /* AppDelegate.swift */; };
@@ -52,6 +55,9 @@
 		0CE52AF65BFC93A4E86B2E94 /* Pods-MedicalExam.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MedicalExam.release.xcconfig"; path = "Pods/Target Support Files/Pods-MedicalExam/Pods-MedicalExam.release.xcconfig"; sourceTree = "<group>"; };
 		0E872B2C99B3742F7399C88F /* Pods_MedicalExam.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MedicalExam.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		410A6B7A2012277F0052CE12 /* MessageUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageUtils.swift; sourceTree = "<group>"; };
+		410A6B7D2012DBF00052CE12 /* QuestionBank.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = QuestionBank.storyboard; sourceTree = "<group>"; };
+		410A6B812012DF6D0052CE12 /* NotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesViewController.swift; sourceTree = "<group>"; };
+		410A6B832012E5670052CE12 /* Notes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notes.swift; sourceTree = "<group>"; };
 		4131DD54200F9CCA00A364DE /* CommentsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentsViewController.swift; sourceTree = "<group>"; };
 		4131DD56200F9CDC00A364DE /* DoQuestionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoQuestionViewController.swift; sourceTree = "<group>"; };
 		4133072E1FEBED0800C2BD45 /* MedicalExam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MedicalExam.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -122,6 +128,14 @@
 			path = Util;
 			sourceTree = "<group>";
 		};
+		410A6B7C2012DBA80052CE12 /* design */ = {
+			isa = PBXGroup;
+			children = (
+				410A6B7D2012DBF00052CE12 /* QuestionBank.storyboard */,
+			);
+			path = design;
+			sourceTree = "<group>";
+		};
 		413307251FEBED0800C2BD45 = {
 			isa = PBXGroup;
 			children = (
@@ -177,6 +191,7 @@
 				4131DD56200F9CDC00A364DE /* DoQuestionViewController.swift */,
 				4131DD54200F9CCA00A364DE /* CommentsViewController.swift */,
 				414DCAA4200252FF00CB2B74 /* SelectQuestionViewController.swift */,
+				410A6B812012DF6D0052CE12 /* NotesViewController.swift */,
 			);
 			path = QuestionBank;
 			sourceTree = "<group>";
@@ -210,6 +225,7 @@
 				414DCA932002134D00CB2B74 /* Chapter.swift */,
 				414DCA952002136800CB2B74 /* ChapterQuestions.swift */,
 				41E4CE08200B8057000CA73F /* ChapterQuestionDo.swift */,
+				410A6B832012E5670052CE12 /* Notes.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -249,6 +265,7 @@
 		41D51C781FEFD3DB00DF78ED /* View */ = {
 			isa = PBXGroup;
 			children = (
+				410A6B7C2012DBA80052CE12 /* design */,
 				41D51C791FEFD3FE00DF78ED /* HeaderView.swift */,
 				41D51C7B1FEFDC4300DF78ED /* TableViewCell.swift */,
 			);
@@ -364,6 +381,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				41EEA0E02000E5BA006DB553 /* NaviTopView.xib in Resources */,
+				410A6B7E2012DBF00052CE12 /* QuestionBank.storyboard in Resources */,
 				41E4CE00200A6111000CA73F /* html in Resources */,
 				41EEA0EC2001D32D006DB553 /* BottomPopupView.xib in Resources */,
 				4133073E1FEBED0800C2BD45 /* LaunchScreen.storyboard in Resources */,
@@ -429,6 +447,7 @@
 			files = (
 				414DCAA5200252FF00CB2B74 /* SelectQuestionViewController.swift in Sources */,
 				41D51C681FEF45F300DF78ED /* MainViewController.swift in Sources */,
+				410A6B822012DF6D0052CE12 /* NotesViewController.swift in Sources */,
 				413307321FEBED0800C2BD45 /* AppDelegate.swift in Sources */,
 				410A6B7B2012277F0052CE12 /* MessageUtils.swift in Sources */,
 				41B825E11FFA25FF004DFDA3 /* RegisterController.swift in Sources */,
@@ -455,6 +474,7 @@
 				4131DD55200F9CCC00A364DE /* CommentsViewController.swift in Sources */,
 				41EEA0E62001163F006DB553 /* Kind.swift in Sources */,
 				414DCA902002128300CB2B74 /* BaseItem.swift in Sources */,
+				410A6B842012E5670052CE12 /* Notes.swift in Sources */,
 				41D51C751FEFC8CD00DF78ED /* SectionModel.swift in Sources */,
 				41EEA0E420010E5F006DB553 /* SelectCategoryController.swift in Sources */,
 				41EEA0E22000EA4D006DB553 /* NaviTopView.swift in Sources */,
