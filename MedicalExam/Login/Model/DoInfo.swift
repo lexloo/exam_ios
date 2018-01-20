@@ -8,19 +8,11 @@
 import RealmSwift
 import SwiftyJSON
 
-class ChapterQuestionDo: Object {
-    @objc dynamic var questionGuid: String?
-    @objc dynamic var chapterGuid: String?
+class DoInfo: Object {
     @objc dynamic var answer: String?
     @objc dynamic var result: String?
     
-    override static func primaryKey() -> String {
-        return "questionGuid"
-    }
-    
     func mapping(_ json: JSON) {
-        self.questionGuid = json["questionGuid"].string
-        self.chapterGuid = json["chapterGuid"].string
         self.answer = json["answer"].string
         self.result = json["result"].string
     }
