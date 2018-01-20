@@ -25,6 +25,7 @@ class NotesViewController: UIViewController {
         var notes = chapterQuestions.notes
         if notes == nil {
             notes = Notes()
+            notes?.notes = txtNotes.text
             RealmUtil.updateField {
                 chapterQuestions.notes = notes;
             }

@@ -44,7 +44,8 @@ class DoQuestionViewController: UIViewController {
         let parameters = ["question_guid": currQuestionGuid, "user_guid": userGuid]
         HttpUtil.postReturnString("question/likes/set", parameters: parameters) {
             result in
-            //保存本地
+            self.saveToLocal(currQuestionGuid)
+
             MessageUtils.alert(viewController: self, message: "收藏成功")
         }
     }
@@ -127,6 +128,22 @@ class DoQuestionViewController: UIViewController {
     
     private func getCurrWebView() -> NvWKWebView {
         return self.questionViewArr[self.getCurrPage()]!
+    }
+    
+    private func saveToLocal(_ questionGuid: String) {
+        let chapterQuestions = RealmUtil.select(ChapterQuestions.self, forPrimaryKey: questionGuid)
+        
+        var likes = chapterQuestions.likes
+        if likes == nil {
+            likes = Likes()
+            RealmUtil.updateField {
+                chapterQuestions.likes = likes;
+            }
+        } else {
+            //RealmUtil.updateField {
+            //    chapterQuestions.likes = txtNotes.text
+            //}
+        }
     }
     
     @objc func keyboardWillChange(_ notification: Notification) {

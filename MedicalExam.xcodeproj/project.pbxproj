@@ -12,6 +12,7 @@
 		410A6B7E2012DBF00052CE12 /* QuestionBank.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 410A6B7D2012DBF00052CE12 /* QuestionBank.storyboard */; };
 		410A6B822012DF6D0052CE12 /* NotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410A6B812012DF6D0052CE12 /* NotesViewController.swift */; };
 		410A6B842012E5670052CE12 /* Notes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410A6B832012E5670052CE12 /* Notes.swift */; };
+		410A6B862012F00F0052CE12 /* Likes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410A6B852012F00F0052CE12 /* Likes.swift */; };
 		4131DD55200F9CCC00A364DE /* CommentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4131DD54200F9CCA00A364DE /* CommentsViewController.swift */; };
 		4131DD57200F9CDC00A364DE /* DoQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4131DD56200F9CDC00A364DE /* DoQuestionViewController.swift */; };
 		413307321FEBED0800C2BD45 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413307311FEBED0800C2BD45 /* AppDelegate.swift */; };
@@ -58,6 +59,7 @@
 		410A6B7D2012DBF00052CE12 /* QuestionBank.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = QuestionBank.storyboard; sourceTree = "<group>"; };
 		410A6B812012DF6D0052CE12 /* NotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesViewController.swift; sourceTree = "<group>"; };
 		410A6B832012E5670052CE12 /* Notes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notes.swift; sourceTree = "<group>"; };
+		410A6B852012F00F0052CE12 /* Likes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Likes.swift; sourceTree = "<group>"; };
 		4131DD54200F9CCA00A364DE /* CommentsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentsViewController.swift; sourceTree = "<group>"; };
 		4131DD56200F9CDC00A364DE /* DoQuestionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoQuestionViewController.swift; sourceTree = "<group>"; };
 		4133072E1FEBED0800C2BD45 /* MedicalExam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MedicalExam.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -226,6 +228,7 @@
 				414DCA952002136800CB2B74 /* ChapterQuestions.swift */,
 				41E4CE08200B8057000CA73F /* ChapterQuestionDo.swift */,
 				410A6B832012E5670052CE12 /* Notes.swift */,
+				410A6B852012F00F0052CE12 /* Likes.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -479,6 +482,7 @@
 				41EEA0E420010E5F006DB553 /* SelectCategoryController.swift in Sources */,
 				41EEA0E22000EA4D006DB553 /* NaviTopView.swift in Sources */,
 				41D51C7A1FEFD3FE00DF78ED /* HeaderView.swift in Sources */,
+				410A6B862012F00F0052CE12 /* Likes.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
