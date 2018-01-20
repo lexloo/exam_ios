@@ -11,13 +11,11 @@ import UIKit
 class QuestionBankViewController: UIViewController {
     private lazy var dataSource: [SectionModel]? = nil
     private var lastActiveSection: Int?
-    private lazy var tableView: UITableView = {
-        let tableView = UITableView(frame: self.view.bounds)
-        tableView.dataSource = self
-        tableView.delegate = self
-        
-        return tableView
-    }()
+    
+    
+    @IBOutlet weak var tableView: UITableView!
+    
+    private var vTools: UIView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +30,14 @@ class QuestionBankViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
+    @IBAction func errorQuestionClick(_ sender: UIButton) {
+    }
+    
+    @IBAction func likesClick(_ sender: UIButton) {
+    }
+    
+    @IBAction func notesClick(_ sender: UIButton) {
+    }
     func initViews() {
         initTableView()
     }
@@ -42,6 +48,9 @@ extension QuestionBankViewController: UITableViewDataSource {
         SectionModel.loadSections {
             (models) in self.dataSource = models
         }
+        
+        self.tableView.dataSource = self
+        self.tableView.delegate = self
         
         self.view.addSubview(tableView)
     }
