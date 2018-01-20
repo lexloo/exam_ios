@@ -11,9 +11,7 @@ iTek.on("Ready", function() {
 			},
             insertComment: function(item) {
                 //native call
-                alert(JSON.stringify(item));
-                this.comments.push(item)
-                alert(this.comments)
+                this.comments.unshift(item)
             }
 		},
 		created: function() {
