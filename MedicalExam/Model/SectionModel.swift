@@ -43,4 +43,20 @@ class SectionModel {
         
         finish(array)
     }
+    
+    class func loadSectionsWithType(_ type: String, finish: ([SectionModel]) -> ()) {
+        var array = [SectionModel]()
+        let userInfo = Global.userInfo
+        let subjects = RealmUtil.selectByFilterString(Subject.self, filter: "categoryGuid = '\(userInfo.examCategory!)'");
+        for subject in subjects {
+            let s = SectionModel()
+            s.title = subject.name
+            s.subjectGuid = subject.guid
+            s.isExpanded = false
+            
+            array.append(s)
+        }
+        
+        finish(array)
+    }
 }

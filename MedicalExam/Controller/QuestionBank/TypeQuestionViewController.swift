@@ -26,6 +26,8 @@ class TypeQuestionViewController: UIQuestionBankBaseViewController {
         default:
             txtTitle.text = "ERROR"
         }
+        
+        initTableView()
     }
     
     override func didReceiveMemoryWarning() {
@@ -34,5 +36,14 @@ class TypeQuestionViewController: UIQuestionBankBaseViewController {
     }
     @IBAction func returnClick(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    private func initTableView() {
+        SectionModel.loadSectionsWithType(self.type!) {
+            (models) in self.dataSource = models
+        }
+            
+        self.tableView.dataSource = self
+        self.tableView.delegate = self
     }
 }
