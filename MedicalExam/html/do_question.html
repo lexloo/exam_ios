@@ -9,8 +9,8 @@
     <script type="text/javascript" src="./libs/vue.min.js"></script>
 </head>
 <body>
-<div id ="app">
-    <div class="title">{{no}}.{{question.text}}</div>
+<div id ="app" v-cloak>
+    <div class="title">{{question.index}}.{{question.text}}</div>
     <div class="options">
         <div @click="select('A')">
             <span class="option" :class="{'selected': check('A'), 'error': checkError('A')}">A</span>{{question.opt_A}}

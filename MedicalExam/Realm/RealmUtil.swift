@@ -65,6 +65,10 @@ class RealmUtil {
         }
     }
     
+    static func updateField(_ block: (() throws -> Void)) -> Void {
+        try! sharedInstance.write(block)
+    }
+    
     static func addListDataAsync<T: Object>(_ objects: [T]) {
         let queue = DispatchQueue.global(qos: DispatchQoS.QoSClass.default)
         queue.async {

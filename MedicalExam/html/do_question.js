@@ -2,8 +2,10 @@ Vue.filter('fixed2', function(value) {
 	return value.toFixed(2);
 });
 
+//原生功能调用用到
+var vue;
 iTek.on("Ready", function() {
-	new Vue({
+	vue = new Vue({
 		el: '#app',
 		data: {
 			question: null,
@@ -70,7 +72,7 @@ iTek.on("Ready", function() {
 			},
 
 			showComments: function() {
-				iTek.qp.showComments({
+				iTek.qb.showComments({
 					questionGuid: this.question.guid
 				});
 			},

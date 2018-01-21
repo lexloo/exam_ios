@@ -20,7 +20,9 @@ class MainViewController: UITabBarController {
     }
     
     func loadTabBarChildController() {
-        let questionBankViewController = QuestionBankViewController()
+        let sb = UIStoryboard(name: "QuestionBank", bundle: nil)
+        let questionBankViewController = sb.instantiateViewController(withIdentifier: "QuestionBankVC") as! QuestionBankViewController
+        questionBankViewController.type = "all"
         let questionBankViewItem: UITabBarItem = UITabBarItem(title: "题库", image: UIImage(named: "test"), selectedImage: UIImage(named:"test"))
         questionBankViewController.tabBarItem = questionBankViewItem
         

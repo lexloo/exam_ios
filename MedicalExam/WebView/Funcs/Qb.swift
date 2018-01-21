@@ -28,6 +28,8 @@ class Qb {
             getDoQuestionInfo(nvWebView: nvWebView, params: params, callbackId: callbackId)
         } else if (funcName == "showComments") {
             showComments(nvWebView: nvWebView, params: params, callbackId: callbackId)
+        } else if (funcName == "getComments") {
+            getComments(nvWebView: nvWebView, params: params, callbackId: callbackId)
         }
     }
     
@@ -35,24 +37,24 @@ class Qb {
         let type = params["type"].string
         let chapterGuid = params["chapterGuid"].string!
         
-        
-        let doInfo = RealmUtil.selectByFilterString(ChapterQuestionDo.self, filter: "chapterGuid == '\(chapterGuid)'")
-        var doInfoMap = [String: String]()
-        for item in doInfo {
-            doInfoMap[item.questionGuid!] = item.result
+        var filter = QuestionBankFilterUtils.getTypeFilter(type!)
+        if filter != "" {
+            filter = " and \(filter)"
         }
         
-        if type == nil {
-            let qs = RealmUtil.selectByFilterString(ChapterQuestions.self, filter: "chapterGuid =='\(chapterGuid)'")
-            
-            var arr = [[String: Any?]]();
-            for i in 0 ..< qs.count {
-                arr.append(["no": qs[i].index, "guid": qs[i].guid, "status": doInfoMap[qs[i].guid!]])
+        let qs = RealmUtil.selectByFilterString(ChapterQuestions.self, filter: "chapterGuid =='\(chapterGuid)' \(filter)")
+
+        var arr = [[String: Any?]]();
+        for i in 0 ..< qs.count {
+            var status: Int = 0
+            if qs[i].doinfo?.result != nil {
+                status = Int((qs[i].doinfo?.result)!)!
             }
-            
-            let result = JSON(arr)
-            nvWebView.sendCallback(callbackId: callbackId!, result: result)
+            arr.append(["no": qs[i].index, "guid": qs[i].guid, "status": status])
         }
+        
+        let result = JSON(arr)
+        nvWebView.sendCallback(callbackId: callbackId!, result: result)
     }
     
     static func startDoQuestion(nvWebView: NvWKWebView, params: JSON, callbackId: String?) {
@@ -73,19 +75,15 @@ class Qb {
         let questionGuid = params["questionGuid"].string!
         
         let question = RealmUtil.select(ChapterQuestions.self, forPrimaryKey: questionGuid)
-        let questionDo = RealmUtil.selectByFilterString(ChapterQuestionDo.self, filter: "questionGuid == '\(questionGuid)'").first
         
         var result = JSON.init(parseJSON: question.data!);
-        
-        if questionDo != nil {
-            if questionDo?.result != nil {
-                result["status"].int = Int((questionDo?.result)!)
-                result["select"].string = questionDo?.answer
-            } else {
-                result["status"].int = 0
-            }
-        } else {
+
+        result["index"].string = question.index;
+        if question.doinfo == nil {
             result["status"].int = 0
+        } else {
+            result["status"].int = Int((question.doinfo?.result)!)
+            result["select"].string = question.doinfo?.answer
         }
         
         print(result);
@@ -103,20 +101,32 @@ class Qb {
     }
     
     static func saveDoQuestion(nvWebView: NvWKWebView, params: JSON, callbackId: String?) {
-        let value = ChapterQuestionDo()
-        value.questionGuid = params["questionGuid"].string
-        value.chapterGuid = params["chapterGuid"].string
-        value.answer = params["answer"].string
-        value.result = params["result"].string
+        let questionGuid = params["questionGuid"].string!
+        let question = RealmUtil.select(ChapterQuestions.self, forPrimaryKey: questionGuid)
         
-        RealmUtil.addCanUpdate(value)
+        var doinfo = question.doinfo
+        if doinfo == nil {
+            doinfo = DoInfo()
+            
+            doinfo?.answer = params["answer"].string
+            doinfo?.result = params["result"].string
+            
+            RealmUtil.updateField {
+                question.doinfo = doinfo;
+            }
+        } else {
+            RealmUtil.updateField {
+                question.doinfo?.answer = params["answer"].string
+                question.doinfo?.result = params["result"].string
+            }
+        }
         
-        let parameters = [
+        let parameters: [String: String] = [
             "user_guid": Global.userInfo.guid!,
-            "question_guid": value.questionGuid!,
-            "chapter_guid": value.chapterGuid!,
-            "answer": value.answer!,
-            "result": value.result!]
+            "question_guid": "xxxxx",
+            "chapter_guid": "yyyyy",
+            "answer": (doinfo?.answer)!,
+            "result": (doinfo?.result)!]
         HttpUtil.postReturnString("question/do_info/set", parameters: parameters) {
             result in
             nvWebView.sendCallback(callbackId: callbackId!, result: JSON())
@@ -140,5 +150,13 @@ class Qb {
         
         commentsVC.questionGuid = params["questionGuid"].string
         nvWebView.uiViewController?.present(commentsVC, animated: true, completion: nil)
+    }
+    
+    static func getComments(nvWebView: NvWKWebView, params: JSON, callbackId: String?) {
+        let parameters = ["question_guid": params["questionGuid"].string!, "page": "1"]
+        HttpUtil.postReturnData("question/list_comment", parameters: parameters) {
+            result in
+            nvWebView.sendCallback(callbackId: callbackId!, result: result)
+        }
     }
 }

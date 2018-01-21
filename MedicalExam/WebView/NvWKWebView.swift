@@ -12,6 +12,7 @@ import SwiftyJSON
 
 class NvWKWebView: WKWebView {
     var uiViewController: UIViewController?
+    var callback: WKWebViewCallback?
     
     init(frame: CGRect, uiViewController: UIViewController){
         let config = WKWebViewConfiguration()
@@ -38,7 +39,7 @@ class NvWKWebView: WKWebView {
 extension NvWKWebView {
     func initClients() {
         loadSdk()
-        registerClientFuncs(module: "qb", funcs: ["getChapterQuestion,startDoQuestion,getDoQuestion,getCommentCount,saveDoQuestion,getDoQuestionInfo,showComments"])
+        registerClientFuncs(module: "qb", funcs: ["getChapterQuestion,startDoQuestion,getDoQuestion,getCommentCount,saveDoQuestion,getDoQuestionInfo,showComments,getComments"])
         addKVO()
     }
     
@@ -131,6 +132,15 @@ extension NvWKWebView {
         }
     }
     
+    func evaluateJavaScript(_ script: String) {
+        self.evaluateJavaScript(script) {
+            (_, err) in
+            if err != nil {
+                print("\(String(describing: err))")
+            }
+        }
+    }
+    
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         if keyPath == "loading" {
         }
@@ -150,7 +160,13 @@ extension NvWKWebView: WKScriptMessageHandler {
             let funcName = json["funcName"].string!
             let data = JSON.init(parseJSON: json["data"].string!)
             
-            WebViewModuleFuncs.exec(nvWebView: self, module: module, funcName: funcName, data: data)
+            if module == "callback" {
+                if let callback = self.callback {
+                    callback.exec(funcName: funcName, data: data)
+                }
+            } else {
+                WebViewModuleFuncs.exec(nvWebView: self, module: module, funcName: funcName, data: data)
+            }
         }
     }
 }
