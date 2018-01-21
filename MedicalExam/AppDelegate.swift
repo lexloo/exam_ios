@@ -15,12 +15,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-        UIApplication.shared.statusBarStyle = .lightContent
+//        UIApplication.shared.statusBarStyle = .lightContent
+//        
+//        let navBar = UINavigationBar.appearance()
+//        navBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
+//        navBar.barTintColor = UIColor(red: 0x2b/255.0, green: 0x85/255.0, blue: 0xe4/255.0, alpha: 1.0)
         
-        let navBar = UINavigationBar.appearance()
-        navBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
-        navBar.barTintColor = UIColor(red: 0x2b/255.0, green: 0x85/255.0, blue: 0xe4/255.0, alpha: 1.0)
-        
+//        Thread.sleep(forTimeInterval: 10)
         return true
     }
 

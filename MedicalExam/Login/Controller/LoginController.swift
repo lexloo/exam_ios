@@ -16,6 +16,8 @@ class LoginController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+//        Thread.sleep(forTimeInterval: 10)
     }
     
     override func didReceiveMemoryWarning() {
@@ -55,5 +57,9 @@ class LoginController: UIViewController {
     @IBAction func backTap(_ sender: Any) {
         txtMobile.resignFirstResponder()
         txtPasswd.resignFirstResponder()
+    }
+    
+    override var prefersStatusBarHidden: Bool {
+        return true
     }
 }

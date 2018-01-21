@@ -53,4 +53,8 @@ class MainViewController: UITabBarController {
         self.setViewControllers(tabBarViewControllers, animated: true)
         self.selectedIndex = 0
     }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return UIStatusBarStyle.lightContent
+    }
 }

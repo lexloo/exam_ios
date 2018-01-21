@@ -40,13 +40,6 @@
             </objects>
             <point key="canvasLocation" x="52" y="374.66266866566718"/>
         </scene>
-        <!--Storyboard Reference-->
-        <scene sceneID="J3V-Pb-x4b">
-            <objects>
-                <viewControllerPlaceholder id="caa-9d-BGe" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="cEl-hh-LNT" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-        </scene>
     </scenes>
     <resources>
         <image name="ykzj" width="142" height="36"/>
