@@ -13,7 +13,7 @@ class VideoViewController: UIViewController {
         super.viewDidLoad()
         
         self.title = "直播"
-        self.view.backgroundColor = BaseColor.backgroundColor
+        self.view.backgroundColor = BaseColor.statusBarColor
     }
     
     override func didReceiveMemoryWarning() {

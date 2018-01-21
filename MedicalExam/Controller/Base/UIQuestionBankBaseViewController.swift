@@ -34,6 +34,10 @@ extension UIQuestionBankBaseViewController: UITableViewDataSource {
         
         return 0
     }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 48
+    }
 }
 
 extension UIQuestionBankBaseViewController: UITableViewDelegate {
