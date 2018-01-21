@@ -25,23 +25,23 @@ class MainViewController: UITabBarController {
         let sb = UIStoryboard(name: "QuestionBank", bundle: nil)
         let questionBankViewController = sb.instantiateViewController(withIdentifier: "QuestionBankVC") as! QuestionBankViewController
         questionBankViewController.type = "all"
-        let questionBankViewItem: UITabBarItem = UITabBarItem(title: "题库", image: UIImage(named: "test"), selectedImage: UIImage(named:"test"))
+        let questionBankViewItem: UITabBarItem = UITabBarItem(title: "题库", image: UIImage(named: "question_bank"), selectedImage: UIImage(named:"question_bank"))
         questionBankViewController.tabBarItem = questionBankViewItem
         
         let shareViewController = VideoViewController()
-        let shareViewItem: UITabBarItem = UITabBarItem(title:"分享", image: UIImage(named: "test"), selectedImage: UIImage(named: "test"))
+        let shareViewItem: UITabBarItem = UITabBarItem(title:"分享", image: UIImage(named: "share"), selectedImage: UIImage(named: "share"))
         shareViewController.tabBarItem = shareViewItem
         
         let videoViewController = VideoViewController()
-        let videoViewItem: UITabBarItem = UITabBarItem(title:"直播", image: UIImage(named: "test"), selectedImage: UIImage(named: "test"))
+        let videoViewItem: UITabBarItem = UITabBarItem(title:"直播", image: UIImage(named: "vedio"), selectedImage: UIImage(named: "vedio"))
         videoViewController.tabBarItem = videoViewItem
         
         let bigVViewController = VideoViewController()
-        let bigVViewItem: UITabBarItem = UITabBarItem(title:"大V", image: UIImage(named: "test"), selectedImage: UIImage(named: "test"))
+        let bigVViewItem: UITabBarItem = UITabBarItem(title:"大V", image: UIImage(named: "big_v"), selectedImage: UIImage(named: "big_v"))
         bigVViewController.tabBarItem = bigVViewItem
         
         let myViewController = MyViewController()
-        let myViewItem: UITabBarItem = UITabBarItem(title: "我的", image: UIImage(named: "test"), selectedImage: UIImage(named: "test"))
+        let myViewItem: UITabBarItem = UITabBarItem(title: "我的", image: UIImage(named: "my_options"), selectedImage: UIImage(named: "my_options"))
         myViewController.tabBarItem = myViewItem
         
         let tabBarViewControllers = [
