@@ -28,7 +28,7 @@ class MainViewController: UITabBarController {
         let questionBankViewItem: UITabBarItem = UITabBarItem(title: "题库", image: UIImage(named: "question_bank"), selectedImage: UIImage(named:"question_bank"))
         questionBankViewController.tabBarItem = questionBankViewItem
         
-        let shareViewController = VideoViewController()
+        let shareViewController = ShareViewController()
         let shareViewItem: UITabBarItem = UITabBarItem(title:"分享", image: UIImage(named: "share"), selectedImage: UIImage(named: "share"))
         shareViewController.tabBarItem = shareViewItem
         
@@ -36,7 +36,7 @@ class MainViewController: UITabBarController {
         let videoViewItem: UITabBarItem = UITabBarItem(title:"直播", image: UIImage(named: "vedio"), selectedImage: UIImage(named: "vedio"))
         videoViewController.tabBarItem = videoViewItem
         
-        let bigVViewController = VideoViewController()
+        let bigVViewController = BigVViewController()
         let bigVViewItem: UITabBarItem = UITabBarItem(title:"大V", image: UIImage(named: "big_v"), selectedImage: UIImage(named: "big_v"))
         bigVViewController.tabBarItem = bigVViewItem
         
