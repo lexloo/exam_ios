@@ -10,7 +10,7 @@ import UIKit
 import WebKit
 import SwiftyJSON
 
-class CommentsViewController: UIViewController {
+class CommentsViewController: BaseUIViewController {
     var questionGuid: String?
     var commentGuid: String?
     var commentName: String?

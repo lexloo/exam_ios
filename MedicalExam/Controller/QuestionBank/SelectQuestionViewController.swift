@@ -9,7 +9,7 @@
 import UIKit
 import WebKit
 
-class SelectQuestionViewController: UIViewController {
+class SelectQuestionViewController: BaseUIViewController {
     @IBOutlet weak var lblSubject: UILabel!
     var subjectName: String?
     var chapterName: String?

@@ -17,6 +17,7 @@ class RegisterController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.view.backgroundColor = BaseColor.statusBarColor
         tfMobile.becomeFirstResponder()
     }
     

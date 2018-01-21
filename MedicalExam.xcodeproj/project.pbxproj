@@ -34,6 +34,7 @@
 		414DCAA5200252FF00CB2B74 /* SelectQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414DCAA4200252FF00CB2B74 /* SelectQuestionViewController.swift */; };
 		418426DA201466C60080DA8D /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418426D9201466C60080DA8D /* Colors.swift */; };
 		418426DD201472EB0080DA8D /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418426DC201472EB0080DA8D /* LaunchViewController.swift */; };
+		418426DF2014A9200080DA8D /* BaseUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418426DE2014A91F0080DA8D /* BaseUIViewController.swift */; };
 		41B825DB1FF79A6E004DFDA3 /* UILogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41B825DA1FF79A6E004DFDA3 /* UILogin.storyboard */; };
 		41B825DD1FF7BEA3004DFDA3 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B825DC1FF7BEA3004DFDA3 /* LoginController.swift */; };
 		41B825E11FFA25FF004DFDA3 /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B825E01FFA25FE004DFDA3 /* RegisterController.swift */; };
@@ -94,6 +95,7 @@
 		414DCAA4200252FF00CB2B74 /* SelectQuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectQuestionViewController.swift; sourceTree = "<group>"; };
 		418426D9201466C60080DA8D /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		418426DC201472EB0080DA8D /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
+		418426DE2014A91F0080DA8D /* BaseUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseUIViewController.swift; sourceTree = "<group>"; };
 		41B825DA1FF79A6E004DFDA3 /* UILogin.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UILogin.storyboard; sourceTree = "<group>"; };
 		41B825DC1FF7BEA3004DFDA3 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		41B825E01FFA25FE004DFDA3 /* RegisterController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegisterController.swift; path = MedicalExam/Login/Controller/RegisterController.swift; sourceTree = SOURCE_ROOT; };
@@ -170,6 +172,7 @@
 			isa = PBXGroup;
 			children = (
 				410A6B8C201304C20052CE12 /* UIQuestionBankBaseViewController.swift */,
+				418426DE2014A91F0080DA8D /* BaseUIViewController.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -545,6 +548,7 @@
 				41D51C751FEFC8CD00DF78ED /* SectionModel.swift in Sources */,
 				41EEA0E420010E5F006DB553 /* SelectCategoryController.swift in Sources */,
 				41EEA0E22000EA4D006DB553 /* NaviTopView.swift in Sources */,
+				418426DF2014A9200080DA8D /* BaseUIViewController.swift in Sources */,
 				41D51C7A1FEFD3FE00DF78ED /* HeaderView.swift in Sources */,
 				410A6B862012F00F0052CE12 /* Likes.swift in Sources */,
 			);

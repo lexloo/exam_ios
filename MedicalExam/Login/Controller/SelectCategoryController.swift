@@ -9,7 +9,7 @@
 import UIKit
 import Foundation
 
-class SelectCategoryController: UIViewController {
+class SelectCategoryController: BaseUIViewController {
     @IBOutlet weak var naviTopView: NaviTopView!
     @IBOutlet weak var btnSelectCategory: UIButton!
    

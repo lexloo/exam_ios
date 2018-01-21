@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DoQuestionViewController: UIViewController {
+class DoQuestionViewController: BaseUIViewController {
     public var subjectName: String?
     public var chapterGuid: String?
     public var chapterName: String?
@@ -86,6 +86,7 @@ class DoQuestionViewController: UIViewController {
         
         NotificationCenter.default.addObserver(self, selector: #selector(DoQuestionViewController.keyboardWillChange(_:)), name: .UIKeyboardWillChangeFrame, object: nil)
         
+        self.lblChapterName.backgroundColor = BaseColor.tableSectionColor
         lblSubjectName.text = subjectName!
         lblChapterName.text = chapterName!
         

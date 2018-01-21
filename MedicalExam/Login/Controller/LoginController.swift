@@ -9,7 +9,7 @@ import UIKit
 import Foundation
 import SwiftyJSON
 
-class LoginController: UIViewController {    
+class LoginController: BaseUIViewController {    
     @IBOutlet weak var txtMobile: UITextField!
     
     @IBOutlet weak var txtPasswd: UITextField!

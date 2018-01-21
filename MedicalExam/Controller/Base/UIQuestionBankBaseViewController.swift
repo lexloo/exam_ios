@@ -12,6 +12,16 @@ class UIQuestionBankBaseViewController: UIViewController {
     lazy var dataSource: [SectionModel]? = nil
     var lastActiveSection: Int?
     var type: String?
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        self.view.backgroundColor = BaseColor.statusBarColor
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
 }
 
 extension UIQuestionBankBaseViewController: UITableViewDataSource {
@@ -86,6 +96,7 @@ extension UIQuestionBankBaseViewController: UITableViewDelegate {
         selectQuestionVC.chapterGuid = chapterGuid
         selectQuestionVC.type = type
         
+        tableView.deselectRow(at: indexPath, animated: true)
         self.present(selectQuestionVC, animated: true, completion: nil)
     }
 }

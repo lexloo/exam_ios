@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NotesViewController: UIViewController {
+class NotesViewController: BaseUIViewController {
     var questionGuid: String?
     
     @IBOutlet weak var txtNotes: UITextView!
