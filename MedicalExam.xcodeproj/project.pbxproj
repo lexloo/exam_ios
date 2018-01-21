@@ -33,7 +33,6 @@
 		414DCA9920024E2200CB2B74 /* NvWKWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414DCA9820024E2200CB2B74 /* NvWKWebView.swift */; };
 		414DCAA5200252FF00CB2B74 /* SelectQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414DCAA4200252FF00CB2B74 /* SelectQuestionViewController.swift */; };
 		418426DA201466C60080DA8D /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418426D9201466C60080DA8D /* Colors.swift */; };
-		418426DD201472EB0080DA8D /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418426DC201472EB0080DA8D /* LaunchViewController.swift */; };
 		418426DF2014A9200080DA8D /* BaseUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418426DE2014A91F0080DA8D /* BaseUIViewController.swift */; };
 		41B825DB1FF79A6E004DFDA3 /* UILogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41B825DA1FF79A6E004DFDA3 /* UILogin.storyboard */; };
 		41B825DD1FF7BEA3004DFDA3 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B825DC1FF7BEA3004DFDA3 /* LoginController.swift */; };
@@ -94,7 +93,6 @@
 		414DCA9820024E2200CB2B74 /* NvWKWebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NvWKWebView.swift; sourceTree = "<group>"; };
 		414DCAA4200252FF00CB2B74 /* SelectQuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectQuestionViewController.swift; sourceTree = "<group>"; };
 		418426D9201466C60080DA8D /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
-		418426DC201472EB0080DA8D /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		418426DE2014A91F0080DA8D /* BaseUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseUIViewController.swift; sourceTree = "<group>"; };
 		41B825DA1FF79A6E004DFDA3 /* UILogin.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UILogin.storyboard; sourceTree = "<group>"; };
 		41B825DC1FF7BEA3004DFDA3 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
@@ -252,7 +250,6 @@
 			isa = PBXGroup;
 			children = (
 				4133073C1FEBED0800C2BD45 /* LaunchScreen.storyboard */,
-				418426DC201472EB0080DA8D /* LaunchViewController.swift */,
 			);
 			path = Launch;
 			sourceTree = "<group>";
@@ -542,7 +539,6 @@
 				41D51C6A1FEF480A00DF78ED /* QuestionBankViewController.swift in Sources */,
 				4131DD55200F9CCC00A364DE /* CommentsViewController.swift in Sources */,
 				41EEA0E62001163F006DB553 /* Kind.swift in Sources */,
-				418426DD201472EB0080DA8D /* LaunchViewController.swift in Sources */,
 				414DCA902002128300CB2B74 /* BaseItem.swift in Sources */,
 				410A6B842012E5670052CE12 /* Notes.swift in Sources */,
 				41D51C751FEFC8CD00DF78ED /* SectionModel.swift in Sources */,
