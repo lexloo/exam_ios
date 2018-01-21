@@ -16,8 +16,8 @@ class QuestionBankViewController: UIQuestionBankBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.view.backgroundColor = BaseColor.backgroundColor
         self.title = "题库"
-        self.view.backgroundColor = UIColor.brown
         
         initViews()
     }

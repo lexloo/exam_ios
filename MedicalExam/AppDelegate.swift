@@ -13,14 +13,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-//        self.window = UIWindow(frame: UIScreen.main.bounds)
-//        self.window?.makeKeyAndVisible()
-//
-//        let root = LoginController()
-//        self.window?.rootViewController = root;
+        UIApplication.shared.statusBarStyle = .lightContent
+        
+        let navBar = UINavigationBar.appearance()
+        navBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
+        navBar.barTintColor = UIColor(red: 0x2b/255.0, green: 0x85/255.0, blue: 0xe4/255.0, alpha: 1.0)
         
         return true
     }
