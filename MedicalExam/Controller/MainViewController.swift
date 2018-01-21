@@ -22,8 +22,8 @@ class MainViewController: UITabBarController {
     }
     
     func loadTabBarChildController() {
-        let sb = UIStoryboard(name: "QuestionBank", bundle: nil)
-        let questionBankViewController = sb.instantiateViewController(withIdentifier: "QuestionBankVC") as! QuestionBankViewController
+        let sbQb = UIStoryboard(name: "QuestionBank", bundle: nil)
+        let questionBankViewController = sbQb.instantiateViewController(withIdentifier: "QuestionBankVC") as! QuestionBankViewController
         questionBankViewController.type = "all"
         let questionBankViewItem: UITabBarItem = UITabBarItem(title: "题库", image: UIImage(named: "question_bank"), selectedImage: UIImage(named:"question_bank"))
         questionBankViewController.tabBarItem = questionBankViewItem
@@ -40,7 +40,8 @@ class MainViewController: UITabBarController {
         let bigVViewItem: UITabBarItem = UITabBarItem(title:"大V", image: UIImage(named: "big_v"), selectedImage: UIImage(named: "big_v"))
         bigVViewController.tabBarItem = bigVViewItem
         
-        let myViewController = MyViewController()
+        let sbOpts = UIStoryboard(name: "MyOptions", bundle: nil)
+        let myViewController = sbOpts.instantiateViewController(withIdentifier: "MyViewVC") as! MyViewController
         let myViewItem: UITabBarItem = UITabBarItem(title: "我的", image: UIImage(named: "my_options"), selectedImage: UIImage(named: "my_options"))
         myViewController.tabBarItem = myViewItem
         
