@@ -11,6 +11,8 @@ import UIKit
 class MainViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
+       
+        UIApplication.shared.statusBarStyle = .lightContent
         
         self.loadTabBarChildController();
     }
@@ -52,9 +54,5 @@ class MainViewController: UITabBarController {
         
         self.setViewControllers(tabBarViewControllers, animated: true)
         self.selectedIndex = 0
-    }
-    
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return UIStatusBarStyle.lightContent
     }
 }
