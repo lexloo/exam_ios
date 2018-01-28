@@ -25,6 +25,8 @@ class SelectCategoryController: SingleSelectorViewController {
 //
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.title = "选择考试类别"
         self.dataSource = self
 //
 //        naviTopView.btnReturn.addTarget(self, action: #selector(SelectCategoryController.close), for: UIControlEvents.touchUpInside)

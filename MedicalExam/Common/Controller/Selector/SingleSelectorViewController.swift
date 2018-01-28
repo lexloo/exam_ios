@@ -10,11 +10,11 @@ import UIKit
 
 class SingleSelectorViewController: UIViewController {
     private lazy var tableView: UITableView? = {
-        let tempTableView = UITableView(frame: self.view.bounds, style: UITableViewStyle.plain)
+        let bounds = self.view.bounds
+        let tempTableView = UITableView(frame: CGRect(x: 0.0, y: 60.0, width: bounds.width, height: bounds.height - 60.0), style: UITableViewStyle.plain)
         tempTableView.delegate = self
         tempTableView.dataSource = self
         tempTableView.separatorStyle = UITableViewCellSeparatorStyle.singleLine
-
         
         //去除多余的空白行
         tempTableView.tableFooterView = UIView()
@@ -32,10 +32,20 @@ class SingleSelectorViewController: UIViewController {
         }
     }
     
+    var topView: TopNaviView?
+    override var title: String? {
+        didSet {
+            self.topView?.title = title
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.view.backgroundColor = UIColor.white
+        
+        topView = TopNaviView(frame: CGRect(x: 0.0, y: 0.0, width: self.view.bounds.width, height: 60.0))
+        self.view.addSubview(topView!)
     }
 
     override func didReceiveMemoryWarning() {

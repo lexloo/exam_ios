@@ -32,12 +32,13 @@
 		414DCA962002136800CB2B74 /* ChapterQuestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414DCA952002136800CB2B74 /* ChapterQuestions.swift */; };
 		414DCA9920024E2200CB2B74 /* NvWKWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414DCA9820024E2200CB2B74 /* NvWKWebView.swift */; };
 		414DCAA5200252FF00CB2B74 /* SelectQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414DCAA4200252FF00CB2B74 /* SelectQuestionViewController.swift */; };
-		418426DA201466C60080DA8D /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418426D9201466C60080DA8D /* Colors.swift */; };
+		418426DA201466C60080DA8D /* BaseColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418426D9201466C60080DA8D /* BaseColor.swift */; };
 		418426DF2014A9200080DA8D /* BaseUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418426DE2014A91F0080DA8D /* BaseUIViewController.swift */; };
 		419783E22014C41F000EC030 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419783E12014C41F000EC030 /* ShareViewController.swift */; };
 		419783E42014C42E000EC030 /* BigVViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419783E32014C42E000EC030 /* BigVViewController.swift */; };
 		419783E72014CA82000EC030 /* MyOptions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 419783E62014CA82000EC030 /* MyOptions.storyboard */; };
 		419F4E8A201DBD0100BE2351 /* SingleSelectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419F4E89201DBD0100BE2351 /* SingleSelectTableViewCell.swift */; };
+		419F4E8D201DC1C500BE2351 /* TopNaviViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419F4E8C201DC1C500BE2351 /* TopNaviViewController.swift */; };
 		41AC5817201D8E69005FBBDA /* SingleSelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41AC5816201D8E69005FBBDA /* SingleSelectorViewController.swift */; };
 		41AC5819201D9485005FBBDA /* SelectItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41AC5818201D9485005FBBDA /* SelectItem.swift */; };
 		41AC581B201D98E1005FBBDA /* SelectDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41AC581A201D98E1005FBBDA /* SelectDataSource.swift */; };
@@ -101,12 +102,13 @@
 		414DCA952002136800CB2B74 /* ChapterQuestions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChapterQuestions.swift; sourceTree = "<group>"; };
 		414DCA9820024E2200CB2B74 /* NvWKWebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NvWKWebView.swift; sourceTree = "<group>"; };
 		414DCAA4200252FF00CB2B74 /* SelectQuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectQuestionViewController.swift; sourceTree = "<group>"; };
-		418426D9201466C60080DA8D /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		418426D9201466C60080DA8D /* BaseColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseColor.swift; sourceTree = "<group>"; };
 		418426DE2014A91F0080DA8D /* BaseUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseUIViewController.swift; sourceTree = "<group>"; };
 		419783E12014C41F000EC030 /* ShareViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
 		419783E32014C42E000EC030 /* BigVViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BigVViewController.swift; sourceTree = "<group>"; };
 		419783E62014CA82000EC030 /* MyOptions.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyOptions.storyboard; sourceTree = "<group>"; };
 		419F4E89201DBD0100BE2351 /* SingleSelectTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleSelectTableViewCell.swift; sourceTree = "<group>"; };
+		419F4E8C201DC1C500BE2351 /* TopNaviViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopNaviViewController.swift; sourceTree = "<group>"; };
 		41AC5816201D8E69005FBBDA /* SingleSelectorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleSelectorViewController.swift; sourceTree = "<group>"; };
 		41AC5818201D9485005FBBDA /* SelectItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectItem.swift; sourceTree = "<group>"; };
 		41AC581A201D98E1005FBBDA /* SelectDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDataSource.swift; sourceTree = "<group>"; };
@@ -262,7 +264,7 @@
 		418426D8201466B00080DA8D /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				418426D9201466C60080DA8D /* Colors.swift */,
+				418426D9201466C60080DA8D /* BaseColor.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -282,6 +284,14 @@
 			path = My;
 			sourceTree = "<group>";
 		};
+		419F4E8B201DC19900BE2351 /* TopNaviView */ = {
+			isa = PBXGroup;
+			children = (
+				419F4E8C201DC1C500BE2351 /* TopNaviViewController.swift */,
+			);
+			path = TopNaviView;
+			sourceTree = "<group>";
+		};
 		41AC5813201D8B6E005FBBDA /* Common */ = {
 			isa = PBXGroup;
 			children = (
@@ -294,6 +304,7 @@
 		41AC5814201D8C47005FBBDA /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				419F4E8B201DC19900BE2351 /* TopNaviView */,
 				41AC5815201D8C95005FBBDA /* Selector */,
 			);
 			path = Controller;
@@ -568,7 +579,7 @@
 			files = (
 				419783E22014C41F000EC030 /* ShareViewController.swift in Sources */,
 				414DCAA5200252FF00CB2B74 /* SelectQuestionViewController.swift in Sources */,
-				418426DA201466C60080DA8D /* Colors.swift in Sources */,
+				418426DA201466C60080DA8D /* BaseColor.swift in Sources */,
 				41D51C681FEF45F300DF78ED /* MainViewController.swift in Sources */,
 				419F4E8A201DBD0100BE2351 /* SingleSelectTableViewCell.swift in Sources */,
 				410A6B8D201304C20052CE12 /* UIQuestionBankBaseViewController.swift in Sources */,
@@ -588,6 +599,7 @@
 				41AC581B201D98E1005FBBDA /* SelectDataSource.swift in Sources */,
 				41EEA0E82001190C006DB553 /* Catagory.swift in Sources */,
 				41EEA0C720007ABE006DB553 /* UserInfo.swift in Sources */,
+				419F4E8D201DC1C500BE2351 /* TopNaviViewController.swift in Sources */,
 				410A6B9120136EEF0052CE12 /* WKWebViewCallback.swift in Sources */,
 				414DCA8E2001F9D400CB2B74 /* Global.swift in Sources */,
 				41D51C7C1FEFDC4300DF78ED /* TableViewCell.swift in Sources */,
