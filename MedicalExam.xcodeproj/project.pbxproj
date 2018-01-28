@@ -38,7 +38,9 @@
 		419783E42014C42E000EC030 /* BigVViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419783E32014C42E000EC030 /* BigVViewController.swift */; };
 		419783E72014CA82000EC030 /* MyOptions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 419783E62014CA82000EC030 /* MyOptions.storyboard */; };
 		419F4E8A201DBD0100BE2351 /* SingleSelectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419F4E89201DBD0100BE2351 /* SingleSelectTableViewCell.swift */; };
-		419F4E8D201DC1C500BE2351 /* TopNaviViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419F4E8C201DC1C500BE2351 /* TopNaviViewController.swift */; };
+		419F4E8D201DC1C500BE2351 /* TopNaviView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419F4E8C201DC1C500BE2351 /* TopNaviView.swift */; };
+		419F4E8F201DD59C00BE2351 /* TopNaviViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419F4E8E201DD59C00BE2351 /* TopNaviViewDelegate.swift */; };
+		419F4E91201DDB4F00BE2351 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419F4E90201DDB4F00BE2351 /* UIView.swift */; };
 		41AC5817201D8E69005FBBDA /* SingleSelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41AC5816201D8E69005FBBDA /* SingleSelectorViewController.swift */; };
 		41AC5819201D9485005FBBDA /* SelectItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41AC5818201D9485005FBBDA /* SelectItem.swift */; };
 		41AC581B201D98E1005FBBDA /* SelectDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41AC581A201D98E1005FBBDA /* SelectDataSource.swift */; };
@@ -108,7 +110,9 @@
 		419783E32014C42E000EC030 /* BigVViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BigVViewController.swift; sourceTree = "<group>"; };
 		419783E62014CA82000EC030 /* MyOptions.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyOptions.storyboard; sourceTree = "<group>"; };
 		419F4E89201DBD0100BE2351 /* SingleSelectTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleSelectTableViewCell.swift; sourceTree = "<group>"; };
-		419F4E8C201DC1C500BE2351 /* TopNaviViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopNaviViewController.swift; sourceTree = "<group>"; };
+		419F4E8C201DC1C500BE2351 /* TopNaviView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopNaviView.swift; sourceTree = "<group>"; };
+		419F4E8E201DD59C00BE2351 /* TopNaviViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopNaviViewDelegate.swift; sourceTree = "<group>"; };
+		419F4E90201DDB4F00BE2351 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		41AC5816201D8E69005FBBDA /* SingleSelectorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleSelectorViewController.swift; sourceTree = "<group>"; };
 		41AC5818201D9485005FBBDA /* SelectItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectItem.swift; sourceTree = "<group>"; };
 		41AC581A201D98E1005FBBDA /* SelectDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDataSource.swift; sourceTree = "<group>"; };
@@ -265,6 +269,7 @@
 			isa = PBXGroup;
 			children = (
 				418426D9201466C60080DA8D /* BaseColor.swift */,
+				419F4E90201DDB4F00BE2351 /* UIView.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -287,7 +292,8 @@
 		419F4E8B201DC19900BE2351 /* TopNaviView */ = {
 			isa = PBXGroup;
 			children = (
-				419F4E8C201DC1C500BE2351 /* TopNaviViewController.swift */,
+				419F4E8C201DC1C500BE2351 /* TopNaviView.swift */,
+				419F4E8E201DD59C00BE2351 /* TopNaviViewDelegate.swift */,
 			);
 			path = TopNaviView;
 			sourceTree = "<group>";
@@ -597,9 +603,10 @@
 				41AC5819201D9485005FBBDA /* SelectItem.swift in Sources */,
 				41D51C6C1FEF493700DF78ED /* MyViewController.swift in Sources */,
 				41AC581B201D98E1005FBBDA /* SelectDataSource.swift in Sources */,
+				419F4E91201DDB4F00BE2351 /* UIView.swift in Sources */,
 				41EEA0E82001190C006DB553 /* Catagory.swift in Sources */,
 				41EEA0C720007ABE006DB553 /* UserInfo.swift in Sources */,
-				419F4E8D201DC1C500BE2351 /* TopNaviViewController.swift in Sources */,
+				419F4E8D201DC1C500BE2351 /* TopNaviView.swift in Sources */,
 				410A6B9120136EEF0052CE12 /* WKWebViewCallback.swift in Sources */,
 				414DCA8E2001F9D400CB2B74 /* Global.swift in Sources */,
 				41D51C7C1FEFDC4300DF78ED /* TableViewCell.swift in Sources */,
@@ -609,6 +616,7 @@
 				41B825DD1FF7BEA3004DFDA3 /* LoginController.swift in Sources */,
 				414DCA922002134200CB2B74 /* Subject.swift in Sources */,
 				414DCA942002134D00CB2B74 /* Chapter.swift in Sources */,
+				419F4E8F201DD59C00BE2351 /* TopNaviViewDelegate.swift in Sources */,
 				41E4CE05200B0667000CA73F /* Qb.swift in Sources */,
 				41EEA0CA20007EDC006DB553 /* RealmUtil.swift in Sources */,
 				410A6B8A201304710052CE12 /* TypeQuestionViewController.swift in Sources */,

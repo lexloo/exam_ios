@@ -33,13 +33,12 @@ class SingleSelectorViewController: UIViewController {
     }
     
     var topView: TopNaviView?
+    var deselectRow = true
     override var title: String? {
         didSet {
             self.topView?.title = title
         }
     }
-    
-    var fnBack: ()-> Void
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,7 +46,7 @@ class SingleSelectorViewController: UIViewController {
         self.view.backgroundColor = UIColor.white
         
         topView = TopNaviView(frame: CGRect(x: 0.0, y: 0.0, width: self.view.bounds.width, height: 60.0))
-        topView?.btnLeft?.addTarget(self, action: #selector(tappedReturn), for: .touchUpInside)
+        
         self.view.addSubview(topView!)
     }
 
@@ -55,10 +54,11 @@ class SingleSelectorViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
-    @objc func tappedReturn() {
-        if fnBack != nil {
-            fnBack()
-        }
+    @objc func _tappedReturn() {
+        self.tappedReturn()
+    }
+    
+    func tappedReturn() {
     }
 }
 
@@ -84,53 +84,18 @@ extension SingleSelectorViewController: UITableViewDataSource {
 }
 
 extension SingleSelectorViewController: UITableViewDelegate {
-//    func numberOfSections(in tableView: UITableView) -> Int {
-//        return (dataSource?.count)!
-//    }
-//
-//    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-//        var headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "id") as? HeaderView
-//        if headerView == nil {
-//            headerView = HeaderView.init(reuseIdentifier: "id")
-//        }
-//
-//        headerView?.sectionModel = dataSource![section]
-//        headerView?.expandCallBack = {
-//            (isExpanded: Bool) -> Void in
-//            if isExpanded {
-//                if self.lastActiveSection != nil && self.lastActiveSection != section {
-//                    self.dataSource![self.lastActiveSection!].isExpanded = false
-//                    tableView.reloadSections([section, self.lastActiveSection!], with: UITableViewRowAnimation.fade)
-//                } else {
-//                    tableView.reloadSections([section], with: UITableViewRowAnimation.fade)
-//                }
-//
-//                self.lastActiveSection = section
-//            } else {
-//                tableView.reloadSections([section], with: UITableViewRowAnimation.fade)
-//            }
-//        }
-//
-//        return headerView
-//    }
-    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let section = self.dataSource![indexPath.section]
-//        let cell = section.cellModels[indexPath.row]
-//
-//        let subjectName = section.title
-//        let chapterName = cell.title
-//        let chapterGuid = cell.guid
-//
-//        let loginStoryBoard = UIStoryboard(name: "UILogin", bundle: nil)
-//        let selectQuestionVC = loginStoryBoard.instantiateViewController(withIdentifier: "SelectQuestionVC") as! SelectQuestionViewController
-//        selectQuestionVC.subjectName = subjectName
-//        selectQuestionVC.chapterName = chapterName
-//        selectQuestionVC.chapterGuid = chapterGuid
-//        selectQuestionVC.type = type
-//
-//        tableView.deselectRow(at: indexPath, animated: true)
-//        self.present(selectQuestionVC, animated: true, completion: nil)
-        //tableView.deselectRow(at: indexPath, animated: true)
+        let item = items![indexPath.row]
+        
+        if deselectRow {
+            tableView.deselectRow(at: indexPath, animated: true)
+        }
+        
+        self.selectItem(item)
+    }
+    
+    func selectItem(_ item: SelectItem) {
+        // subclass implement
+        print("item")
     }
 }

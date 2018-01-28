@@ -28,6 +28,8 @@ class SelectCategoryController: SingleSelectorViewController {
         
         self.title = "选择考试类别"
         self.dataSource = self
+        self.topView?.rightButtonTitle = "保存"
+        self.topView?.delegate = self
 //
 //        naviTopView.btnReturn.addTarget(self, action: #selector(SelectCategoryController.close), for: UIControlEvents.touchUpInside)
 //
@@ -46,6 +48,16 @@ class SelectCategoryController: SingleSelectorViewController {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+}
+
+extension SelectCategoryController: TopNaviViewDelegate {
+    func leftClick() {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    func rightClick() {
+        self.dismiss(animated: true, completion: nil)
     }
 }
 

@@ -11,17 +11,51 @@ import SnapKit
 
 class TopNaviView: UIView {
     var btnLeft: UIButton?
+    var btnRight: UIButton?
+    // 设置标题后就创建按钮
+    var rightButtonTitle: String? {
+        didSet {
+            showRightButton = true
+            btnRight = UIButton(type: .custom)
+            btnRight?.setTitle(rightButtonTitle, for: .normal)
+            btnRight?.setTitleColor(BaseColor.naviButtonColor, for: .normal)
+            self.addSubview(btnRight!)
+            
+            btnRight?.snp.makeConstraints {
+                make in
+                make.centerY.equalToSuperview().offset(10)
+                make.right.equalToSuperview().offset(-16)
+            }
+        }
+    }
+    private var showRightButton = false
     var lblTitle: UILabel?
     var title: String? {
         didSet {
-            self.lblTitle?.text = title
+            lblTitle?.text = title
         }
     }
+    
+    var delegate: TopNaviViewDelegate? {
+        didSet {
+            btnLeft?.addTarget(viewController, action: #selector(leftClick), for: .touchUpInside)
+            
+            if showRightButton {
+                btnRight?.addTarget(viewController, action: #selector(rightClick), for: .touchUpInside)
+            }
+        }
+    }
+
+    // 组件所在的ViewController
+    lazy var viewController: UIViewController? = {
+        return firstViewController()
+    }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         
         self.backgroundColor = BaseColor.statusBarColor
+        
         initViews()
     }
     
@@ -50,5 +84,13 @@ class TopNaviView: UIView {
             make.centerX.equalToSuperview()
             make.centerY.equalToSuperview().offset(10)
         }
+    }
+    
+    @objc private func leftClick() {
+        self.delegate?.leftClick()
+    }
+    
+    @objc private func rightClick() {
+        self.delegate?.rightClick!()
     }
 }
