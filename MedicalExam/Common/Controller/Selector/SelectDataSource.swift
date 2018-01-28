@@ -7,5 +7,5 @@
 //
 
 protocol SelectDataSource {
-    func getItemData()-> [SelectItem]?
+    func queryItemData(_ cb: @escaping ([SelectItem]?) -> Void)
 }

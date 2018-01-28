@@ -37,10 +37,12 @@
 		419783E22014C41F000EC030 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419783E12014C41F000EC030 /* ShareViewController.swift */; };
 		419783E42014C42E000EC030 /* BigVViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419783E32014C42E000EC030 /* BigVViewController.swift */; };
 		419783E72014CA82000EC030 /* MyOptions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 419783E62014CA82000EC030 /* MyOptions.storyboard */; };
-		419F4E8A201DBD0100BE2351 /* SingleSelectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419F4E89201DBD0100BE2351 /* SingleSelectTableViewCell.swift */; };
+		419F4E8A201DBD0100BE2351 /* CheckBoxSelectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419F4E89201DBD0100BE2351 /* CheckBoxSelectTableViewCell.swift */; };
 		419F4E8D201DC1C500BE2351 /* TopNaviView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419F4E8C201DC1C500BE2351 /* TopNaviView.swift */; };
 		419F4E8F201DD59C00BE2351 /* TopNaviViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419F4E8E201DD59C00BE2351 /* TopNaviViewDelegate.swift */; };
 		419F4E91201DDB4F00BE2351 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419F4E90201DDB4F00BE2351 /* UIView.swift */; };
+		419F4E93201DEFF400BE2351 /* SingleCheckBoxSelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419F4E92201DEFF400BE2351 /* SingleCheckBoxSelectorViewController.swift */; };
+		419F4E95201DF30000BE2351 /* SelectCategoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419F4E94201DF30000BE2351 /* SelectCategoryController.swift */; };
 		41AC5817201D8E69005FBBDA /* SingleSelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41AC5816201D8E69005FBBDA /* SingleSelectorViewController.swift */; };
 		41AC5819201D9485005FBBDA /* SelectItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41AC5818201D9485005FBBDA /* SelectItem.swift */; };
 		41AC581B201D98E1005FBBDA /* SelectDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41AC581A201D98E1005FBBDA /* SelectDataSource.swift */; };
@@ -65,7 +67,7 @@
 		41EEA0CD2000B005006DB553 /* HttpUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EEA0CC2000B005006DB553 /* HttpUtil.swift */; };
 		41EEA0E02000E5BA006DB553 /* NaviTopView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41EEA0DF2000E5BA006DB553 /* NaviTopView.xib */; };
 		41EEA0E22000EA4D006DB553 /* NaviTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EEA0E12000EA4D006DB553 /* NaviTopView.swift */; };
-		41EEA0E420010E5F006DB553 /* SelectCategoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EEA0E320010E5F006DB553 /* SelectCategoryController.swift */; };
+		41EEA0E420010E5F006DB553 /* SelectKindController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EEA0E320010E5F006DB553 /* SelectKindController.swift */; };
 		41EEA0E62001163F006DB553 /* Kind.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EEA0E52001163F006DB553 /* Kind.swift */; };
 		41EEA0E82001190C006DB553 /* Catagory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EEA0E72001190C006DB553 /* Catagory.swift */; };
 		41EEA0EA2001D2F0006DB553 /* BottomPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EEA0E92001D2EF006DB553 /* BottomPopupView.swift */; };
@@ -109,10 +111,12 @@
 		419783E12014C41F000EC030 /* ShareViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
 		419783E32014C42E000EC030 /* BigVViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BigVViewController.swift; sourceTree = "<group>"; };
 		419783E62014CA82000EC030 /* MyOptions.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyOptions.storyboard; sourceTree = "<group>"; };
-		419F4E89201DBD0100BE2351 /* SingleSelectTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleSelectTableViewCell.swift; sourceTree = "<group>"; };
+		419F4E89201DBD0100BE2351 /* CheckBoxSelectTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBoxSelectTableViewCell.swift; sourceTree = "<group>"; };
 		419F4E8C201DC1C500BE2351 /* TopNaviView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopNaviView.swift; sourceTree = "<group>"; };
 		419F4E8E201DD59C00BE2351 /* TopNaviViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopNaviViewDelegate.swift; sourceTree = "<group>"; };
 		419F4E90201DDB4F00BE2351 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		419F4E92201DEFF400BE2351 /* SingleCheckBoxSelectorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleCheckBoxSelectorViewController.swift; sourceTree = "<group>"; };
+		419F4E94201DF30000BE2351 /* SelectCategoryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCategoryController.swift; sourceTree = "<group>"; };
 		41AC5816201D8E69005FBBDA /* SingleSelectorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleSelectorViewController.swift; sourceTree = "<group>"; };
 		41AC5818201D9485005FBBDA /* SelectItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectItem.swift; sourceTree = "<group>"; };
 		41AC581A201D98E1005FBBDA /* SelectDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDataSource.swift; sourceTree = "<group>"; };
@@ -137,7 +141,7 @@
 		41EEA0CC2000B005006DB553 /* HttpUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpUtil.swift; sourceTree = "<group>"; };
 		41EEA0DF2000E5BA006DB553 /* NaviTopView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NaviTopView.xib; sourceTree = "<group>"; };
 		41EEA0E12000EA4D006DB553 /* NaviTopView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NaviTopView.swift; sourceTree = "<group>"; };
-		41EEA0E320010E5F006DB553 /* SelectCategoryController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectCategoryController.swift; sourceTree = "<group>"; };
+		41EEA0E320010E5F006DB553 /* SelectKindController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectKindController.swift; sourceTree = "<group>"; };
 		41EEA0E52001163F006DB553 /* Kind.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kind.swift; sourceTree = "<group>"; };
 		41EEA0E72001190C006DB553 /* Catagory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Catagory.swift; sourceTree = "<group>"; };
 		41EEA0E92001D2EF006DB553 /* BottomPopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomPopupView.swift; sourceTree = "<group>"; };
@@ -322,7 +326,8 @@
 				41AC5816201D8E69005FBBDA /* SingleSelectorViewController.swift */,
 				41AC5818201D9485005FBBDA /* SelectItem.swift */,
 				41AC581A201D98E1005FBBDA /* SelectDataSource.swift */,
-				419F4E89201DBD0100BE2351 /* SingleSelectTableViewCell.swift */,
+				419F4E89201DBD0100BE2351 /* CheckBoxSelectTableViewCell.swift */,
+				419F4E92201DEFF400BE2351 /* SingleCheckBoxSelectorViewController.swift */,
 			);
 			path = Selector;
 			sourceTree = "<group>";
@@ -366,9 +371,10 @@
 		41B825D91FF74457004DFDA3 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				41EEA0E320010E5F006DB553 /* SelectCategoryController.swift */,
+				41EEA0E320010E5F006DB553 /* SelectKindController.swift */,
 				41B825E01FFA25FE004DFDA3 /* RegisterController.swift */,
 				41B825DC1FF7BEA3004DFDA3 /* LoginController.swift */,
+				419F4E94201DF30000BE2351 /* SelectCategoryController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -583,11 +589,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				419F4E93201DEFF400BE2351 /* SingleCheckBoxSelectorViewController.swift in Sources */,
 				419783E22014C41F000EC030 /* ShareViewController.swift in Sources */,
 				414DCAA5200252FF00CB2B74 /* SelectQuestionViewController.swift in Sources */,
 				418426DA201466C60080DA8D /* BaseColor.swift in Sources */,
 				41D51C681FEF45F300DF78ED /* MainViewController.swift in Sources */,
-				419F4E8A201DBD0100BE2351 /* SingleSelectTableViewCell.swift in Sources */,
+				419F4E8A201DBD0100BE2351 /* CheckBoxSelectTableViewCell.swift in Sources */,
 				410A6B8D201304C20052CE12 /* UIQuestionBankBaseViewController.swift in Sources */,
 				410A6B822012DF6D0052CE12 /* NotesViewController.swift in Sources */,
 				419783E42014C42E000EC030 /* BigVViewController.swift in Sources */,
@@ -624,10 +631,11 @@
 				41D51C6A1FEF480A00DF78ED /* QuestionBankViewController.swift in Sources */,
 				4131DD55200F9CCC00A364DE /* CommentsViewController.swift in Sources */,
 				41EEA0E62001163F006DB553 /* Kind.swift in Sources */,
+				419F4E95201DF30000BE2351 /* SelectCategoryController.swift in Sources */,
 				414DCA902002128300CB2B74 /* BaseItem.swift in Sources */,
 				410A6B842012E5670052CE12 /* Notes.swift in Sources */,
 				41D51C751FEFC8CD00DF78ED /* SectionModel.swift in Sources */,
-				41EEA0E420010E5F006DB553 /* SelectCategoryController.swift in Sources */,
+				41EEA0E420010E5F006DB553 /* SelectKindController.swift in Sources */,
 				41AC5817201D8E69005FBBDA /* SingleSelectorViewController.swift in Sources */,
 				41EEA0E22000EA4D006DB553 /* NaviTopView.swift in Sources */,
 				418426DF2014A9200080DA8D /* BaseUIViewController.swift in Sources */,
