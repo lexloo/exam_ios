@@ -25,13 +25,14 @@ class SelectKindController: SingleSelectorViewController {
     override func selectItem(_ item: SelectItem) {
         let selectCategoryVC = SelectCategoryController()
         selectCategoryVC.kindGuid = item.guid!
-        self.present(selectCategoryVC, animated: true, completion: nil)
+        self.present(selectCategoryVC, animated: true , completion: nil)
     }
 }
 
 extension SelectKindController: TopNaviViewDelegate {
     func leftClick() {
-        self.dismiss(animated: true, completion: nil)
+        //self.dismiss(animated: true, completion: nil)
+        self.view.window?.rootViewController?.dismiss(animated: true, completion: nil)
     }
 }
 

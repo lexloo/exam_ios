@@ -41,6 +41,7 @@ class SelectCategoryController: SingleCheckBoxSelectorViewController {
     }
     
     func refreshData(userInfo: UserInfo) {
+        var ptr = 0
         RealmUtil.addCanUpdate(userInfo)
         
         RealmUtil.delete(RealmUtil.selectAll(ChapterQuestions.self))
@@ -57,6 +58,11 @@ class SelectCategoryController: SingleCheckBoxSelectorViewController {
                 subjects.append(subject)
             }
             RealmUtil.addListData(subjects)
+            
+            ptr = ptr + 1
+            if ptr == 3 {
+                self.close()
+            }
         }
         
         let p2 = ["category_guid": userInfo.examCategory!]
@@ -69,6 +75,11 @@ class SelectCategoryController: SingleCheckBoxSelectorViewController {
                 chapters.append(chapter)
             }
             RealmUtil.addListData(chapters)
+            
+            ptr = ptr + 1
+            if ptr == 3 {
+                self.close()
+            }
         }
         
         let p3 = ["category_guid": userInfo.examCategory!]
@@ -81,13 +92,24 @@ class SelectCategoryController: SingleCheckBoxSelectorViewController {
                 questions.append(question)
             }
             RealmUtil.addListData(questions)
+            
+            ptr = ptr + 1
+            if ptr == 3 {
+                self.close()
+            }
         }
+    }
+    
+    func close() {
+//        self.dismiss(animated: true, completion: nil)
+        self.view.window?.rootViewController?.dismiss(animated: true, completion: nil)
     }
 }
 
 extension SelectCategoryController: TopNaviViewDelegate {
     func leftClick() {
-        self.dismiss(animated: true, completion: nil)
+        let selectKindVC = SelectKindController()
+        self.present(selectKindVC, animated: true, completion: nil)
     }
     
     func rightClick() {
