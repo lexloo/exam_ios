@@ -14,7 +14,7 @@ class SelectItem {
         self.name = name
     }
     
-    override var description: String {
-        return self.name
+    var description: String {
+        return self.name!
     }
 }

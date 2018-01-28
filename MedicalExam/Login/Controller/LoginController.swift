@@ -42,8 +42,8 @@ class LoginController: BaseUIViewController {
                 self.present(main, animated: true, completion: nil)
             } else {
                 //select category
-                let selectCategoryVC = self.storyboard?.instantiateViewController(withIdentifier: "SelectCategoryVC")
-                self.present(selectCategoryVC!, animated: true, completion: nil)
+                let selectCategoryVC = SelectCategoryController()
+                self.present(selectCategoryVC, animated: true, completion: nil)
             }
         }
     }

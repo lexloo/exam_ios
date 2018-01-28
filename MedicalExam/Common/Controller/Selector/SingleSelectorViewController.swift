@@ -13,6 +13,10 @@ class SingleSelectorViewController: UIViewController {
         let tempTableView = UITableView(frame: self.view.bounds, style: UITableViewStyle.plain)
         tempTableView.delegate = self
         tempTableView.dataSource = self
+        tempTableView.separatorStyle = UITableViewCellSeparatorStyle.singleLine
+        
+        //去除多余的空白行
+        tempTableView.tableFooterView = UIView()
         
         return tempTableView
     }()
@@ -21,10 +25,16 @@ class SingleSelectorViewController: UIViewController {
         return self.dataSource?.getItemData()
     }()
     
-    var dataSource: SelectDataSource?
+    var dataSource: SelectDataSource? {
+        didSet(old) {
+            self.view.addSubview(self.tableView!)
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.view.backgroundColor = UIColor.white
     }
 
     override func didReceiveMemoryWarning() {
@@ -34,10 +44,12 @@ class SingleSelectorViewController: UIViewController {
 
 extension SingleSelectorViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCell(withIdentifier: "id") as? TableViewCell
+        var cell = tableView.dequeueReusableCell(withIdentifier: "id")
         if cell == nil {
-            cell = TableViewCell.init(style: UITableViewCellStyle.value1, reuseIdentifier: "id")
+            cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "id")
+            cell?.accessoryType = UITableViewCellAccessoryType.disclosureIndicator
         }
+        cell?.textLabel?.text = items?[indexPath.row].description
         
         return cell!
     }
@@ -99,5 +111,6 @@ extension SingleSelectorViewController: UITableViewDelegate {
 //
 //        tableView.deselectRow(at: indexPath, animated: true)
 //        self.present(selectQuestionVC, animated: true, completion: nil)
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }

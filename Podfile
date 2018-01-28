@@ -10,7 +10,7 @@ target 'MedicalExam' do
   pod 'SwiftyJSON', :git => 'https://github.com/SwiftyJSON/SwiftyJSON.git'
   pod 'Alamofire', '~> 4.5'
   pod 'RealmSwift'
-  pod 'SnapKit',  '~> 3.0'
+  pod 'SnapKit',  '~> 4.0'
   #pod 'ObjectMapper'
   #pod 'AlamofireObjectMapper'
 end

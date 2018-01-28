@@ -37,9 +37,11 @@
 		419783E22014C41F000EC030 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419783E12014C41F000EC030 /* ShareViewController.swift */; };
 		419783E42014C42E000EC030 /* BigVViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419783E32014C42E000EC030 /* BigVViewController.swift */; };
 		419783E72014CA82000EC030 /* MyOptions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 419783E62014CA82000EC030 /* MyOptions.storyboard */; };
+		419F4E8A201DBD0100BE2351 /* SingleSelectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419F4E89201DBD0100BE2351 /* SingleSelectTableViewCell.swift */; };
 		41AC5817201D8E69005FBBDA /* SingleSelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41AC5816201D8E69005FBBDA /* SingleSelectorViewController.swift */; };
 		41AC5819201D9485005FBBDA /* SelectItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41AC5818201D9485005FBBDA /* SelectItem.swift */; };
 		41AC581B201D98E1005FBBDA /* SelectDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41AC581A201D98E1005FBBDA /* SelectDataSource.swift */; };
+		41AC581C201DAA96005FBBDA /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41AC581D201DAA96005FBBDA /* SnapKit.framework */; };
 		41B825DB1FF79A6E004DFDA3 /* UILogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41B825DA1FF79A6E004DFDA3 /* UILogin.storyboard */; };
 		41B825DD1FF7BEA3004DFDA3 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B825DC1FF7BEA3004DFDA3 /* LoginController.swift */; };
 		41B825E11FFA25FF004DFDA3 /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B825E01FFA25FE004DFDA3 /* RegisterController.swift */; };
@@ -104,9 +106,11 @@
 		419783E12014C41F000EC030 /* ShareViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
 		419783E32014C42E000EC030 /* BigVViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BigVViewController.swift; sourceTree = "<group>"; };
 		419783E62014CA82000EC030 /* MyOptions.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyOptions.storyboard; sourceTree = "<group>"; };
+		419F4E89201DBD0100BE2351 /* SingleSelectTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleSelectTableViewCell.swift; sourceTree = "<group>"; };
 		41AC5816201D8E69005FBBDA /* SingleSelectorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleSelectorViewController.swift; sourceTree = "<group>"; };
 		41AC5818201D9485005FBBDA /* SelectItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectItem.swift; sourceTree = "<group>"; };
 		41AC581A201D98E1005FBBDA /* SelectDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDataSource.swift; sourceTree = "<group>"; };
+		41AC581D201DAA96005FBBDA /* SnapKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SnapKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		41B825DA1FF79A6E004DFDA3 /* UILogin.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UILogin.storyboard; sourceTree = "<group>"; };
 		41B825DC1FF7BEA3004DFDA3 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		41B825E01FFA25FE004DFDA3 /* RegisterController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegisterController.swift; path = MedicalExam/Login/Controller/RegisterController.swift; sourceTree = SOURCE_ROOT; };
@@ -140,6 +144,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41AC581C201DAA96005FBBDA /* SnapKit.framework in Frameworks */,
 				410A6B982013BCAA0052CE12 /* Alamofire.framework in Frameworks */,
 				410A6B9A2013BE890052CE12 /* Realm.framework in Frameworks */,
 				410A6B942013BB100052CE12 /* RealmSwift.framework in Frameworks */,
@@ -154,6 +159,7 @@
 		0443A657E04107E797CD97DE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				41AC581D201DAA96005FBBDA /* SnapKit.framework */,
 				410A6B9B2013BE890052CE12 /* Realm.framework */,
 				410A6B992013BCAA0052CE12 /* Alamofire.framework */,
 				410A6B972013BB170052CE12 /* Realm.framework */,
@@ -213,7 +219,6 @@
 			children = (
 				41AC5813201D8B6E005FBBDA /* Common */,
 				418426DB201472A70080DA8D /* Launch */,
-				418426D8201466B00080DA8D /* Base */,
 				410A6B792012273C0052CE12 /* Util */,
 				414DCA9720024D6100CB2B74 /* WebView */,
 				41EEA0D62000E029006DB553 /* CustomView */,
@@ -280,6 +285,7 @@
 		41AC5813201D8B6E005FBBDA /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				418426D8201466B00080DA8D /* Base */,
 				41AC5814201D8C47005FBBDA /* Controller */,
 			);
 			path = Common;
@@ -299,6 +305,7 @@
 				41AC5816201D8E69005FBBDA /* SingleSelectorViewController.swift */,
 				41AC5818201D9485005FBBDA /* SelectItem.swift */,
 				41AC581A201D98E1005FBBDA /* SelectDataSource.swift */,
+				419F4E89201DBD0100BE2351 /* SingleSelectTableViewCell.swift */,
 			);
 			path = Selector;
 			sourceTree = "<group>";
@@ -563,6 +570,7 @@
 				414DCAA5200252FF00CB2B74 /* SelectQuestionViewController.swift in Sources */,
 				418426DA201466C60080DA8D /* Colors.swift in Sources */,
 				41D51C681FEF45F300DF78ED /* MainViewController.swift in Sources */,
+				419F4E8A201DBD0100BE2351 /* SingleSelectTableViewCell.swift in Sources */,
 				410A6B8D201304C20052CE12 /* UIQuestionBankBaseViewController.swift in Sources */,
 				410A6B822012DF6D0052CE12 /* NotesViewController.swift in Sources */,
 				419783E42014C42E000EC030 /* BigVViewController.swift in Sources */,
