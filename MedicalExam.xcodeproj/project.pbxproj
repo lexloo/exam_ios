@@ -37,6 +37,9 @@
 		419783E22014C41F000EC030 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419783E12014C41F000EC030 /* ShareViewController.swift */; };
 		419783E42014C42E000EC030 /* BigVViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419783E32014C42E000EC030 /* BigVViewController.swift */; };
 		419783E72014CA82000EC030 /* MyOptions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 419783E62014CA82000EC030 /* MyOptions.storyboard */; };
+		41AC5817201D8E69005FBBDA /* SingleSelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41AC5816201D8E69005FBBDA /* SingleSelectorViewController.swift */; };
+		41AC5819201D9485005FBBDA /* SelectItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41AC5818201D9485005FBBDA /* SelectItem.swift */; };
+		41AC581B201D98E1005FBBDA /* SelectDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41AC581A201D98E1005FBBDA /* SelectDataSource.swift */; };
 		41B825DB1FF79A6E004DFDA3 /* UILogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41B825DA1FF79A6E004DFDA3 /* UILogin.storyboard */; };
 		41B825DD1FF7BEA3004DFDA3 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B825DC1FF7BEA3004DFDA3 /* LoginController.swift */; };
 		41B825E11FFA25FF004DFDA3 /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B825E01FFA25FE004DFDA3 /* RegisterController.swift */; };
@@ -62,6 +65,7 @@
 		41EEA0E82001190C006DB553 /* Catagory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EEA0E72001190C006DB553 /* Catagory.swift */; };
 		41EEA0EA2001D2F0006DB553 /* BottomPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EEA0E92001D2EF006DB553 /* BottomPopupView.swift */; };
 		41EEA0EC2001D32D006DB553 /* BottomPopupView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41EEA0EB2001D32D006DB553 /* BottomPopupView.xib */; };
+		FBF2684D85C2E4FDA9710D72 /* Pods_MedicalExam.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E872B2C99B3742F7399C88F /* Pods_MedicalExam.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -100,6 +104,9 @@
 		419783E12014C41F000EC030 /* ShareViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
 		419783E32014C42E000EC030 /* BigVViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BigVViewController.swift; sourceTree = "<group>"; };
 		419783E62014CA82000EC030 /* MyOptions.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyOptions.storyboard; sourceTree = "<group>"; };
+		41AC5816201D8E69005FBBDA /* SingleSelectorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleSelectorViewController.swift; sourceTree = "<group>"; };
+		41AC5818201D9485005FBBDA /* SelectItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectItem.swift; sourceTree = "<group>"; };
+		41AC581A201D98E1005FBBDA /* SelectDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDataSource.swift; sourceTree = "<group>"; };
 		41B825DA1FF79A6E004DFDA3 /* UILogin.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UILogin.storyboard; sourceTree = "<group>"; };
 		41B825DC1FF7BEA3004DFDA3 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		41B825E01FFA25FE004DFDA3 /* RegisterController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegisterController.swift; path = MedicalExam/Login/Controller/RegisterController.swift; sourceTree = SOURCE_ROOT; };
@@ -137,6 +144,7 @@
 				410A6B9A2013BE890052CE12 /* Realm.framework in Frameworks */,
 				410A6B942013BB100052CE12 /* RealmSwift.framework in Frameworks */,
 				410A6B922013BACE0052CE12 /* SwiftyJSON.framework in Frameworks */,
+				FBF2684D85C2E4FDA9710D72 /* Pods_MedicalExam.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -203,6 +211,7 @@
 		413307301FEBED0800C2BD45 /* MedicalExam */ = {
 			isa = PBXGroup;
 			children = (
+				41AC5813201D8B6E005FBBDA /* Common */,
 				418426DB201472A70080DA8D /* Launch */,
 				418426D8201466B00080DA8D /* Base */,
 				410A6B792012273C0052CE12 /* Util */,
@@ -266,6 +275,32 @@
 			children = (
 			);
 			path = My;
+			sourceTree = "<group>";
+		};
+		41AC5813201D8B6E005FBBDA /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				41AC5814201D8C47005FBBDA /* Controller */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		41AC5814201D8C47005FBBDA /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				41AC5815201D8C95005FBBDA /* Selector */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		41AC5815201D8C95005FBBDA /* Selector */ = {
+			isa = PBXGroup;
+			children = (
+				41AC5816201D8E69005FBBDA /* SingleSelectorViewController.swift */,
+				41AC5818201D9485005FBBDA /* SelectItem.swift */,
+				41AC581A201D98E1005FBBDA /* SelectDataSource.swift */,
+			);
+			path = Selector;
 			sourceTree = "<group>";
 		};
 		41B825D61FF74432004DFDA3 /* Login */ = {
@@ -540,7 +575,9 @@
 				414DCA962002136800CB2B74 /* ChapterQuestions.swift in Sources */,
 				41EEA0EA2001D2F0006DB553 /* BottomPopupView.swift in Sources */,
 				41EEA0CD2000B005006DB553 /* HttpUtil.swift in Sources */,
+				41AC5819201D9485005FBBDA /* SelectItem.swift in Sources */,
 				41D51C6C1FEF493700DF78ED /* MyViewController.swift in Sources */,
+				41AC581B201D98E1005FBBDA /* SelectDataSource.swift in Sources */,
 				41EEA0E82001190C006DB553 /* Catagory.swift in Sources */,
 				41EEA0C720007ABE006DB553 /* UserInfo.swift in Sources */,
 				410A6B9120136EEF0052CE12 /* WKWebViewCallback.swift in Sources */,
@@ -563,6 +600,7 @@
 				410A6B842012E5670052CE12 /* Notes.swift in Sources */,
 				41D51C751FEFC8CD00DF78ED /* SectionModel.swift in Sources */,
 				41EEA0E420010E5F006DB553 /* SelectCategoryController.swift in Sources */,
+				41AC5817201D8E69005FBBDA /* SingleSelectorViewController.swift in Sources */,
 				41EEA0E22000EA4D006DB553 /* NaviTopView.swift in Sources */,
 				418426DF2014A9200080DA8D /* BaseUIViewController.swift in Sources */,
 				41D51C7A1FEFD3FE00DF78ED /* HeaderView.swift in Sources */,
@@ -699,7 +737,7 @@
 				DEVELOPMENT_TEAM = C86H234989;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = MedicalExam/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cc.lexloo.medicalexam;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -717,7 +755,7 @@
 				DEVELOPMENT_TEAM = C86H234989;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = MedicalExam/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cc.lexloo.medicalexam;
 				PRODUCT_NAME = "$(TARGET_NAME)";
