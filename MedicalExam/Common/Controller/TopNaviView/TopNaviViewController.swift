@@ -33,6 +33,7 @@ class TopNaviView: UIView {
         btnLeft = UIButton(type: .custom)
         btnLeft?.setTitle("返回", for: .normal)
         btnLeft?.setTitleColor(BaseColor.naviButtonColor, for: .normal)
+        btnLeft?.setImage(UIImage(named: "navi_back"), for: .normal)
         self.addSubview(btnLeft!)
         
         btnLeft?.snp.makeConstraints {
