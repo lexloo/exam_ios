@@ -13,9 +13,9 @@ class SingleSelectTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
         
         if selected {
-            imageView?.image = UIImage(named: "")
+            imageView?.image = UIImage(named: "check_circle")
         } else {
-            imageView?.image = UIImage(named: "")
+            imageView?.image = UIImage(named: "uncheck_circle")
         }
     }
 }

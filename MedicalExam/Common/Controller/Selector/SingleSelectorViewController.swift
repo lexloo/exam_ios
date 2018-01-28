@@ -14,6 +14,7 @@ class SingleSelectorViewController: UIViewController {
         tempTableView.delegate = self
         tempTableView.dataSource = self
         tempTableView.separatorStyle = UITableViewCellSeparatorStyle.singleLine
+
         
         //去除多余的空白行
         tempTableView.tableFooterView = UIView()
@@ -46,7 +47,7 @@ extension SingleSelectorViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell = tableView.dequeueReusableCell(withIdentifier: "id")
         if cell == nil {
-            cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "id")
+            cell = SingleSelectTableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "id")
             cell?.accessoryType = UITableViewCellAccessoryType.disclosureIndicator
         }
         cell?.textLabel?.text = items?[indexPath.row].description
@@ -111,6 +112,6 @@ extension SingleSelectorViewController: UITableViewDelegate {
 //
 //        tableView.deselectRow(at: indexPath, animated: true)
 //        self.present(selectQuestionVC, animated: true, completion: nil)
-        tableView.deselectRow(at: indexPath, animated: true)
+        //tableView.deselectRow(at: indexPath, animated: true)
     }
 }
