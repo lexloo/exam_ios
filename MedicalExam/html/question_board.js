@@ -1,5 +1,6 @@
+var vue;
 iTek.on("Ready", function(){
-    new Vue({
+    vue = new Vue({
         el: '#app',
         data: {
             questions: null
@@ -19,6 +20,12 @@ iTek.on("Ready", function(){
                                         questionGuid: guid,
                                         type: this.type
                 });
+            },
+            reloadQuestions: function() {
+                var that = this;
+                iTek.qb.getChapterQuestion({chapterGuid: this.chapterGuid, type: this.type}, function(result){
+                    that.questions = result;
+                });
             }
         },
         created: function() {
@@ -26,11 +33,7 @@ iTek.on("Ready", function(){
             this.chapterName = iTek.local['chapterName'];
             this.subjectName = iTek.local['subjectName'];
             this.type = iTek.local['type'];
-        
-            var that = this;
-            iTek.qb.getChapterQuestion({chapterGuid: this.chapterGuid, type: this.type}, function(result){
-                that.questions = result;
-            });
+            this.reloadQuestions();
         }
     });
 });

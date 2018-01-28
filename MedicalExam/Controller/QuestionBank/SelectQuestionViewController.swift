@@ -16,26 +16,34 @@ class SelectQuestionViewController: BaseUIViewController {
     var chapterGuid: String?
     var type: String?
     
-    var webView: NvWKWebView?
+    weak var webView: NvWKWebView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         webView = NvWKWebView(frame: CGRect(x:0, y:60, width:self.view.bounds.size.width, height:self.view.bounds.size.height), uiViewController: self)
         view.addSubview(webView!)
-        
+
         let params: [String: String] = ["subjectName": subjectName!, "chapterGuid": chapterGuid!, "chapterName": chapterName!, "type": type!]
         webView?.loadHtml(name: "html/question_board", params: params)
         
         lblSubject.text = subjectName!
+        
+        let notificationName = Notification.Name(rawValue: "REFRESH-SELECT-QUESTION")
+        NotificationCenter.default.addObserver(self, selector: #selector(refreshQuestion(notification:)), name: notificationName, object: nil)
     }
 
+    @objc func refreshQuestion(notification: Notification) {
+        self.webView?.evaluateJavaScript("vue.reloadQuestions()")
+    }
+        
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
     @IBAction func returnClick(_ sender: UIButton) {
+        
         self.dismiss(animated: true, completion: nil)
     }
     

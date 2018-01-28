@@ -78,6 +78,9 @@ class DoQuestionViewController: BaseUIViewController {
         txtComments.resignFirstResponder()
     }
     @IBAction func returnClick(_ sender: UIButton) {
+        let notificationName = Notification.Name(rawValue: "REFRESH-SELECT-QUESTION")
+        NotificationCenter.default.post(name: notificationName, object: self)
+        
         self.dismiss(animated: true, completion: nil)
     }
     
