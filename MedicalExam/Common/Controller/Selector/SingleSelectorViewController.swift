@@ -27,7 +27,7 @@ class SingleSelectorViewController: UIViewController {
     }()
     
     var dataSource: SelectDataSource? {
-        didSet(old) {
+        didSet {
             self.view.addSubview(self.tableView!)
         }
     }
@@ -39,17 +39,26 @@ class SingleSelectorViewController: UIViewController {
         }
     }
     
+    var fnBack: ()-> Void
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.view.backgroundColor = UIColor.white
         
         topView = TopNaviView(frame: CGRect(x: 0.0, y: 0.0, width: self.view.bounds.width, height: 60.0))
+        topView?.btnLeft?.addTarget(self, action: #selector(tappedReturn), for: .touchUpInside)
         self.view.addSubview(topView!)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    @objc func tappedReturn() {
+        if fnBack != nil {
+            fnBack()
+        }
     }
 }
 
