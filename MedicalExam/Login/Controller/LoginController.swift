@@ -36,7 +36,10 @@ class LoginController: BaseUIViewController {
             
             RealmUtil.addCanUpdate(userInfo)
 
-            if userInfo.examKind != nil {
+            //if don't have subjects, then show select subjects and chapters dialog
+            let count = RealmUtil.selectAll(Subject.self).count
+            print(count)
+            if count > 0 {
                 //goto main controller
                 let main = MainViewController()
                 self.present(main, animated: true, completion: nil)
