@@ -10,6 +10,7 @@ import UIKit
 
 class MyViewController: UITableViewController {
     @IBOutlet weak var vLogo: UIView!
+    @IBOutlet var tbProp: UITableView!
     
     @IBAction func exitClick(_ sender: UIButton) {
         exit(0)
@@ -18,8 +19,11 @@ class MyViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = "我的"
-        self.vLogo.backgroundColor = BaseColor.statusBarColor
+        title = "我的"
+        
+        vLogo.bounds = CGRect(x: 0, y: 0, width: view.bounds.width, height: 160)
+        vLogo.backgroundColor = BaseColor.statusBarColor
+        self.tbProp.tableFooterView = UIView();
     }
     
     override func didReceiveMemoryWarning() {

@@ -190,7 +190,6 @@
 			isa = PBXGroup;
 			children = (
 				410A6B7D2012DBF00052CE12 /* QuestionBank.storyboard */,
-				419783E62014CA82000EC030 /* MyOptions.storyboard */,
 			);
 			path = design;
 			sourceTree = "<group>";
@@ -286,6 +285,8 @@
 		419783E52014CA51000EC030 /* My */ = {
 			isa = PBXGroup;
 			children = (
+				419783E62014CA82000EC030 /* MyOptions.storyboard */,
+				41D51C6B1FEF493700DF78ED /* MyViewController.swift */,
 			);
 			path = My;
 			sourceTree = "<group>";
@@ -393,7 +394,6 @@
 				414DCA9F2002527900CB2B74 /* QuestionBank */,
 				41D51C671FEF45F300DF78ED /* MainViewController.swift */,
 				41D51C691FEF480A00DF78ED /* QuestionBankViewController.swift */,
-				41D51C6B1FEF493700DF78ED /* MyViewController.swift */,
 				41D51C6D1FEF495800DF78ED /* VideoViewController.swift */,
 				419783E12014C41F000EC030 /* ShareViewController.swift */,
 				419783E32014C42E000EC030 /* BigVViewController.swift */,
