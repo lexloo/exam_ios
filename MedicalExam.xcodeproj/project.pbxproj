@@ -72,7 +72,6 @@
 		41EEA0E82001190C006DB553 /* Catagory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EEA0E72001190C006DB553 /* Catagory.swift */; };
 		41EEA0EA2001D2F0006DB553 /* BottomPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EEA0E92001D2EF006DB553 /* BottomPopupView.swift */; };
 		41EEA0EC2001D32D006DB553 /* BottomPopupView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41EEA0EB2001D32D006DB553 /* BottomPopupView.xib */; };
-		FBF2684D85C2E4FDA9710D72 /* Pods_MedicalExam.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E872B2C99B3742F7399C88F /* Pods_MedicalExam.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -159,7 +158,6 @@
 				410A6B9A2013BE890052CE12 /* Realm.framework in Frameworks */,
 				410A6B942013BB100052CE12 /* RealmSwift.framework in Frameworks */,
 				410A6B922013BACE0052CE12 /* SwiftyJSON.framework in Frameworks */,
-				FBF2684D85C2E4FDA9710D72 /* Pods_MedicalExam.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -230,7 +228,6 @@
 				41AC5813201D8B6E005FBBDA /* Common */,
 				418426DB201472A70080DA8D /* Launch */,
 				410A6B792012273C0052CE12 /* Util */,
-				414DCA9720024D6100CB2B74 /* WebView */,
 				41EEA0D62000E029006DB553 /* CustomView */,
 				41EEA0CB2000AFDD006DB553 /* Http */,
 				41EEA0C820007EBA006DB553 /* Realm */,
@@ -305,6 +302,7 @@
 		41AC5813201D8B6E005FBBDA /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				41C9E2ED2021FCAB001606DA /* View */,
 				418426D8201466B00080DA8D /* Base */,
 				41AC5814201D8C47005FBBDA /* Controller */,
 			);
@@ -314,7 +312,6 @@
 		41AC5814201D8C47005FBBDA /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				419F4E8B201DC19900BE2351 /* TopNaviView */,
 				41AC5815201D8C95005FBBDA /* Selector */,
 			);
 			path = Controller;
@@ -377,6 +374,15 @@
 				419F4E94201DF30000BE2351 /* SelectCategoryController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		41C9E2ED2021FCAB001606DA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				419F4E8B201DC19900BE2351 /* TopNaviView */,
+				414DCA9720024D6100CB2B74 /* WebView */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		41D51C641FEF452C00DF78ED /* Controller */ = {
