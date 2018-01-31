@@ -27,6 +27,7 @@ class NvWKWebView: WKWebView {
         self.configuration.userContentController.add(self, name: "invoke")
         self.navigationDelegate = self
         self.uiDelegate = self
+        self.scrollView.bounces = false
         
         self.initClients()
     }
