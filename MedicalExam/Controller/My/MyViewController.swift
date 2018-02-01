@@ -26,8 +26,6 @@ class MyViewController: UITableViewController {
     }()
     private var avatarData: Data?
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -36,14 +34,37 @@ class MyViewController: UITableViewController {
         vLogo.bounds = CGRect(x: 0, y: 0, width: view.bounds.width, height: 160)
         vLogo.backgroundColor = BaseColor.statusBarColor
         
-        ivAvatar.layer.cornerRadius = ivAvatar.frame.size.width / 2
-        ivAvatar.clipsToBounds = true
+        //ivAvatar.layer.cornerRadius = ivAvatar.frame.size.width / 2
+        //ivAvatar.clipsToBounds = true
+        ivAvatar.image = UIImage(color: UIColor.white, size: CGSize(width: 80, height: 80))?.roundCornersToCircle(withBorder: 10, color: UIColor.orange)
         
         tbProp.tableFooterView = UIView();
+        
+        let avatarClick = UITapGestureRecognizer(target: self, action: #selector(avatarEdit));
+        ivAvatar.addGestureRecognizer(avatarClick)
+        ivAvatar.isUserInteractionEnabled = true
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    @objc func avatarEdit() {
+        let sheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        
+        sheet.addAction(UIAlertAction(title: "Camera", style: .default, handler: {
+            (UIAlertAction) in
+            self.openCamera()
+        }))
+        
+        sheet.addAction(UIAlertAction(title: "Photo", style: .default, handler: {
+            (UIAlertAction) in
+            self.openLibrary()
+        }))
+        
+        sheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        
+        self.present(sheet, animated: true, completion: nil)
     }
 }
 
@@ -74,10 +95,16 @@ extension MyViewController: UIImagePickerControllerDelegate, UINavigationControl
                     }
                     
                     if avatarData != nil {
-                        
+                        ivAvatar.image = UIImage(data: avatarData!)?.resize(toSize: CGSize(width: 80, height: 80))?.roundCornersToCircle(withBorder: 40, color: UIColor.orange)
                     }
                 }
             }
         }
+        
+        picker.dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
     }
 }
