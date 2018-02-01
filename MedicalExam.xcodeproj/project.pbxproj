@@ -300,6 +300,13 @@
 			path = TopNaviView;
 			sourceTree = "<group>";
 		};
+		41A0EF0420236241002712D3 /* Image */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Image;
+			sourceTree = "<group>";
+		};
 		41AC5813201D8B6E005FBBDA /* Common */ = {
 			isa = PBXGroup;
 			children = (
@@ -380,6 +387,7 @@
 		41C9E2ED2021FCAB001606DA /* View */ = {
 			isa = PBXGroup;
 			children = (
+				41A0EF0420236241002712D3 /* Image */,
 				419F4E8B201DC19900BE2351 /* TopNaviView */,
 				414DCA9720024D6100CB2B74 /* WebView */,
 			);
