@@ -32,11 +32,21 @@
 		414DCA962002136800CB2B74 /* ChapterQuestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414DCA952002136800CB2B74 /* ChapterQuestions.swift */; };
 		414DCA9920024E2200CB2B74 /* NvWKWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414DCA9820024E2200CB2B74 /* NvWKWebView.swift */; };
 		414DCAA5200252FF00CB2B74 /* SelectQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414DCAA4200252FF00CB2B74 /* SelectQuestionViewController.swift */; };
-		418426DA201466C60080DA8D /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418426D9201466C60080DA8D /* Colors.swift */; };
+		418426DA201466C60080DA8D /* BaseColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418426D9201466C60080DA8D /* BaseColor.swift */; };
 		418426DF2014A9200080DA8D /* BaseUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418426DE2014A91F0080DA8D /* BaseUIViewController.swift */; };
 		419783E22014C41F000EC030 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419783E12014C41F000EC030 /* ShareViewController.swift */; };
 		419783E42014C42E000EC030 /* BigVViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419783E32014C42E000EC030 /* BigVViewController.swift */; };
 		419783E72014CA82000EC030 /* MyOptions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 419783E62014CA82000EC030 /* MyOptions.storyboard */; };
+		419F4E8A201DBD0100BE2351 /* CheckBoxSelectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419F4E89201DBD0100BE2351 /* CheckBoxSelectTableViewCell.swift */; };
+		419F4E8D201DC1C500BE2351 /* TopNaviView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419F4E8C201DC1C500BE2351 /* TopNaviView.swift */; };
+		419F4E8F201DD59C00BE2351 /* TopNaviViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419F4E8E201DD59C00BE2351 /* TopNaviViewDelegate.swift */; };
+		419F4E91201DDB4F00BE2351 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419F4E90201DDB4F00BE2351 /* UIView.swift */; };
+		419F4E93201DEFF400BE2351 /* SingleCheckBoxSelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419F4E92201DEFF400BE2351 /* SingleCheckBoxSelectorViewController.swift */; };
+		419F4E95201DF30000BE2351 /* SelectCategoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419F4E94201DF30000BE2351 /* SelectCategoryController.swift */; };
+		41AC5817201D8E69005FBBDA /* SingleSelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41AC5816201D8E69005FBBDA /* SingleSelectorViewController.swift */; };
+		41AC5819201D9485005FBBDA /* SelectItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41AC5818201D9485005FBBDA /* SelectItem.swift */; };
+		41AC581B201D98E1005FBBDA /* SelectDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41AC581A201D98E1005FBBDA /* SelectDataSource.swift */; };
+		41AC581C201DAA96005FBBDA /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41AC581D201DAA96005FBBDA /* SnapKit.framework */; };
 		41B825DB1FF79A6E004DFDA3 /* UILogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41B825DA1FF79A6E004DFDA3 /* UILogin.storyboard */; };
 		41B825DD1FF7BEA3004DFDA3 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B825DC1FF7BEA3004DFDA3 /* LoginController.swift */; };
 		41B825E11FFA25FF004DFDA3 /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B825E01FFA25FE004DFDA3 /* RegisterController.swift */; };
@@ -57,11 +67,12 @@
 		41EEA0CD2000B005006DB553 /* HttpUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EEA0CC2000B005006DB553 /* HttpUtil.swift */; };
 		41EEA0E02000E5BA006DB553 /* NaviTopView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41EEA0DF2000E5BA006DB553 /* NaviTopView.xib */; };
 		41EEA0E22000EA4D006DB553 /* NaviTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EEA0E12000EA4D006DB553 /* NaviTopView.swift */; };
-		41EEA0E420010E5F006DB553 /* SelectCategoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EEA0E320010E5F006DB553 /* SelectCategoryController.swift */; };
+		41EEA0E420010E5F006DB553 /* SelectKindController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EEA0E320010E5F006DB553 /* SelectKindController.swift */; };
 		41EEA0E62001163F006DB553 /* Kind.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EEA0E52001163F006DB553 /* Kind.swift */; };
 		41EEA0E82001190C006DB553 /* Catagory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EEA0E72001190C006DB553 /* Catagory.swift */; };
 		41EEA0EA2001D2F0006DB553 /* BottomPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EEA0E92001D2EF006DB553 /* BottomPopupView.swift */; };
 		41EEA0EC2001D32D006DB553 /* BottomPopupView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41EEA0EB2001D32D006DB553 /* BottomPopupView.xib */; };
+		FBF2684D85C2E4FDA9710D72 /* Pods_MedicalExam.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E872B2C99B3742F7399C88F /* Pods_MedicalExam.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -95,11 +106,21 @@
 		414DCA952002136800CB2B74 /* ChapterQuestions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChapterQuestions.swift; sourceTree = "<group>"; };
 		414DCA9820024E2200CB2B74 /* NvWKWebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NvWKWebView.swift; sourceTree = "<group>"; };
 		414DCAA4200252FF00CB2B74 /* SelectQuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectQuestionViewController.swift; sourceTree = "<group>"; };
-		418426D9201466C60080DA8D /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		418426D9201466C60080DA8D /* BaseColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseColor.swift; sourceTree = "<group>"; };
 		418426DE2014A91F0080DA8D /* BaseUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseUIViewController.swift; sourceTree = "<group>"; };
 		419783E12014C41F000EC030 /* ShareViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
 		419783E32014C42E000EC030 /* BigVViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BigVViewController.swift; sourceTree = "<group>"; };
 		419783E62014CA82000EC030 /* MyOptions.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyOptions.storyboard; sourceTree = "<group>"; };
+		419F4E89201DBD0100BE2351 /* CheckBoxSelectTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBoxSelectTableViewCell.swift; sourceTree = "<group>"; };
+		419F4E8C201DC1C500BE2351 /* TopNaviView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopNaviView.swift; sourceTree = "<group>"; };
+		419F4E8E201DD59C00BE2351 /* TopNaviViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopNaviViewDelegate.swift; sourceTree = "<group>"; };
+		419F4E90201DDB4F00BE2351 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		419F4E92201DEFF400BE2351 /* SingleCheckBoxSelectorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleCheckBoxSelectorViewController.swift; sourceTree = "<group>"; };
+		419F4E94201DF30000BE2351 /* SelectCategoryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCategoryController.swift; sourceTree = "<group>"; };
+		41AC5816201D8E69005FBBDA /* SingleSelectorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleSelectorViewController.swift; sourceTree = "<group>"; };
+		41AC5818201D9485005FBBDA /* SelectItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectItem.swift; sourceTree = "<group>"; };
+		41AC581A201D98E1005FBBDA /* SelectDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDataSource.swift; sourceTree = "<group>"; };
+		41AC581D201DAA96005FBBDA /* SnapKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SnapKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		41B825DA1FF79A6E004DFDA3 /* UILogin.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UILogin.storyboard; sourceTree = "<group>"; };
 		41B825DC1FF7BEA3004DFDA3 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		41B825E01FFA25FE004DFDA3 /* RegisterController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegisterController.swift; path = MedicalExam/Login/Controller/RegisterController.swift; sourceTree = SOURCE_ROOT; };
@@ -120,7 +141,7 @@
 		41EEA0CC2000B005006DB553 /* HttpUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpUtil.swift; sourceTree = "<group>"; };
 		41EEA0DF2000E5BA006DB553 /* NaviTopView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NaviTopView.xib; sourceTree = "<group>"; };
 		41EEA0E12000EA4D006DB553 /* NaviTopView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NaviTopView.swift; sourceTree = "<group>"; };
-		41EEA0E320010E5F006DB553 /* SelectCategoryController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectCategoryController.swift; sourceTree = "<group>"; };
+		41EEA0E320010E5F006DB553 /* SelectKindController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectKindController.swift; sourceTree = "<group>"; };
 		41EEA0E52001163F006DB553 /* Kind.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kind.swift; sourceTree = "<group>"; };
 		41EEA0E72001190C006DB553 /* Catagory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Catagory.swift; sourceTree = "<group>"; };
 		41EEA0E92001D2EF006DB553 /* BottomPopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomPopupView.swift; sourceTree = "<group>"; };
@@ -133,10 +154,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41AC581C201DAA96005FBBDA /* SnapKit.framework in Frameworks */,
 				410A6B982013BCAA0052CE12 /* Alamofire.framework in Frameworks */,
 				410A6B9A2013BE890052CE12 /* Realm.framework in Frameworks */,
 				410A6B942013BB100052CE12 /* RealmSwift.framework in Frameworks */,
 				410A6B922013BACE0052CE12 /* SwiftyJSON.framework in Frameworks */,
+				FBF2684D85C2E4FDA9710D72 /* Pods_MedicalExam.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,6 +169,7 @@
 		0443A657E04107E797CD97DE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				41AC581D201DAA96005FBBDA /* SnapKit.framework */,
 				410A6B9B2013BE890052CE12 /* Realm.framework */,
 				410A6B992013BCAA0052CE12 /* Alamofire.framework */,
 				410A6B972013BB170052CE12 /* Realm.framework */,
@@ -203,8 +227,8 @@
 		413307301FEBED0800C2BD45 /* MedicalExam */ = {
 			isa = PBXGroup;
 			children = (
+				41AC5813201D8B6E005FBBDA /* Common */,
 				418426DB201472A70080DA8D /* Launch */,
-				418426D8201466B00080DA8D /* Base */,
 				410A6B792012273C0052CE12 /* Util */,
 				414DCA9720024D6100CB2B74 /* WebView */,
 				41EEA0D62000E029006DB553 /* CustomView */,
@@ -248,7 +272,8 @@
 		418426D8201466B00080DA8D /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				418426D9201466C60080DA8D /* Colors.swift */,
+				418426D9201466C60080DA8D /* BaseColor.swift */,
+				419F4E90201DDB4F00BE2351 /* UIView.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -266,6 +291,45 @@
 			children = (
 			);
 			path = My;
+			sourceTree = "<group>";
+		};
+		419F4E8B201DC19900BE2351 /* TopNaviView */ = {
+			isa = PBXGroup;
+			children = (
+				419F4E8C201DC1C500BE2351 /* TopNaviView.swift */,
+				419F4E8E201DD59C00BE2351 /* TopNaviViewDelegate.swift */,
+			);
+			path = TopNaviView;
+			sourceTree = "<group>";
+		};
+		41AC5813201D8B6E005FBBDA /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				418426D8201466B00080DA8D /* Base */,
+				41AC5814201D8C47005FBBDA /* Controller */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		41AC5814201D8C47005FBBDA /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				419F4E8B201DC19900BE2351 /* TopNaviView */,
+				41AC5815201D8C95005FBBDA /* Selector */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		41AC5815201D8C95005FBBDA /* Selector */ = {
+			isa = PBXGroup;
+			children = (
+				41AC5816201D8E69005FBBDA /* SingleSelectorViewController.swift */,
+				41AC5818201D9485005FBBDA /* SelectItem.swift */,
+				41AC581A201D98E1005FBBDA /* SelectDataSource.swift */,
+				419F4E89201DBD0100BE2351 /* CheckBoxSelectTableViewCell.swift */,
+				419F4E92201DEFF400BE2351 /* SingleCheckBoxSelectorViewController.swift */,
+			);
+			path = Selector;
 			sourceTree = "<group>";
 		};
 		41B825D61FF74432004DFDA3 /* Login */ = {
@@ -307,9 +371,10 @@
 		41B825D91FF74457004DFDA3 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				41EEA0E320010E5F006DB553 /* SelectCategoryController.swift */,
+				41EEA0E320010E5F006DB553 /* SelectKindController.swift */,
 				41B825E01FFA25FE004DFDA3 /* RegisterController.swift */,
 				41B825DC1FF7BEA3004DFDA3 /* LoginController.swift */,
+				419F4E94201DF30000BE2351 /* SelectCategoryController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -524,10 +589,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				419F4E93201DEFF400BE2351 /* SingleCheckBoxSelectorViewController.swift in Sources */,
 				419783E22014C41F000EC030 /* ShareViewController.swift in Sources */,
 				414DCAA5200252FF00CB2B74 /* SelectQuestionViewController.swift in Sources */,
-				418426DA201466C60080DA8D /* Colors.swift in Sources */,
+				418426DA201466C60080DA8D /* BaseColor.swift in Sources */,
 				41D51C681FEF45F300DF78ED /* MainViewController.swift in Sources */,
+				419F4E8A201DBD0100BE2351 /* CheckBoxSelectTableViewCell.swift in Sources */,
 				410A6B8D201304C20052CE12 /* UIQuestionBankBaseViewController.swift in Sources */,
 				410A6B822012DF6D0052CE12 /* NotesViewController.swift in Sources */,
 				419783E42014C42E000EC030 /* BigVViewController.swift in Sources */,
@@ -540,9 +607,13 @@
 				414DCA962002136800CB2B74 /* ChapterQuestions.swift in Sources */,
 				41EEA0EA2001D2F0006DB553 /* BottomPopupView.swift in Sources */,
 				41EEA0CD2000B005006DB553 /* HttpUtil.swift in Sources */,
+				41AC5819201D9485005FBBDA /* SelectItem.swift in Sources */,
 				41D51C6C1FEF493700DF78ED /* MyViewController.swift in Sources */,
+				41AC581B201D98E1005FBBDA /* SelectDataSource.swift in Sources */,
+				419F4E91201DDB4F00BE2351 /* UIView.swift in Sources */,
 				41EEA0E82001190C006DB553 /* Catagory.swift in Sources */,
 				41EEA0C720007ABE006DB553 /* UserInfo.swift in Sources */,
+				419F4E8D201DC1C500BE2351 /* TopNaviView.swift in Sources */,
 				410A6B9120136EEF0052CE12 /* WKWebViewCallback.swift in Sources */,
 				414DCA8E2001F9D400CB2B74 /* Global.swift in Sources */,
 				41D51C7C1FEFDC4300DF78ED /* TableViewCell.swift in Sources */,
@@ -552,6 +623,7 @@
 				41B825DD1FF7BEA3004DFDA3 /* LoginController.swift in Sources */,
 				414DCA922002134200CB2B74 /* Subject.swift in Sources */,
 				414DCA942002134D00CB2B74 /* Chapter.swift in Sources */,
+				419F4E8F201DD59C00BE2351 /* TopNaviViewDelegate.swift in Sources */,
 				41E4CE05200B0667000CA73F /* Qb.swift in Sources */,
 				41EEA0CA20007EDC006DB553 /* RealmUtil.swift in Sources */,
 				410A6B8A201304710052CE12 /* TypeQuestionViewController.swift in Sources */,
@@ -559,10 +631,12 @@
 				41D51C6A1FEF480A00DF78ED /* QuestionBankViewController.swift in Sources */,
 				4131DD55200F9CCC00A364DE /* CommentsViewController.swift in Sources */,
 				41EEA0E62001163F006DB553 /* Kind.swift in Sources */,
+				419F4E95201DF30000BE2351 /* SelectCategoryController.swift in Sources */,
 				414DCA902002128300CB2B74 /* BaseItem.swift in Sources */,
 				410A6B842012E5670052CE12 /* Notes.swift in Sources */,
 				41D51C751FEFC8CD00DF78ED /* SectionModel.swift in Sources */,
-				41EEA0E420010E5F006DB553 /* SelectCategoryController.swift in Sources */,
+				41EEA0E420010E5F006DB553 /* SelectKindController.swift in Sources */,
+				41AC5817201D8E69005FBBDA /* SingleSelectorViewController.swift in Sources */,
 				41EEA0E22000EA4D006DB553 /* NaviTopView.swift in Sources */,
 				418426DF2014A9200080DA8D /* BaseUIViewController.swift in Sources */,
 				41D51C7A1FEFD3FE00DF78ED /* HeaderView.swift in Sources */,
@@ -699,7 +773,7 @@
 				DEVELOPMENT_TEAM = C86H234989;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = MedicalExam/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cc.lexloo.medicalexam;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -717,7 +791,7 @@
 				DEVELOPMENT_TEAM = C86H234989;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = MedicalExam/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cc.lexloo.medicalexam;
 				PRODUCT_NAME = "$(TARGET_NAME)";

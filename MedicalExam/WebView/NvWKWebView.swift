@@ -11,7 +11,7 @@ import WebKit
 import SwiftyJSON
 
 class NvWKWebView: WKWebView {
-    var uiViewController: UIViewController?
+    weak var uiViewController: UIViewController?
     var callback: WKWebViewCallback?
     
     init(frame: CGRect, uiViewController: UIViewController){

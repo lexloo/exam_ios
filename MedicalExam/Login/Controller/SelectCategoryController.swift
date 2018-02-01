@@ -1,105 +1,47 @@
 //
-//  SelectCategoryController.swift
+//  SelectCategoryViewController.swift
 //  MedicalExam
 //
-//  Created by 黄奇 on 06/01/2018.
+//  Created by 黄奇 on 28/01/2018.
 //  Copyright © 2018 SmartWall. All rights reserved.
 //
-
 import UIKit
 import Foundation
 
-class SelectCategoryController: BaseUIViewController {
-    @IBOutlet weak var naviTopView: NaviTopView!
-    @IBOutlet weak var btnSelectCategory: UIButton!
-   
-    var pvExamCategory: UIPickerView?
-    
-    @IBOutlet weak var bpvCatagory: BottomPopupView!
-    let kind1 = Kind(guid: "61AEAB78A7CD3671E050840A063959A8", name:"医师资格");
-    let kind2 = Kind(guid:"61AEAB78A7CE3671E050840A063959A8", name:"卫生资格");
-    
-    var catagorys: [Kind: [Catagory]]?
-    var kindArr: [Kind]?
-    var selectKind: Kind?
-    
+class SelectCategoryController: SingleCheckBoxSelectorViewController {
+    var kindGuid: String?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        naviTopView.btnReturn.addTarget(self, action: #selector(SelectCategoryController.close), for: UIControlEvents.touchUpInside)
-        
-        pvExamCategory = UIPickerView()
-        pvExamCategory?.selectedRow(inComponent: 0)
-        pvExamCategory?.selectedRow(inComponent: 1)
-        pvExamCategory?.dataSource = self
-        pvExamCategory?.delegate = self
-        
-        bpvCatagory.vmContainer.addSubview(pvExamCategory!)
-        bpvCatagory.btnOK.addTarget(self, action: #selector(SelectCategoryController.setCategory), for: .touchUpInside)
-        
-        
-        loadData()
+        self.title = "选择考试分类"
+        self.dataSource = self
+        self.topView?.rightButtonTitle = "保存"
+        self.topView?.delegate = self
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
-    @objc func close() {
-        self.dismiss(animated: true, completion: nil)
-    }
-    
-    @objc func setCategory() {
-        let kind: Kind = self.kindArr![(self.pvExamCategory?.selectedRow(inComponent: 0))!]
-        let catagory: Catagory = self.catagorys![kind]![(self.pvExamCategory?.selectedRow(inComponent: 1))!]
-        let title = kind.name + "|" + catagory.name!
-        self.btnSelectCategory.setTitle(title, for: .normal)
-
+    func setCategory(categoryGuid: String) {
         let userInfo = UserInfo()
         userInfo.copyFrom(Global.userInfo)
-        userInfo.examKind = kind.guid
-        userInfo.examCategory = catagory.guid
+        userInfo.examKind = self.kindGuid
+        userInfo.examCategory = categoryGuid
         Global.userInfo.copyFrom(userInfo)
-
-        let parameters:Dictionary = ["guid": userInfo.guid!, "kind": userInfo.examKind!, "category": userInfo.examCategory!]
+        
+        let parameters = ["guid": userInfo.guid!, "kind": userInfo.examKind!, "category": userInfo.examCategory!]
         HttpUtil.postReturnString("user/kind_category", parameters: parameters) {
             result in
             if "SUCCESS" == result {
-                self.refreshData(userInfo)
+                self.refreshData(userInfo: userInfo)
             }
         }
     }
     
-    @IBAction func selectCategory(_ sender: UIButton) {
-        bpvCatagory.isHidden = false
-    }
-}
-
-extension SelectCategoryController {
-    func loadData() {
-        kindArr = [kind1, kind2]
-        selectKind = kind1
-        var catagory1: [Catagory] = []
-        var catagory2: [Catagory] = []
-        
-        HttpUtil.postReturnData("list/all_catagory", parameters: nil) {
-            json in
-            for (_, item) in json {
-                let catagory = Catagory()
-                catagory.mapping(item)
-                
-                if "61AEAB78A7CD3671E050840A063959A8" == catagory.kindGuid! {
-                    catagory1.append(catagory)
-                } else {
-                    catagory2.append(catagory)
-                }
-            }
-            self.catagorys = [self.kind1: catagory1, self.kind2: catagory2]
-            self.pvExamCategory?.reloadAllComponents()
-        }
-    }
-    
-    func refreshData(_ userInfo: UserInfo) {
+    func refreshData(userInfo: UserInfo) {
+        var ptr = 0
         RealmUtil.addCanUpdate(userInfo)
         
         RealmUtil.delete(RealmUtil.selectAll(ChapterQuestions.self))
@@ -116,8 +58,13 @@ extension SelectCategoryController {
                 subjects.append(subject)
             }
             RealmUtil.addListData(subjects)
+            
+            ptr = ptr + 1
+            if ptr == 3 {
+                self.close()
+            }
         }
-      
+        
         let p2 = ["category_guid": userInfo.examCategory!]
         HttpUtil.postReturnData("list/category_chapter", parameters: p2) {
             json in
@@ -128,8 +75,13 @@ extension SelectCategoryController {
                 chapters.append(chapter)
             }
             RealmUtil.addListData(chapters)
+            
+            ptr = ptr + 1
+            if ptr == 3 {
+                self.close()
+            }
         }
- 
+        
         let p3 = ["category_guid": userInfo.examCategory!]
         HttpUtil.postReturnData("question/category/get", parameters: p3) {
             json in
@@ -140,46 +92,47 @@ extension SelectCategoryController {
                 questions.append(question)
             }
             RealmUtil.addListData(questions)
-        }
-    }
-}
-
-extension SelectCategoryController: UIPickerViewDataSource {
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 2;
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        if 0 == component {
-            return (kindArr?.count)!
-        }
-        
-        if let cs = catagorys {
-            return cs[selectKind!]!.count
-        } else {
-            return 0
-        }
-    }
-}
-
-extension SelectCategoryController: UIPickerViewDelegate {
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        if component == 0 {
-            return kindArr?[row].name
-        } else {
-            if let cs = catagorys {
-                return cs[selectKind!]![row].name
-            } else {
-                return ""
+            
+            ptr = ptr + 1
+            if ptr == 3 {
+                self.close()
             }
         }
     }
     
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        if component == 0 {
-            selectKind = kindArr?[row]
-            pickerView.reloadComponent(1)
+    func close() {
+//        self.dismiss(animated: true, completion: nil)
+        self.view.window?.rootViewController?.dismiss(animated: true, completion: nil)
+    }
+}
+
+extension SelectCategoryController: TopNaviViewDelegate {
+    func leftClick() {
+        let selectKindVC = SelectKindController()
+        self.present(selectKindVC, animated: true, completion: nil)
+    }
+    
+    func rightClick() {
+        if let select = self.getSelectItem() {
+            setCategory(categoryGuid: select.guid!)
+        } else {
+            MessageUtils.alert(viewController: self, message: "请选择考试分类")
         }
     }
 }
 
+extension SelectCategoryController: SelectDataSource {
+    func queryItemData(_ cb: @escaping ([SelectItem]?) -> Void) {
+        let p = ["kind_guid": self.kindGuid!]
+        HttpUtil.postReturnData("list/catagory", parameters: p) {
+            json in
+            var items = [SelectItem]()
+            
+            for (_, item) in json {
+                items.append(SelectItem(guid: item["guid"].string, name: item["name"].string))
+            }
+            
+            cb(items)
+        }
+    }
+}
