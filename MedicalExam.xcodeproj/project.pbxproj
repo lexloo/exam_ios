@@ -43,6 +43,8 @@
 		419F4E91201DDB4F00BE2351 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419F4E90201DDB4F00BE2351 /* UIView.swift */; };
 		419F4E93201DEFF400BE2351 /* SingleCheckBoxSelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419F4E92201DEFF400BE2351 /* SingleCheckBoxSelectorViewController.swift */; };
 		419F4E95201DF30000BE2351 /* SelectCategoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419F4E94201DF30000BE2351 /* SelectCategoryController.swift */; };
+		41A0EF0B2023643C002712D3 /* ImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A0EF092023643C002712D3 /* ImageHelper.swift */; };
+		41A0EF0C2023643C002712D3 /* ImageVIewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A0EF0A2023643C002712D3 /* ImageVIewExtension.swift */; };
 		41AC5817201D8E69005FBBDA /* SingleSelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41AC5816201D8E69005FBBDA /* SingleSelectorViewController.swift */; };
 		41AC5819201D9485005FBBDA /* SelectItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41AC5818201D9485005FBBDA /* SelectItem.swift */; };
 		41AC581B201D98E1005FBBDA /* SelectDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41AC581A201D98E1005FBBDA /* SelectDataSource.swift */; };
@@ -116,6 +118,8 @@
 		419F4E90201DDB4F00BE2351 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		419F4E92201DEFF400BE2351 /* SingleCheckBoxSelectorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleCheckBoxSelectorViewController.swift; sourceTree = "<group>"; };
 		419F4E94201DF30000BE2351 /* SelectCategoryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCategoryController.swift; sourceTree = "<group>"; };
+		41A0EF092023643C002712D3 /* ImageHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageHelper.swift; sourceTree = "<group>"; };
+		41A0EF0A2023643C002712D3 /* ImageVIewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageVIewExtension.swift; sourceTree = "<group>"; };
 		41AC5816201D8E69005FBBDA /* SingleSelectorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleSelectorViewController.swift; sourceTree = "<group>"; };
 		41AC5818201D9485005FBBDA /* SelectItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectItem.swift; sourceTree = "<group>"; };
 		41AC581A201D98E1005FBBDA /* SelectDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDataSource.swift; sourceTree = "<group>"; };
@@ -303,6 +307,8 @@
 		41A0EF0420236241002712D3 /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				41A0EF092023643C002712D3 /* ImageHelper.swift */,
+				41A0EF0A2023643C002712D3 /* ImageVIewExtension.swift */,
 			);
 			path = Image;
 			sourceTree = "<group>";
@@ -609,6 +615,7 @@
 				418426DA201466C60080DA8D /* BaseColor.swift in Sources */,
 				41D51C681FEF45F300DF78ED /* MainViewController.swift in Sources */,
 				419F4E8A201DBD0100BE2351 /* CheckBoxSelectTableViewCell.swift in Sources */,
+				41A0EF0C2023643C002712D3 /* ImageVIewExtension.swift in Sources */,
 				410A6B8D201304C20052CE12 /* UIQuestionBankBaseViewController.swift in Sources */,
 				410A6B822012DF6D0052CE12 /* NotesViewController.swift in Sources */,
 				419783E42014C42E000EC030 /* BigVViewController.swift in Sources */,
@@ -644,6 +651,7 @@
 				41D51C771FEFC94D00DF78ED /* CellModel.swift in Sources */,
 				41D51C6A1FEF480A00DF78ED /* QuestionBankViewController.swift in Sources */,
 				4131DD55200F9CCC00A364DE /* CommentsViewController.swift in Sources */,
+				41A0EF0B2023643C002712D3 /* ImageHelper.swift in Sources */,
 				41EEA0E62001163F006DB553 /* Kind.swift in Sources */,
 				419F4E95201DF30000BE2351 /* SelectCategoryController.swift in Sources */,
 				414DCA902002128300CB2B74 /* BaseItem.swift in Sources */,
