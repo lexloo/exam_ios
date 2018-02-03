@@ -8,15 +8,13 @@
 
 import UIKit
 
-class UIQuestionBankBaseViewController: UIViewController {
+class UIQuestionBankBaseViewController: BaseUIViewController {
     lazy var dataSource: [SectionModel]? = nil
     var lastActiveSection: Int?
     var type: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.view.backgroundColor = BaseColor.statusBarColor
     }
     
     override func didReceiveMemoryWarning() {

@@ -25,8 +25,9 @@ class MainViewController: UITabBarController {
         let sbQb = UIStoryboard(name: "QuestionBank", bundle: nil)
         let questionBankViewController = sbQb.instantiateViewController(withIdentifier: "QuestionBankVC") as! QuestionBankViewController
         questionBankViewController.type = "all"
+        let naviQuestionBankViewController = UINavigationController(rootViewController: questionBankViewController)
         let questionBankViewItem: UITabBarItem = UITabBarItem(title: "题库", image: UIImage(named: "question_bank"), selectedImage: UIImage(named:"question_bank"))
-        questionBankViewController.tabBarItem = questionBankViewItem
+        naviQuestionBankViewController.tabBarItem = questionBankViewItem
         
         let shareViewController = ShareViewController()
         let shareViewItem: UITabBarItem = UITabBarItem(title:"分享", image: UIImage(named: "share"), selectedImage: UIImage(named: "share"))
@@ -47,7 +48,7 @@ class MainViewController: UITabBarController {
         myNaviViewController.tabBarItem = myViewItem
         
         let tabBarViewControllers = [
-            questionBankViewController,
+            naviQuestionBankViewController,
             shareViewController,
             videoViewController,
             bigVViewController,

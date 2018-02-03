@@ -190,14 +190,6 @@
 			path = Util;
 			sourceTree = "<group>";
 		};
-		410A6B7C2012DBA80052CE12 /* design */ = {
-			isa = PBXGroup;
-			children = (
-				410A6B7D2012DBF00052CE12 /* QuestionBank.storyboard */,
-			);
-			path = design;
-			sourceTree = "<group>";
-		};
 		410A6B8B201304960052CE12 /* Base */ = {
 			isa = PBXGroup;
 			children = (
@@ -251,7 +243,6 @@
 				41EEA0CB2000AFDD006DB553 /* Http */,
 				41EEA0C820007EBA006DB553 /* Realm */,
 				41B825D61FF74432004DFDA3 /* Login */,
-				41D51C781FEFD3DB00DF78ED /* View */,
 				41D51C731FEFC88B00DF78ED /* Model */,
 				41D51C641FEF452C00DF78ED /* Controller */,
 				41E4CDFF200A6111000CA73F /* html */,
@@ -276,6 +267,8 @@
 		414DCA9F2002527900CB2B74 /* QuestionBank */ = {
 			isa = PBXGroup;
 			children = (
+				41D51C781FEFD3DB00DF78ED /* View */,
+				410A6B7D2012DBF00052CE12 /* QuestionBank.storyboard */,
 				4131DD56200F9CDC00A364DE /* DoQuestionViewController.swift */,
 				4131DD54200F9CCA00A364DE /* CommentsViewController.swift */,
 				414DCAA4200252FF00CB2B74 /* SelectQuestionViewController.swift */,
@@ -436,7 +429,6 @@
 		41D51C781FEFD3DB00DF78ED /* View */ = {
 			isa = PBXGroup;
 			children = (
-				410A6B7C2012DBA80052CE12 /* design */,
 				41D51C791FEFD3FE00DF78ED /* HeaderView.swift */,
 				41D51C7B1FEFDC4300DF78ED /* TableViewCell.swift */,
 			);
