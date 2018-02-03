@@ -15,18 +15,18 @@ class SelectKindController: SingleSelectorViewController {
         
         self.title = "类别"
         self.dataSource = self
-        
-        let closeItem = UIBarButtonItem(title: "关闭", style: .done, target: self, action: #selector(close))
-        self.navigationItem.leftBarButtonItem = closeItem
+//        
+//        let closeItem = UIBarButtonItem(title: "关闭", style: .done, target: self, action: #selector(close))
+//        self.navigationItem.leftBarButtonItem = closeItem
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
-    @objc func close() {
-        self.dismiss(animated: true, completion: nil)
-    }
+//    @objc func close() {
+//        self.dismiss(animated: true, completion: nil)
+//    }
     
     override func selectItem(_ item: SelectItem) {
         let selectCategoryVC = SelectCategoryController()

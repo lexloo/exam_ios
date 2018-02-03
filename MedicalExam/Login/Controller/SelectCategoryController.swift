@@ -110,7 +110,8 @@ class SelectCategoryController: SingleCheckBoxSelectorViewController {
     }
     
     func close() {
-        self.dismiss(animated: true, completion: nil)
+        print("close")
+        self.navigationController?.popToRootViewController(animated: true)
     }
 }
 

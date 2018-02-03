@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MyViewController: UITableViewController {
+class MyViewController: BaseUITableViewController {
     @IBOutlet weak var vLogo: UIView!
     @IBOutlet weak var ivAvatar: UIImageView!
     @IBOutlet var tbProp: UITableView!
@@ -62,9 +62,7 @@ class MyViewController: UITableViewController {
         switch indexPath.section {
         case 0:
             let selectKindVC = SelectKindController()
-            let nav = UINavigationController(rootViewController: selectKindVC)
-            
-            self.present(nav, animated: true, completion: nil)
+            self.navigationController?.pushViewController(selectKindVC, animated: true)
         default:
             empty()
         }

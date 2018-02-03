@@ -42,15 +42,16 @@ class MainViewController: UITabBarController {
         
         let sbOpts = UIStoryboard(name: "MyOptions", bundle: nil)
         let myViewController = sbOpts.instantiateViewController(withIdentifier: "MyViewVC") as! MyViewController
+        let myNaviViewController = UINavigationController(rootViewController: myViewController)
         let myViewItem: UITabBarItem = UITabBarItem(title: "我的", image: UIImage(named: "my_options"), selectedImage: UIImage(named: "my_options"))
-        myViewController.tabBarItem = myViewItem
+        myNaviViewController.tabBarItem = myViewItem
         
         let tabBarViewControllers = [
             questionBankViewController,
             shareViewController,
             videoViewController,
             bigVViewController,
-            myViewController
+            myNaviViewController
         ]
         
         self.setViewControllers(tabBarViewControllers, animated: true)

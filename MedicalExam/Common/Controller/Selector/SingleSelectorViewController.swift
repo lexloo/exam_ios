@@ -10,8 +10,7 @@ import UIKit
 
 class SingleSelectorViewController: BaseUIViewController {
     private lazy var tableView: UITableView? = {
-        let bounds = self.view.bounds
-        let tempTableView = UITableView(frame: CGRect(x: 0.0, y: 60.0, width: bounds.width, height: bounds.height - 60.0), style: UITableViewStyle.plain)
+        let tempTableView = UITableView(frame: self.view.bounds, style: UITableViewStyle.plain)
         tempTableView.delegate = self
         tempTableView.dataSource = self
         tempTableView.separatorStyle = UITableViewCellSeparatorStyle.singleLine
@@ -33,22 +32,9 @@ class SingleSelectorViewController: BaseUIViewController {
         }
     }
     
-    var topView: TopNaviView?
     var deselectRow = true
-    override var title: String? {
-        didSet {
-            self.topView?.title = title
-        }
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.view.backgroundColor = UIColor.white
-        
-        topView = TopNaviView(frame: CGRect(x: 0.0, y: 0.0, width: self.view.bounds.width, height: 60.0))
-        
-        self.view.addSubview(topView!)
     }
 
     override func didReceiveMemoryWarning() {
