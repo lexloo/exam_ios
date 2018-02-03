@@ -13,6 +13,7 @@ class MyViewController: UITableViewController {
     @IBOutlet weak var ivAvatar: UIImageView!
     @IBOutlet var tbProp: UITableView!
     
+    @IBOutlet weak var lblCategory: UILabel!
     @IBAction func exitClick(_ sender: UIButton) {
         exit(0)
     }
@@ -26,6 +27,10 @@ class MyViewController: UITableViewController {
     }()
     
     private var avatarData: Data?
+    
+    private func empty() {
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,6 +55,26 @@ class MyViewController: UITableViewController {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("\(indexPath.section)-\(indexPath.row)")
+        switch indexPath.section {
+        case 0:
+            let selectKindVC = SelectKindController()
+            let nav = UINavigationController(rootViewController: selectKindVC)
+            
+            self.present(nav, animated: true, completion: nil)
+        default:
+            empty()
+        }
+//        let item = items![indexPath.row]
+//
+//        if deselectRow {
+//            tableView.deselectRow(at: indexPath, animated: true)
+//        }
+//
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
     @objc func avatarEdit() {

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SingleSelectorViewController: UIViewController {
+class SingleSelectorViewController: BaseUIViewController {
     private lazy var tableView: UITableView? = {
         let bounds = self.view.bounds
         let tempTableView = UITableView(frame: CGRect(x: 0.0, y: 60.0, width: bounds.width, height: bounds.height - 60.0), style: UITableViewStyle.plain)

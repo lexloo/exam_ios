@@ -13,15 +13,12 @@ class BaseUIViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.view.backgroundColor = BaseColor.statusBarColor
+        self.navigationController?.navigationBar.barTintColor = BaseColor.statusBarColor
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
+        self.navigationController?.navigationBar.tintColor = UIColor.white
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-    }
-    
-    deinit {
-        print("baseUi")
-        NotificationCenter.default.removeObserver(self)
     }
 }

@@ -41,11 +41,11 @@ class SingleCheckBoxSelectorViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.backgroundColor = UIColor.white
+        //self.view.backgroundColor = UIColor.white
         
-        topView = TopNaviView(frame: CGRect(x: 0.0, y: 0.0, width: self.view.bounds.width, height: 60.0))
+        //topView = TopNaviView(frame: CGRect(x: 0.0, y: 0.0, width: self.view.bounds.width, height: 60.0))
         
-        self.view.addSubview(topView!)
+        //self.view.addSubview(topView!)
     }
     
     override func didReceiveMemoryWarning() {

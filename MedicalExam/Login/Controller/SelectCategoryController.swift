@@ -14,14 +14,23 @@ class SelectCategoryController: SingleCheckBoxSelectorViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = "选择考试分类"
+        self.title = "分类"
         self.dataSource = self
-        self.topView?.rightButtonTitle = "保存"
-        self.topView?.delegate = self
+
+        let saveItem = UIBarButtonItem(title: "保存", style: .done, target: self, action: #selector(save))
+        self.navigationItem.rightBarButtonItem = saveItem
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    @objc func save() {
+        if let select = self.getSelectItem() {
+            setCategory(categoryGuid: select.guid!)
+        } else {
+            MessageUtils.alert(viewController: self, message: "请选择考试分类")
+        }
     }
     
     func setCategory(categoryGuid: String) {
@@ -101,23 +110,7 @@ class SelectCategoryController: SingleCheckBoxSelectorViewController {
     }
     
     func close() {
-//        self.dismiss(animated: true, completion: nil)
-        self.view.window?.rootViewController?.dismiss(animated: true, completion: nil)
-    }
-}
-
-extension SelectCategoryController: TopNaviViewDelegate {
-    func leftClick() {
-        let selectKindVC = SelectKindController()
-        self.present(selectKindVC, animated: true, completion: nil)
-    }
-    
-    func rightClick() {
-        if let select = self.getSelectItem() {
-            setCategory(categoryGuid: select.guid!)
-        } else {
-            MessageUtils.alert(viewController: self, message: "请选择考试分类")
-        }
+        self.dismiss(animated: true, completion: nil)
     }
 }
 
