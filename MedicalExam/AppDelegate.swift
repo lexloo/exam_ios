@@ -16,6 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         UIApplication.shared.statusBarStyle = .lightContent
+        print(Html5FuncFactory.getClass(name: "Test"))
 //
 //        let navBar = UINavigationBar.appearance()
 //        navBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]

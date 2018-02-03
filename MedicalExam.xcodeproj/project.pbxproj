@@ -22,6 +22,7 @@
 		410A6B9A2013BE890052CE12 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 410A6B9B2013BE890052CE12 /* Realm.framework */; };
 		4112162020256D9F002C2F9D /* FileUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4112161F20256D9F002C2F9D /* FileUtils.swift */; };
 		411216252025E348002C2F9D /* BaseUITableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411216242025E348002C2F9D /* BaseUITableViewController.swift */; };
+		41121627202630A3002C2F9D /* Html5Func.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41121626202630A3002C2F9D /* Html5Func.swift */; };
 		4131DD55200F9CCC00A364DE /* CommentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4131DD54200F9CCA00A364DE /* CommentsViewController.swift */; };
 		4131DD57200F9CDC00A364DE /* DoQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4131DD56200F9CDC00A364DE /* DoQuestionViewController.swift */; };
 		413307321FEBED0800C2BD45 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413307311FEBED0800C2BD45 /* AppDelegate.swift */; };
@@ -95,6 +96,7 @@
 		410A6B9B2013BE890052CE12 /* Realm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Realm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4112161F20256D9F002C2F9D /* FileUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileUtils.swift; sourceTree = "<group>"; };
 		411216242025E348002C2F9D /* BaseUITableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseUITableViewController.swift; sourceTree = "<group>"; };
+		41121626202630A3002C2F9D /* Html5Func.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Html5Func.swift; sourceTree = "<group>"; };
 		4131DD54200F9CCA00A364DE /* CommentsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentsViewController.swift; sourceTree = "<group>"; };
 		4131DD56200F9CDC00A364DE /* DoQuestionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoQuestionViewController.swift; sourceTree = "<group>"; };
 		4133072E1FEBED0800C2BD45 /* MedicalExam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MedicalExam.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -215,6 +217,14 @@
 			path = Base;
 			sourceTree = "<group>";
 		};
+		4112162820263123002C2F9D /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				41121626202630A3002C2F9D /* Html5Func.swift */,
+			);
+			path = Api;
+			sourceTree = "<group>";
+		};
 		413307251FEBED0800C2BD45 = {
 			isa = PBXGroup;
 			children = (
@@ -256,6 +266,7 @@
 		414DCA9720024D6100CB2B74 /* WebView */ = {
 			isa = PBXGroup;
 			children = (
+				4112162820263123002C2F9D /* Api */,
 				41E4CE03200B064A000CA73F /* Funcs */,
 				414DCA9820024E2200CB2B74 /* NvWKWebView.swift */,
 				41E4CE01200B051D000CA73F /* WebViewModuleFuncs.swift */,
@@ -645,6 +656,7 @@
 				414DCA922002134200CB2B74 /* Subject.swift in Sources */,
 				414DCA942002134D00CB2B74 /* Chapter.swift in Sources */,
 				41E4CE05200B0667000CA73F /* Qb.swift in Sources */,
+				41121627202630A3002C2F9D /* Html5Func.swift in Sources */,
 				41EEA0CA20007EDC006DB553 /* RealmUtil.swift in Sources */,
 				410A6B8A201304710052CE12 /* TypeQuestionViewController.swift in Sources */,
 				41D51C771FEFC94D00DF78ED /* CellModel.swift in Sources */,
