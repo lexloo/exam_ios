@@ -20,6 +20,7 @@
 		410A6B942013BB100052CE12 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 410A6B952013BB100052CE12 /* RealmSwift.framework */; };
 		410A6B982013BCAA0052CE12 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 410A6B992013BCAA0052CE12 /* Alamofire.framework */; };
 		410A6B9A2013BE890052CE12 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 410A6B9B2013BE890052CE12 /* Realm.framework */; };
+		4112162020256D9F002C2F9D /* FileUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4112161F20256D9F002C2F9D /* FileUtils.swift */; };
 		4131DD55200F9CCC00A364DE /* CommentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4131DD54200F9CCA00A364DE /* CommentsViewController.swift */; };
 		4131DD57200F9CDC00A364DE /* DoQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4131DD56200F9CDC00A364DE /* DoQuestionViewController.swift */; };
 		413307321FEBED0800C2BD45 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413307311FEBED0800C2BD45 /* AppDelegate.swift */; };
@@ -93,6 +94,7 @@
 		410A6B972013BB170052CE12 /* Realm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Realm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		410A6B992013BCAA0052CE12 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		410A6B9B2013BE890052CE12 /* Realm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Realm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4112161F20256D9F002C2F9D /* FileUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileUtils.swift; sourceTree = "<group>"; };
 		4131DD54200F9CCA00A364DE /* CommentsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentsViewController.swift; sourceTree = "<group>"; };
 		4131DD56200F9CDC00A364DE /* DoQuestionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoQuestionViewController.swift; sourceTree = "<group>"; };
 		4133072E1FEBED0800C2BD45 /* MedicalExam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MedicalExam.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -207,6 +209,14 @@
 			path = Base;
 			sourceTree = "<group>";
 		};
+		4112161C20255F76002C2F9D /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				4112161F20256D9F002C2F9D /* FileUtils.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
 		413307251FEBED0800C2BD45 = {
 			isa = PBXGroup;
 			children = (
@@ -316,6 +326,7 @@
 		41AC5813201D8B6E005FBBDA /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				4112161C20255F76002C2F9D /* Util */,
 				41C9E2ED2021FCAB001606DA /* View */,
 				418426D8201466B00080DA8D /* Base */,
 				41AC5814201D8C47005FBBDA /* Controller */,
@@ -623,6 +634,7 @@
 				410A6B7B2012277F0052CE12 /* MessageUtils.swift in Sources */,
 				41B825E11FFA25FF004DFDA3 /* RegisterController.swift in Sources */,
 				41E4CE02200B051D000CA73F /* WebViewModuleFuncs.swift in Sources */,
+				4112162020256D9F002C2F9D /* FileUtils.swift in Sources */,
 				4131DD57200F9CDC00A364DE /* DoQuestionViewController.swift in Sources */,
 				410A6B8F20133A6A0052CE12 /* QuestionBankFilterUtils.swift in Sources */,
 				414DCA962002136800CB2B74 /* ChapterQuestions.swift in Sources */,

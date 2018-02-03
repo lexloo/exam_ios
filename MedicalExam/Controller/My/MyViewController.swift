@@ -24,6 +24,7 @@ class MyViewController: UITableViewController {
         
         return pickVC
     }()
+    
     private var avatarData: Data?
     
     override func viewDidLoad() {
@@ -34,15 +35,17 @@ class MyViewController: UITableViewController {
         vLogo.bounds = CGRect(x: 0, y: 0, width: view.bounds.width, height: 160)
         vLogo.backgroundColor = BaseColor.statusBarColor
         
-        //ivAvatar.layer.cornerRadius = ivAvatar.frame.size.width / 2
-        //ivAvatar.clipsToBounds = true
-        ivAvatar.image = UIImage(color: UIColor.white, size: CGSize(width: 80, height: 80))?.roundCornersToCircle(withBorder: 10, color: UIColor.orange)
-        
         tbProp.tableFooterView = UIView();
         
         let avatarClick = UITapGestureRecognizer(target: self, action: #selector(avatarEdit));
         ivAvatar.addGestureRecognizer(avatarClick)
         ivAvatar.isUserInteractionEnabled = true
+        
+        if let savedImage = UIImage(contentsOfFile: FileUtils.getAvatarFileName("avatar")) {
+            ivAvatar.image = savedImage.roundCornersToCircle(withBorder: 40, color: UIColor.orange)
+        } else {
+            ivAvatar.image = UIImage(color: UIColor.white, size: CGSize(width: 80, height: 80))?.roundCornersToCircle(withBorder: 10, color: UIColor.orange)
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -72,6 +75,7 @@ extension MyViewController: UIImagePickerControllerDelegate, UINavigationControl
     private func openCamera() {
         if UIImagePickerController.isSourceTypeAvailable(.camera) {
             pickVC.sourceType = .camera
+            pickVC.allowsEditing = true
             self.present(pickVC, animated: true, completion: nil)
         } else {
             MessageUtils.alert(viewController: self, message: "camera")
@@ -96,6 +100,8 @@ extension MyViewController: UIImagePickerControllerDelegate, UINavigationControl
                     
                     if avatarData != nil {
                         ivAvatar.image = UIImage(data: avatarData!)?.resize(toSize: CGSize(width: 80, height: 80))?.roundCornersToCircle(withBorder: 40, color: UIColor.orange)
+                        
+                        FileUtils.saveAvatar(avatarData!, "avatar")
                     }
                 }
             }
