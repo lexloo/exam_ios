@@ -7,7 +7,7 @@
 //
 import UIKit
 
-class SingleCheckBoxSelectorViewController: UIViewController {
+class SingleCheckBoxSelectorViewController: BaseUIViewController {
     private lazy var tableView: UITableView? = {
         let tempTableView = UITableView(frame: self.view.bounds, style: UITableViewStyle.plain)
         tempTableView.dataSource = self

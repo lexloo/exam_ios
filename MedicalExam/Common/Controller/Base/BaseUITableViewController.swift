@@ -23,6 +23,17 @@ class BaseUITableViewController: UITableViewController {
         super.didReceiveMemoryWarning()
     }
     
+    func publishNotification(name: String, userInfo: [AnyHashable: Any]?) {
+        let notificationName = Notification.Name(name)
+        NotificationCenter.default.post(name: notificationName, object: self, userInfo: userInfo)
+    }
+    
+    func subscribeNotification(name: String, selector: Selector) {
+        let notificationName = Notification.Name(name)
+        
+        NotificationCenter.default.addObserver(self, selector: selector, name: notificationName, object: nil)
+    }
+    
     deinit {
         NotificationCenter.default.removeObserver(self)
     }

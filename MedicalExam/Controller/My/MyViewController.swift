@@ -12,8 +12,8 @@ class MyViewController: BaseUITableViewController {
     @IBOutlet weak var vLogo: UIView!
     @IBOutlet weak var ivAvatar: UIImageView!
     @IBOutlet var tbProp: UITableView!
-    
     @IBOutlet weak var lblCategory: UILabel!
+    
     @IBAction func exitClick(_ sender: UIButton) {
         exit(0)
     }
@@ -51,14 +51,21 @@ class MyViewController: BaseUITableViewController {
         } else {
             ivAvatar.image = UIImage(color: UIColor.white, size: CGSize(width: 80, height: 80))?.roundCornersToCircle(withBorder: 10, color: UIColor.orange)
         }
+        
+        self.subscribeNotification(name: "set_category_name", selector: #selector(setCatagory(notification:)))
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
+    @objc func setCatagory(notification: Notification) {
+        let category = notification.userInfo!["name"] as! String
+
+        lblCategory.text = category
+    }
+
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("\(indexPath.section)-\(indexPath.row)")
         switch indexPath.section {
         case 0:
             let selectKindVC = SelectKindController()
@@ -66,29 +73,24 @@ class MyViewController: BaseUITableViewController {
         default:
             empty()
         }
-//        let item = items![indexPath.row]
-//
-//        if deselectRow {
-//            tableView.deselectRow(at: indexPath, animated: true)
-//        }
-//
+
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
     @objc func avatarEdit() {
         let sheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         
-        sheet.addAction(UIAlertAction(title: "Camera", style: .default, handler: {
+        sheet.addAction(UIAlertAction(title: "拍照", style: .default, handler: {
             (UIAlertAction) in
             self.openCamera()
         }))
         
-        sheet.addAction(UIAlertAction(title: "Photo", style: .default, handler: {
+        sheet.addAction(UIAlertAction(title: "相片", style: .default, handler: {
             (UIAlertAction) in
             self.openLibrary()
         }))
         
-        sheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        sheet.addAction(UIAlertAction(title: "取消", style: .cancel, handler: nil))
         
         self.present(sheet, animated: true, completion: nil)
     }

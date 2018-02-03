@@ -27,23 +27,24 @@ class SelectCategoryController: SingleCheckBoxSelectorViewController {
     
     @objc func save() {
         if let select = self.getSelectItem() {
-            setCategory(categoryGuid: select.guid!)
+            setCategory(category: select)
         } else {
             MessageUtils.alert(viewController: self, message: "请选择考试分类")
         }
     }
     
-    func setCategory(categoryGuid: String) {
+    func setCategory(category: SelectItem) {
         let userInfo = UserInfo()
         userInfo.copyFrom(Global.userInfo)
         userInfo.examKind = self.kindGuid
-        userInfo.examCategory = categoryGuid
+        userInfo.examCategory = category.guid
         Global.userInfo.copyFrom(userInfo)
         
         let parameters = ["guid": userInfo.guid!, "kind": userInfo.examKind!, "category": userInfo.examCategory!]
         HttpUtil.postReturnString("user/kind_category", parameters: parameters) {
             result in
             if "SUCCESS" == result {
+                self.publishNotification(name: "set_category_name", userInfo: ["name": category.name])
                 self.refreshData(userInfo: userInfo)
             }
         }
@@ -110,7 +111,6 @@ class SelectCategoryController: SingleCheckBoxSelectorViewController {
     }
     
     func close() {
-        print("close")
         self.navigationController?.popToRootViewController(animated: true)
     }
 }
