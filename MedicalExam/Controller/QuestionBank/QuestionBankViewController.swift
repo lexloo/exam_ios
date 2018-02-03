@@ -29,21 +29,21 @@ class QuestionBankViewController: UIQuestionBankBaseViewController {
         let sb = UIStoryboard(name: "QuestionBank", bundle: nil)
         let next = sb.instantiateViewController(withIdentifier: "TypeQuestionListVC") as! TypeQuestionViewController
         next.type = "error"
-        self.present(next, animated: true, completion: nil)
+        self.navigationController?.pushViewController(next, animated: true)
     }
     
     @IBAction func likesClick(_ sender: UIButton) {
         let sb = UIStoryboard(name: "QuestionBank", bundle: nil)
         let next = sb.instantiateViewController(withIdentifier: "TypeQuestionListVC") as! TypeQuestionViewController
         next.type = "liked"
-        self.present(next, animated: true, completion: nil)
+        self.navigationController?.pushViewController(next, animated: true)
     }
     
     @IBAction func notesClick(_ sender: UIButton) {
         let sb = UIStoryboard(name: "QuestionBank", bundle: nil)
         let next = sb.instantiateViewController(withIdentifier: "TypeQuestionListVC") as! TypeQuestionViewController
         next.type = "notes"
-        self.present(next, animated: true, completion: nil)
+        self.navigationController?.pushViewController(next, animated: true)
     }
     func initViews() {
         initTableView()

@@ -17,8 +17,6 @@ class DoQuestionViewController: BaseUIViewController {
     public var questionGuid: String?
     public var questionArr = [String]()
     public var questionViewArr = [NvWKWebView?]()
-    @IBOutlet weak var lblSubjectName: UILabel!
-    @IBOutlet weak var lblChapterName: UILabel!
     @IBOutlet weak var svContainer: UIScrollView!
     @IBOutlet weak var vTool: UIView!
     @IBOutlet weak var vCommentInput: UIView!
@@ -34,7 +32,7 @@ class DoQuestionViewController: BaseUIViewController {
         let notesVC = sb.instantiateViewController(withIdentifier: "NotesVC") as! NotesViewController
         
         notesVC.questionGuid = self.questionArr[self.getCurrPage()]
-        self.present(notesVC, animated: true, completion: nil)
+        self.navigationController?.pushViewController(notesVC, animated: true)
     }
     
     @IBAction func newLikesClick(_ sender: UIButton) {
@@ -77,27 +75,23 @@ class DoQuestionViewController: BaseUIViewController {
         vCommentInput.isHidden = true
         txtComments.resignFirstResponder()
     }
-    @IBAction func returnClick(_ sender: UIButton) {
-        let notificationName = Notification.Name(rawValue: "REFRESH-SELECT-QUESTION")
-        NotificationCenter.default.post(name: notificationName, object: self)
-        
-        self.dismiss(animated: true, completion: nil)
-    }
-    
+ 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         NotificationCenter.default.addObserver(self, selector: #selector(DoQuestionViewController.keyboardWillChange(_:)), name: .UIKeyboardWillChangeFrame, object: nil)
         
-        self.lblChapterName.backgroundColor = BaseColor.tableSectionColor
-        lblSubjectName.text = subjectName!
-        lblChapterName.text = chapterName!
-        
+        title = chapterName!
         svContainer.scrollsToTop = false
+        self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
         
         setupViewPager()
     }
 
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true
+        self.publishNotification(name: "refresh_select_question", userInfo: nil)
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }

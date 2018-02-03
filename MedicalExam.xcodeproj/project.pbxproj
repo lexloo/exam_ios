@@ -269,6 +269,7 @@
 			children = (
 				41D51C781FEFD3DB00DF78ED /* View */,
 				410A6B7D2012DBF00052CE12 /* QuestionBank.storyboard */,
+				41D51C691FEF480A00DF78ED /* QuestionBankViewController.swift */,
 				4131DD56200F9CDC00A364DE /* DoQuestionViewController.swift */,
 				4131DD54200F9CCA00A364DE /* CommentsViewController.swift */,
 				414DCAA4200252FF00CB2B74 /* SelectQuestionViewController.swift */,
@@ -408,7 +409,6 @@
 				410A6B8B201304960052CE12 /* Base */,
 				414DCA9F2002527900CB2B74 /* QuestionBank */,
 				41D51C671FEF45F300DF78ED /* MainViewController.swift */,
-				41D51C691FEF480A00DF78ED /* QuestionBankViewController.swift */,
 				41D51C6D1FEF495800DF78ED /* VideoViewController.swift */,
 				419783E12014C41F000EC030 /* ShareViewController.swift */,
 				419783E32014C42E000EC030 /* BigVViewController.swift */,

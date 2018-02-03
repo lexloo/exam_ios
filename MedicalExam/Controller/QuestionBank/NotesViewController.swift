@@ -12,10 +12,25 @@ class NotesViewController: BaseUIViewController {
     var questionGuid: String?
     
     @IBOutlet weak var txtNotes: UITextView!
-    @IBAction func returnClick(_ sender: UIButton) {
-        self.dismiss(animated: true, completion: nil)
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        title = "笔记"
+        
+        let saveItem = UIBarButtonItem(title: "保存", style: .done, target: self, action: #selector(save))
+        self.navigationItem.rightBarButtonItem = saveItem
+        
+        loadPrevNotes()
+        txtNotes.becomeFirstResponder()
     }
-    @IBAction func saveClick(_ sender: UIButton) {
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    @objc func save(_ sender: UIButton) {
         if txtNotes.text == "" {
             return;
         }
@@ -35,18 +50,7 @@ class NotesViewController: BaseUIViewController {
             }
         }
         
-        self.dismiss(animated: true, completion: nil)
-    }
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        loadPrevNotes()
-        txtNotes.becomeFirstResponder()
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        self.navigationController?.popViewController(animated: true)
     }
     
     private func loadPrevNotes() {

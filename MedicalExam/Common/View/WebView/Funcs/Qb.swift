@@ -58,7 +58,7 @@ class Qb {
     }
     
     static func startDoQuestion(nvWebView: NvWKWebView, params: JSON, callbackId: String?) {
-        let loginStoryBoard = UIStoryboard(name: "UILogin", bundle: nil)
+        let loginStoryBoard = UIStoryboard(name: "QuestionBank", bundle: nil)
         let doQuestionVC = loginStoryBoard.instantiateViewController(withIdentifier: "DoQuestionVC") as! DoQuestionViewController
         
         doQuestionVC.subjectName = params["subjectName"].string
@@ -68,7 +68,7 @@ class Qb {
         doQuestionVC.index = params["index"].string
         doQuestionVC.type = params["type"].string
         
-        nvWebView.uiViewController?.present(doQuestionVC, animated: true, completion: nil)
+        nvWebView.uiViewController?.navigationController?.pushViewController(doQuestionVC, animated: true)
     }
 
     static func getDoQuestion(nvWebView: NvWKWebView, params: JSON, callbackId: String?) {
@@ -86,7 +86,6 @@ class Qb {
             result["select"].string = question.doinfo?.answer
         }
         
-        print(result);
         nvWebView.sendCallback(callbackId: callbackId!, result: result)
     }
     
@@ -123,8 +122,8 @@ class Qb {
         
         let parameters: [String: String] = [
             "user_guid": Global.userInfo.guid!,
-            "question_guid": "xxxxx",
-            "chapter_guid": "yyyyy",
+            "question_guid": question.guid!,
+            "chapter_guid": question.chapterGuid!,
             "answer": (doinfo?.answer)!,
             "result": (doinfo?.result)!]
         HttpUtil.postReturnString("question/do_info/set", parameters: parameters) {
@@ -145,11 +144,11 @@ class Qb {
     }
     
     static func showComments(nvWebView: NvWKWebView, params: JSON, callbackId: String?) {
-        let loginStoryBoard = UIStoryboard(name: "UILogin", bundle: nil)
+        let loginStoryBoard = UIStoryboard(name: "QuestionBank", bundle: nil)
         let commentsVC = loginStoryBoard.instantiateViewController(withIdentifier: "CommentsVC") as! CommentsViewController
         
         commentsVC.questionGuid = params["questionGuid"].string
-        nvWebView.uiViewController?.present(commentsVC, animated: true, completion: nil)
+        nvWebView.uiViewController?.navigationController?.pushViewController(commentsVC, animated: true)
     }
     
     static func getComments(nvWebView: NvWKWebView, params: JSON, callbackId: String?) {

@@ -27,6 +27,8 @@ class CommentsViewController: BaseUIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        title = "考生评论"
+        
         webView = NvWKWebView(frame: CGRect(x:0, y:0, width:self.vWebViewContainer.bounds.width, height:self.vWebViewContainer.bounds.height), uiViewController: self)
         webView?.callback = self
         vWebViewContainer.addSubview(webView!)
@@ -41,9 +43,7 @@ class CommentsViewController: BaseUIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    @IBAction func returnClick(_ sender: UIButton) {
-        self.dismiss(animated: true, completion: nil)
-    }
+
     @IBAction func cancelCommentClick(_ sender: UIButton) {
         vCommentInput.isHidden = true
         tvInput.resignFirstResponder()

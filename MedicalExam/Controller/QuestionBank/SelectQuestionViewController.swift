@@ -10,7 +10,6 @@ import UIKit
 import WebKit
 
 class SelectQuestionViewController: BaseUIViewController {
-    @IBOutlet weak var lblSubject: UILabel!
     var subjectName: String?
     var chapterName: String?
     var chapterGuid: String?
@@ -21,36 +20,35 @@ class SelectQuestionViewController: BaseUIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        webView = NvWKWebView(frame: CGRect(x:0, y:60, width:self.view.bounds.size.width, height:self.view.bounds.size.height), uiViewController: self)
+        webView = NvWKWebView(frame: self.view.bounds, uiViewController: self)
         view.addSubview(webView!)
 
         let params: [String: String] = ["subjectName": subjectName!, "chapterGuid": chapterGuid!, "chapterName": chapterName!, "type": type!]
         webView?.loadHtml(name: "html/question_board", params: params)
         
-        lblSubject.text = subjectName!
+        self.title = subjectName!
+        self.subscribeNotification(name: "refresh_select_question", selector: #selector(refreshQuestion(notification:)))
         
-        let notificationName = Notification.Name(rawValue: "REFRESH-SELECT-QUESTION")
-        NotificationCenter.default.addObserver(self, selector: #selector(refreshQuestion(notification:)), name: notificationName, object: nil)
+        let closeItem = UIBarButtonItem(title: "题库", style: .done, target: self, action: #selector(close))
+        self.navigationItem.leftBarButtonItem = closeItem
+        
+        let redoItem = UIBarButtonItem(title: "重做", style: .plain, target: self, action: #selector(redo))
+        self.navigationItem.rightBarButtonItem = redoItem
     }
 
     @objc func refreshQuestion(notification: Notification) {
         self.webView?.evaluateJavaScript("vue.reloadQuestions()")
     }
+    
+    @objc func close() {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    @objc func redo() {
+        
+    }
         
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    @IBAction func returnClick(_ sender: UIButton) {
-        
-        self.dismiss(animated: true, completion: nil)
-    }
-    
-    @IBAction func redoClick(_ sender: UIButton) {
-    }
-    
-    func close() {
-        self.dismiss(animated: true, completion: nil)
     }
 }

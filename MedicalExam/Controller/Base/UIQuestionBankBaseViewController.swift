@@ -87,14 +87,16 @@ extension UIQuestionBankBaseViewController: UITableViewDelegate {
         let chapterName = cell.title
         let chapterGuid = cell.guid
         
-        let loginStoryBoard = UIStoryboard(name: "UILogin", bundle: nil)
+        let loginStoryBoard = UIStoryboard(name: "QuestionBank", bundle: nil)
         let selectQuestionVC = loginStoryBoard.instantiateViewController(withIdentifier: "SelectQuestionVC") as! SelectQuestionViewController
+        
+        tableView.deselectRow(at: indexPath, animated: true)
         selectQuestionVC.subjectName = subjectName
         selectQuestionVC.chapterName = chapterName
         selectQuestionVC.chapterGuid = chapterGuid
         selectQuestionVC.type = type
         
-        tableView.deselectRow(at: indexPath, animated: true)
-        self.present(selectQuestionVC, animated: true, completion: nil)
+        let naviSelectQuestionVC = UINavigationController(rootViewController: selectQuestionVC)
+        self.present(naviSelectQuestionVC, animated: true, completion: nil)
     }
 }
