@@ -13,6 +13,7 @@ import SwiftyJSON
 class NvWKWebView: WKWebView {
     weak var uiViewController: UIViewController?
     var callback: WKWebViewCallback?
+    private var htmlFuncsCreator: Html5FuncsCreator?
     
     init(frame: CGRect, uiViewController: UIViewController){
         let config = WKWebViewConfiguration()
@@ -30,6 +31,7 @@ class NvWKWebView: WKWebView {
         self.scrollView.bounces = false
         
         self.initClients()
+        htmlFuncsCreator = Html5FuncsCreator(webview: self)
     }
 
     required init?(coder: NSCoder) {
@@ -40,7 +42,6 @@ class NvWKWebView: WKWebView {
 extension NvWKWebView {
     func initClients() {
         loadSdk()
-        registerClientFuncs(module: "qb", funcs: ["getChapterQuestion,startDoQuestion,getDoQuestion,getCommentCount,saveDoQuestion,getDoQuestionInfo,showComments,getComments"])
         addKVO()
     }
     
@@ -55,7 +56,7 @@ extension NvWKWebView {
         }
     }
     
-    private func registerClientFuncs(module: String, funcs:[String]) {
+    func registerClientFuncs(module: String, funcs:[String]) {
         let script = "iTek.__html5_reg(\"\(module)\", \"\(funcs.joined(separator: ","))\")"
         
         self.evaluateJavaScript(script) {
@@ -64,8 +65,6 @@ extension NvWKWebView {
                 print("\(String(describing: err))")
             }
         }
-        
-        print("register:" + funcs.joined(separator: ","))
     }
     
     private func addKVO() {
@@ -166,7 +165,7 @@ extension NvWKWebView: WKScriptMessageHandler {
                     callback.exec(funcName: funcName, data: data)
                 }
             } else {
-                WebViewModuleFuncs.exec(nvWebView: self, module: module, funcName: funcName, data: data)
+                htmlFuncsCreator?.exec(moduleName: module, funcName: funcName, data: data)
             }
         }
     }

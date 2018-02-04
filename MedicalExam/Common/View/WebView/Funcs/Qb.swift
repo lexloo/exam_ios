@@ -9,31 +9,35 @@
 import Foundation
 import SwiftyJSON
 
-class Qb {
-    static func exec(nvWebView: NvWKWebView, funcName: String, data: JSON) {
+class Qb: Html5Funcs{
+    override func exec(funcName: String, data: JSON) {
         let params = data["params"]
         let callbackId = data["callbackId"].string
-        print(funcName);
+
         if funcName == "getChapterQuestion" {
-            getChapterQuestions(nvWebView:nvWebView, params: params, callbackId: callbackId)
+            getChapterQuestions(params: params, callbackId: callbackId)
         } else if (funcName == "startDoQuestion") {
-            startDoQuestion(nvWebView:nvWebView, params: params, callbackId: callbackId)
+            startDoQuestion(params: params, callbackId: callbackId)
         } else if (funcName == "getDoQuestion") {
-            getDoQuestion(nvWebView: nvWebView, params: params, callbackId: callbackId)
+            getDoQuestion(params: params, callbackId: callbackId)
         } else if (funcName == "getCommentCount") {
-            getCommentCount(nvWebView: nvWebView, params: params, callbackId: callbackId)
+            getCommentCount(params: params, callbackId: callbackId)
         } else if (funcName == "saveDoQuestion") {
-            saveDoQuestion(nvWebView: nvWebView, params: params, callbackId: callbackId)
+            saveDoQuestion(params: params, callbackId: callbackId)
         } else if (funcName == "getDoQuestionInfo") {
-            getDoQuestionInfo(nvWebView: nvWebView, params: params, callbackId: callbackId)
+            getDoQuestionInfo(params: params, callbackId: callbackId)
         } else if (funcName == "showComments") {
-            showComments(nvWebView: nvWebView, params: params, callbackId: callbackId)
+            showComments(params: params, callbackId: callbackId)
         } else if (funcName == "getComments") {
-            getComments(nvWebView: nvWebView, params: params, callbackId: callbackId)
+            getComments(params: params, callbackId: callbackId)
         }
     }
     
-    static func getChapterQuestions(nvWebView: NvWKWebView, params: JSON, callbackId: String?) {
+    static func getFuncsForRegister() -> [String] {
+        return ["getChapterQuestion,startDoQuestion,getDoQuestion,getCommentCount,saveDoQuestion,getDoQuestionInfo,showComments,getComments"]
+    }
+    
+    func getChapterQuestions(params: JSON, callbackId: String?) {
         let type = params["type"].string
         let chapterGuid = params["chapterGuid"].string!
         
@@ -54,10 +58,10 @@ class Qb {
         }
         
         let result = JSON(arr)
-        nvWebView.sendCallback(callbackId: callbackId!, result: result)
+        webview?.sendCallback(callbackId: callbackId!, result: result)
     }
     
-    static func startDoQuestion(nvWebView: NvWKWebView, params: JSON, callbackId: String?) {
+    func startDoQuestion(params: JSON, callbackId: String?) {
         let loginStoryBoard = UIStoryboard(name: "QuestionBank", bundle: nil)
         let doQuestionVC = loginStoryBoard.instantiateViewController(withIdentifier: "DoQuestionVC") as! DoQuestionViewController
         
@@ -68,10 +72,10 @@ class Qb {
         doQuestionVC.index = params["index"].string
         doQuestionVC.type = params["type"].string
         
-        nvWebView.uiViewController?.navigationController?.pushViewController(doQuestionVC, animated: true)
+        webview?.uiViewController?.navigationController?.pushViewController(doQuestionVC, animated: true)
     }
 
-    static func getDoQuestion(nvWebView: NvWKWebView, params: JSON, callbackId: String?) {
+    func getDoQuestion(params: JSON, callbackId: String?) {
         let questionGuid = params["questionGuid"].string!
         
         let question = RealmUtil.select(ChapterQuestions.self, forPrimaryKey: questionGuid)
@@ -86,20 +90,20 @@ class Qb {
             result["select"].string = question.doinfo?.answer
         }
         
-        nvWebView.sendCallback(callbackId: callbackId!, result: result)
+        webview?.sendCallback(callbackId: callbackId!, result: result)
     }
     
-    static func getCommentCount(nvWebView: NvWKWebView, params: JSON, callbackId: String?) {
+    func getCommentCount(params: JSON, callbackId: String?) {
         let parameters = ["question_guid": params["questionGuid"].string!]
         HttpUtil.postReturnString("question/comment_count", parameters: parameters) {
             result in
             
             let json = JSON(["count": result]);
-            nvWebView.sendCallback(callbackId: callbackId!, result: json)
+            self.webview?.sendCallback(callbackId: callbackId!, result: json)
         }
     }
     
-    static func saveDoQuestion(nvWebView: NvWKWebView, params: JSON, callbackId: String?) {
+    func saveDoQuestion(params: JSON, callbackId: String?) {
         let questionGuid = params["questionGuid"].string!
         let question = RealmUtil.select(ChapterQuestions.self, forPrimaryKey: questionGuid)
         
@@ -128,34 +132,33 @@ class Qb {
             "result": (doinfo?.result)!]
         HttpUtil.postReturnString("question/do_info/set", parameters: parameters) {
             result in
-            nvWebView.sendCallback(callbackId: callbackId!, result: JSON())
+            self.webview?.sendCallback(callbackId: callbackId!, result: JSON())
         }
     }
     
-    static func getDoQuestionInfo(nvWebView: NvWKWebView, params: JSON, callbackId: String?) {
+    func getDoQuestionInfo(params: JSON, callbackId: String?) {
         let parameters = ["question_guid": params["questionGuid"].string!, "user_guid": Global.userInfo.guid!]
         HttpUtil.postReturnString("question/do_info/get", parameters: parameters) {
             result in
             
             let json = JSON.init(parseJSON: result);
-            print(json);
-            nvWebView.sendCallback(callbackId: callbackId!, result: json)
+            self.webview?.sendCallback(callbackId: callbackId!, result: json)
         }
     }
     
-    static func showComments(nvWebView: NvWKWebView, params: JSON, callbackId: String?) {
+    func showComments(params: JSON, callbackId: String?) {
         let loginStoryBoard = UIStoryboard(name: "QuestionBank", bundle: nil)
         let commentsVC = loginStoryBoard.instantiateViewController(withIdentifier: "CommentsVC") as! CommentsViewController
         
         commentsVC.questionGuid = params["questionGuid"].string
-        nvWebView.uiViewController?.navigationController?.pushViewController(commentsVC, animated: true)
+        webview?.uiViewController?.navigationController?.pushViewController(commentsVC, animated: true)
     }
     
-    static func getComments(nvWebView: NvWKWebView, params: JSON, callbackId: String?) {
+    func getComments(params: JSON, callbackId: String?) {
         let parameters = ["question_guid": params["questionGuid"].string!, "page": "1"]
         HttpUtil.postReturnData("question/list_comment", parameters: parameters) {
             result in
-            nvWebView.sendCallback(callbackId: callbackId!, result: result)
+            self.webview?.sendCallback(callbackId: callbackId!, result: result)
         }
     }
 }
